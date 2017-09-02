@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+echo $DIR
+
+test() {
+    mkdir -p $DIR/../build/source
+    rsync -vr /home/patrikx3/Projects/patrikx3/p3x/lede-insomnia/patches/source/feeds /home/patrikx3/Projects/patrikx3/p3x/lede-insomnia/build/source
+}
+
+export -f test

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $DIR/lib
+
+feeds
+setup-config "d-link-dir-860l-b1"
+#"lede-imagebuilder-17.01.2-ramips-mt7621.Linux-x86_64"

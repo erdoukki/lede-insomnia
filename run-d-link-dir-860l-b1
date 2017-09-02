@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+docker run -t -i patrikx3/lede-insomnia:d-link-dir-860l-b1 bash

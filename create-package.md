@@ -1,0 +1,85 @@
+[//]: #@corifeus-header
+
+## Latest Stable LEDE Version with many plus packages
+
+---
+                        
+[//]: #@corifeus-header:end
+# Create packages
+
+## For starting, I was using these URL's for NodeJs packages
+https://github.com/nxhack/openwrt-node-packages  
+https://github.com/nxhack/openwrt-node-packages/issues/15
+
+# Create a Docker image:  
+
+```
+./build
+```
+
+## Before you create(s) the new same package(s), uninstall the current package(s)! 
+Like ```opkg remove node```, ```opkg remove node-npm``` and then ```opkg install node_v8.2.1.ipk``` etc ... !!!!
+
+
+## Start
+
+```bash
+./run
+make menuconfig
+```
+
+* Target System
+*   Linksys 1900ACS v2 => Marvell Armada 37x/38x/XP
+*   D-Link DIR 860L B1 => MediaTek Ralink MIPS 
+* Target Profile
+  * Linksys 1900ACS v2 => Linksys WRT1900ACS
+  * D-Link DIR 860L B1 =>MT7621
+* The Languages 
+  *  Node.js, Select as M (module) 
+    * Below this => Configuration => Select Version 8.x
+  * node-npm, Select as M (module)
+* Save
+* Exit all
+
+### Note
+If your target machine is MIPS and there is no hardware FPU, you need MIPS_FPU_EMULATOR checked (see if there is fpuemustats in the /sys/kernel/debug/mips directory).
+
+### Then you need first
+```bash
+make kernel_menuconfig
+```
+
+* Target System  
+  * D-Link DIR-860L B1 MediaTek MT7621AT, target ```ramips / mt7621```, type ```mipsel_24kc```
+    * MediaTek Ralink MIPS       
+* Target Profile  
+  * MT7621  
+* Kernel type
+  * Check MIPS FPU EMULATOR
+* Save  
+* Exit  
+
+```bash
+sed -i.bak 's#CONFIG_TARGET_INIT_PATH="#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-lede:#g' .config
+sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.2#http://cdn.corifeus.com/lede/17.01.2#g' .config
+sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.2#http://cdn.corifeus.com/lede/17.01.2#g' package/base-files/image-config.in
+sed -i.bak 's#default "/usr/sbin#default "/opt/router-scripts-lede:/usr/sbin#g' package/base-files/image-config.in
+echo "CONFIG_VERSION_REPO=\"http://cdn.corifeus.com/lede/17.01.2\"" >> .config
+cat package/base-files/image-config.in | grep default
+cat .config | grep CONFIG_VERSION_REPO
+cat .config | grep CONFIG_TARGET_INIT_PATH 
+
+# -jX is the number of threads of you CPU, I got 8
+make -j9
+# if error
+make -j1 V=s
+```
+[//]: #@corifeus-footer
+
+---
+
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.9-73
+
+[Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
+
+[//]: #@corifeus-footer:end

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $DIR/lib
+
+feeds
+setup-config "linksys-wrt3200acm-eduperez-mwlwifi_LEDE"
+#"lede-imagebuilder-17.01.2-mvebu.Linux-x86_64"
