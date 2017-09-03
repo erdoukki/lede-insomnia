@@ -126,6 +126,11 @@ All the latest stable LEDE versions.
 * docker pull patrikx3/lede-insomnia:linksys-wrt3200acm-eduperez-mwlwifi
 * docker pull patrikx3/lede-insomnia:d-link-dir-860l-b1
 
+You run them, but these here, the built is in: http://cdn.corifeus.com/lede/17.01.2, all the built packages and firmwares in ```/build/source/bin```, you move to a host, install the firmware and you are done, because in the ```insomnia``` firmwares there is a lot in, but this is the default, so you need to change your own hostname here:
+[http://192.168.1.1/cgi-bin/luci/admin/system/packages/ipkg](http://192.168.1.1/cgi-bin/luci/admin/system/packages/ipkg) at ```Configuration``` tab.
+
+You can choose to your host.  
+
 # My repos    
    
 https://hub.docker.com/r/patrikx3/lede-insomnia/tags/
@@ -133,7 +138,7 @@ https://hub.docker.com/r/patrikx3/lede-insomnia/tags/
 https://cdn.corifeus.com/lede/  
 
 # Linksys WRT Radar Detection
-Tested on WRT1900ACSv2 and WRT3200ACM, I think most should work.  
+Tested on WRT1900ACSv2 and WRT3200ACM, I think will work.  
 [README](linksys-wrt-radar-detection.md)
 
 ## How I built these Dockers via these links
@@ -150,7 +155,7 @@ Tested on WRT1900ACSv2 and WRT3200ACM, I think most should work.
 
 
 # Create from scratch
-[README for create from scratch](create-from-scratch.md)
+[README](create-from-scratch.md)
 
 
 [//]: #@corifeus-footer
