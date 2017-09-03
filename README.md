@@ -109,7 +109,8 @@ docker pull patrikx3/lede-insomnia:latest
 ./make-linksys-wrt1900acs "http://cdn.mine.com"
 .com"
 ./make-linksys-wrt3200acm "http://cdn.mine.com"
-./make-linksys-wrt1900acs-eduperez-mwlwifi "http://cdn.mine./make-linksys-wrt3200acm-eduperez-mwlwifi "http://cdn.mine.com"
+./make-linksys-wrt1900acs-eduperez-mwlwifi "http://cdn.mine"  
+./make-linksys-wrt3200acm-eduperez-mwlwifi "http://cdn.mine.com"
 ```
 
 All built packages and firmwares including the ```insomnia``` firmwares are in ```/build/source/bin```. 
