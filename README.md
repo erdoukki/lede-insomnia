@@ -33,9 +33,6 @@ https://nodejs.org/en/download/package-manager/
 
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM and D-Link DIR860l B1 is already built, but based on the READMEs, you can built a new one easy.  
 
-# Warning
-Right now, there was a refactor, but it will be done soon, right it is either ```all-lede-*``` all  ```insomnia-lede-*``` firmwares are that are the best.
-
 ## Requirements
 
 **Docker CE**
@@ -62,8 +59,8 @@ https://cdn.corifeus.com/lede/17.01.2/
 If you choose the once that start with ```insomnia-```, it includes everything I could add in.
 
 
-For Linksys WRT3200ACM worth trying, because my WIFI is about flying:
-https://cdn.corifeus.com/lede/17.01.2/targets/mvebu/generic/insomnia-eduperez-mwlwifi-lede-17.01.2-mvebu-linksys-wrt3200acm-squashfs-factory.img
+For Linksys the firmwares that start with ```insomnia-eduperez-mwlwifi``` worth trying, because your WIFI is will be flying:
+https://cdn.corifeus.com/lede/17.01.2/targets/mvebu/generic/
 
 Since, I still do not know have to generate signatures, for now, you need to disable signature verification, and then you can easy update/install/upgrade. The easiest solution I know is via LUCI :  
 [http://192.168.1.1/cgi-bin/luci/admin/system/packages/ipkg](http://192.168.1.1/cgi-bin/luci/admin/system/packages/ipkg)    
@@ -71,37 +68,51 @@ Since, I still do not know have to generate signatures, for now, you need to dis
 In the **Configuration** tab, comment like this:  
 ```#option check_signature 1```
   
-Once, I get there generating signatures, I will fix it as well...
+#### Once, I get there generating signatures, I will fix it as well...
 
 ## Docker
 
 ## Some helper is the source with all the add-ons
-These are the helpers for the raw image (```patrikx3/lede-insomnia:latest```) that is creates new images from:
+These are the helpers for the raw image (```patrikx3/lede-insomnia:latest```) that creates new images from raw. Of course, if you use the ```Docker Images``` with the tag, have pre-built, so if you use add / remove anything, the build will be much faster, because some will not will be needed ```compiled```.  
+
+The tags are here:
+https://hub.docker.com/r/patrikx3/lede-insomnia/tags/  
+    
+So building from a raw image:
 ```bash
 docker pull patrikx3/lede-insomnia:latest
 ./run
 
 # All adds the plus feeds (node, redis, darkmatter), image builder and node, redis 4, fixes Apache builder
-# All set for the .config. feeds.conf and in the build the repositories.confg
+# All set for the .config. feeds.conf and in the image builder in the repositories.confg
 
+# the default packages http url is http://cdn.corifeus.com/lede/17.01.2
+
+# for d-link dir 860l b1
 # the make will ask for a question you can just enter out to 
 # continue to build
 # still is not configured so it is automatic
-# the default packages http url is http://cdn.corifeus.com/lede/17.01.2
 ./make-d-link-dir-860l-b1
+
+# here no questions in the make
 ./make-linksys-wrt1900acs
 ./make-linksys-wrt3200acm
 
 # As additional adds eduperez-mwlwifi_LEDE
+./make-linksys-wrt1900acs-eduperez-mwlwifi
 ./make-linksys-wrt3200acm-eduperez-mwlwifi
 
-# but you can use you own url like
+# but you can use you own url
+# where you upload your own targets/packages
 # it is important to not have a slash at the end 
 ./make-d-link-dir-860l-b1 "http://cdn.mine.com"
 ./make-linksys-wrt1900acs "http://cdn.mine.com"
+.com"
 ./make-linksys-wrt3200acm "http://cdn.mine.com"
-./make-linksys-wrt3200acm-eduperez-mwlwifi "http://cdn.mine.com"
+./make-linksys-wrt1900acs-eduperez-mwlwifi "http://cdn.mine./make-linksys-wrt3200acm-eduperez-mwlwifi "http://cdn.mine.com"
 ```
+
+All built packages and firmwares including the ```insomnia``` firmwares are in ```/build/source/bin```. 
 
 ### Changing the firmware 
 
@@ -110,6 +121,7 @@ docker pull patrikx3/lede-insomnia:latest
 All the latest stable LEDE versions.
 
 * docker pull patrikx3/lede-insomnia:linksys-wrt1900acs
+* docker pull patrikx3/lede-insomnia:linksys-wrt1900acs-eduperez-mwlwifi
 * docker pull patrikx3/lede-insomnia:linksys-wrt3200acm
 * docker pull patrikx3/lede-insomnia:linksys-wrt3200acm-eduperez-mwlwifi
 * docker pull patrikx3/lede-insomnia:d-link-dir-860l-b1
