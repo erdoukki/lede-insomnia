@@ -2,7 +2,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $DIR/lede-insomnia-lib
 
-ROUTER_PROFILE="linksys-wrt3200acm"
+ROUTER_PROFILE="linksys-wrt1900acs"
 ROUTER_TARGET="mvebu"
 ROUTER_SUB_TARGER="generic"
 FIRMWARE_NAME="insomnia"

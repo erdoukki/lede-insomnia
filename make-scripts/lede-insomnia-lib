@@ -1,0 +1,92 @@
+#!/usr/bin/env bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+function patches-and-feeds() {
+    rsync -vr /build/patches/source /build
+}
+
+function feeds() {
+    rsync -vr /build/patches/source/feeds /build/source
+}
+
+function fix-paths() {
+    sed -i.bak "s#http://downloads.lede-project.org/releases/17.01.2#${1}#g" .config
+    sed -i.bak 's#CONFIG_TARGET_INIT_PATH="/usr/sbin#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-lede:/usr/sbin#g' .config
+    cat .config | grep CONFIG_TARGET_INIT_PATH
+    cat .config | grep CONFIG_VERSION_REPO
+}
+
+function setup-config-and-build() {
+
+    if [ -z "$2" ]
+    then
+        CDN_REPO="http://cdn.corifeus.com/lede/17.01.2"
+    else
+        CDN_REPO=$2
+    fi
+
+    rsync -vr /build/router/$1/source/. /build/source
+    touch .config
+
+    sed -i.bak "s#http://downloads.lede-project.org/releases/17.01.2#$CDN_REPO#g" package/base-files/image-config.in
+    sed -i.bak 's#default "/usr/sbin#default "/opt/router-scripts-lede:/usr/sbin#g' package/base-files/image-config.in
+    cat package/base-files/image-config.in | grep default
+
+    fix-paths $CDN_REPO
+
+    read -p "Press any key if you are ready to build otherwise click CONTROL+C..."
+
+    make -j1 V=s
+}
+
+function setup-image-builder-and-build() {
+    IMAGE_BUILDER_PATH=$1
+    ROUTER_PROFILE=$2
+    FIRMWARE_NAME=$3
+    if [ -z "$4" ];
+    then
+        CDN_REPO="http://cdn.corifeus.com/lede/17.01.2"
+    else
+        CDN_REPO=$4
+    fi
+
+    IMAGE_BUILDER_PATH=$(image-builder-uncompress $IMAGE_BUILDER_FILE)
+    pushd $IMAGE_BUILDER_PATH
+
+    sed -i.bak 's#src/gz#src#g' repositories.conf
+    sed -i.bak "s#$4#file:///build/source/bin#g" repositories.conf
+
+    make image PROFILE=$ROUTER_PROFILE PACKAGES="$(< /build/router/${ROUTER_PROFILE}/opkg-list-installed.txt)"
+
+    for FIND_PATH in $(find ${IMAGE_BUILDER_PATH}/bin -type f -iname '*lede*')
+    do
+        FILE=$(basename "$FIND_PATH")
+        BIN_DIR=$(dirname "$FIND_PATH")
+        mv $FIND_PATH "/build/source/bin/targets/${ROUTER_TARGET}/${ROUTER_SUB_TARGER}/${FIRMWARE_NAME}-${FILE}"
+    done
+
+    popd
+}
+
+function image-builder-uncompress() {
+    IMAGE_BUILDER_FILE=$1
+# if you want a result, you can only echo once :)
+#    echo "Uncompressing image builder ${IMAGE_BUILDER_FILE} to /build"
+    tar xf ${IMAGE_BUILDER_FILE} -C /build/
+    IMAGE_BUILDE_BASENAME=$(basename ${IMAGE_BUILDER_FILE%.*})
+    IMAGE_BUILDE_BASENAME=$(basename ${IMAGE_BUILDE_BASENAME%.*})
+    IMAGE_BUILDER_PATH="/build/${IMAGE_BUILDE_BASENAME}"
+    echo $IMAGE_BUILDER_PATH
+}
+
+function post-build() {
+    echo "All files are in /build/source/bin"
+}
+
+export -f image-builder-uncompress
+export -f patches-and-feeds
+export -f feeds
+export -f setup-config-and-build
+export -f fix-paths
+export -f setup-image-builder-and-build
+export -f post-build

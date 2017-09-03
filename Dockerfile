@@ -18,7 +18,7 @@ RUN apt-get -y upgrade
 
 # libboost1.55-dev => libboost-dev
 # openjdk-8-jdk => openjdk-7-jdk
-RUN apt -y install asciidoc bash bc bcc bin86 binutils build-essential bzip2 curl fastjar file flex gawk gcc genisoimage gettext git git-core intltool jikespg libboost-dev libboost-dev libgtk2.0-dev libncurses5-dev libssl-dev libusb-dev libxml-parser-perl make mc nano openjdk-8-jdk patch perl-modules python python-dev rsync ruby sdcc sharutils software-properties-common subversion sudo quilt unzip util-linux wget xsltproc xz-utils zlib1g-dev
+RUN apt -y install asciidoc bash bc bcc bin86 binutils build-essential bzip2 curl ncdu fastjar file flex gawk gcc genisoimage gettext git git-core intltool jikespg libboost-dev libboost-dev libgtk2.0-dev libncurses5-dev libssl-dev libusb-dev libxml-parser-perl make mc nano openjdk-8-jdk patch perl-modules python python-dev rsync ruby sdcc sharutils software-properties-common subversion sudo quilt unzip util-linux wget xsltproc xz-utils zlib1g-dev
 #before it was needed nethack*, still?
 # nethack
 RUN mkdir build
@@ -92,4 +92,5 @@ RUN chown -R docker:docker /build
 USER docker
 RUN echo "set linenumbers" > "/home/docker/.nanorc"
 RUN echo "alias ll='ls -l'" >> /home/docker/.bashrc
+RUN echo "SELECTED_EDITOR=\"/bin/nano\"" > /home/docker/.selected_editor
 CMD /bin/bash

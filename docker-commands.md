@@ -22,9 +22,9 @@ docker exec -it <containerIdOrName> bash
 
 # create an image for a container like
 docker commit <container id> patrikx3/lede-insomnia:linksys-wrt1900acs
+docker commit <container id> patrikx3/lede-insomnia:d-link-dir-860l-b1
 docker commit <container id> patrikx3/lede-insomnia:linksys-wrt3200acm
 docker commit <container id> patrikx3/lede-insomnia:linksys-wrt3200acm-eduperez-mwlwifi
-docker commit <container id> patrikx3/lede-insomnia:d-link-dir-860l-b1
 
 # docker login before pushing
 docker login
@@ -34,10 +34,10 @@ docker images
 
 # upload an image to the registry
 docker push patrikx3/lede-insomnia:latest
+docker push patrikx3/lede-insomnia:d-link-dir-860l-b1
 docker push patrikx3/lede-insomnia:linksys-wrt1900acs
 docker push patrikx3/lede-insomnia:linksys-wrt3200acm
 docker push patrikx3/lede-insomnia:linksys-wrt3200acm-eduperez-mwlwifi
-docker push patrikx3/lede-insomnia:d-link-dir-860l-b1
 ```
 
 ### Save images
@@ -45,26 +45,26 @@ docker push patrikx3/lede-insomnia:d-link-dir-860l-b1
 mkdir -p /media/backup/backup/docker
 docker save patrikx3/lede-insomnia:latest | gzip > /media/backup/backup/docker/lede-insomnia:latest.tgz
 sleep 5
+docker save patrikx3/lede-insomnia:d-link-dir-860l-b1 | gzip > /media/backup/backup/docker/lede-insomnia:d-link-dir-860l-b1.tgz
+sleep 5
 docker save patrikx3/lede-insomnia:linksys-wrt1900acs | gzip > /media/backup/backup/docker/lede-insomnia:linksys-wrt1900acs.tgz
 sleep 5
 docker save patrikx3/lede-insomnia:linksys-wrt3200acm | gzip > /media/backup/backup/docker/lede-insomnia:linksys-wrt3200acm.tgz
 sleep 5
 docker save patrikx3/lede-insomnia:linksys-wrt3200acm-eduperez-mwlwifi | gzip > /media/backup/backup/docker/lede-insomnia:linksys-wrt3200acm-eduperez-mwlwifi.tgz
-sleep 5
-docker save patrikx3/lede-insomnia:d-link-dir-860l-b1 | gzip > /media/backup/backup/docker/lede-insomnia:d-link-dir-860l-b1.tgz
 ```
 
 ### Load image
 ```bash
 gunzip -c /media/backup/backup/docker/lede-insomnia:latest.tgz | docker load
+sleeep 5
+gunzip -c /media/backup/backup/docker/lede-insomnia:d-link-dir-860l-b1.tgz | docker load
 sleep 5
 gunzip -c /media/backup/backup/docker/lede-insomnia:linksys-wrt1900acs.tgz | docker load
 sleep 5
 gunzip -c /media/backup/backup/docker/lede-insomnia:linksys-wrt3200acm.tgz | docker load
 sleep 5
 gunzip -c /media/backup/backup/docker/lede-insomnia:linksys-wrt3200acm-eduperez-mwlwifi.tgz | docker load
-sleeep 5
-gunzip -c /media/backup/backup/docker/lede-insomnia:d-link-dir-860l-b1.tgz | docker load
 ```
 
 ### For running or paused docker, use export:
@@ -76,10 +76,10 @@ docker export <dockernameortag> | gzip > mycontainer.tgz
 ### Get from the registry
 ```bash
 docker pull patrikx3/lede-insomnia:latest
+docker pull patrikx3/lede-insomnia:d-link-dir-860l-b1
 docker pull patrikx3/lede-insomnia:linksys-wrt1900acs
 docker pull patrikx3/lede-insomnia:linksys-wrt3200acm
 docker pull patrikx3/lede-insomnia:linksys-wrt3200acm-eduperez-mwlwifi
-docker pull patrikx3/lede-insomnia:d-link-dir-860l-b1
 ```
 
 [//]: #@corifeus-footer
