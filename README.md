@@ -107,7 +107,6 @@ docker pull patrikx3/lede-insomnia:latest
 # it is important to not have a slash at the end 
 ./make-d-link-dir-860l-b1 "http://cdn.mine.com"
 ./make-linksys-wrt1900acs "http://cdn.mine.com"
-.com"
 ./make-linksys-wrt3200acm "http://cdn.mine.com"
 ./make-linksys-wrt1900acs-eduperez-mwlwifi "http://cdn.mine"  
 ./make-linksys-wrt3200acm-eduperez-mwlwifi "http://cdn.mine.com"
