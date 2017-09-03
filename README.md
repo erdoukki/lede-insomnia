@@ -78,6 +78,9 @@ Once, I get there generating signatures, I will fix it as well...
 ## Some helper is the source with all the add-ons
 These are the helpers for the raw image (```patrikx3/lede-insomnia:latest```) that is creates new images from:
 ```bash
+docker pull patrikx3/lede-insomnia:latest
+./run
+
 # All adds the plus feeds (node, redis, darkmatter), image builder and node, redis 4, fixes Apache builder
 # All set for the .config. feeds.conf and in the build the repositories.confg
 
