@@ -1,6 +1,10 @@
 # DEBUG DEBUG DEBUG
 
 ```bash
+# this is the good
+find -iname '*kmod-mwlwifi*'
+
+# these are all wrong :/
 find -iname '*iwlwifi*'
 find -iname '*iwlwifi*' -exec rm -rf {} +
 find -iname '*kmod-iwlwifi*'
