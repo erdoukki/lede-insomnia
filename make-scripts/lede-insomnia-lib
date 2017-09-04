@@ -1,12 +1,19 @@
 #!/usr/bin/env bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+function pre-build() {
+    ./scripts/feeds update -a
+    ./scripts/feeds install -a
+}
+
 function patches-and-feeds() {
-    rsync -vr /build/patches/source /build
+    cp -avr /build/patches/source /build
+    # if you need to update the feeds, we have to call the ./script feeds
+    # make package/kernel/mwlwifi/{clean,compile}
 }
 
 function feeds() {
-    rsync -vr /build/patches/source/feeds /build/source
+    cp -avr /build/patches/source/feeds /build/source
 }
 
 function fix-paths() {
@@ -25,7 +32,7 @@ function setup-config-and-build() {
         CDN_REPO=$2
     fi
 
-    rsync -vr /build/router/$1/source/. /build/source
+    cp -avr /build/router/$1/source/. /build/source
     touch .config
 
     sed -i.bak "s#http://downloads.lede-project.org/releases/17.01.2#$CDN_REPO#g" package/base-files/image-config.in
@@ -90,3 +97,4 @@ export -f setup-config-and-build
 export -f fix-paths
 export -f setup-image-builder-and-build
 export -f post-build
+export -f pre-build
