@@ -73,7 +73,7 @@ This is a LEDE Docker builder and a living Docker repo as well, ready to build, 
 If you want to install right away with LUCI:
 https://cdn.corifeus.com/lede/17.01.2/
 
-* Linksys WRT1900ACS / Linksys WRT3200ACM /Linksys WRT3200ACM-eduperez-mwlwifi
+* Linksys WRT1900ACS / Linksys WRT3200ACM / Linksys WRT1900ACS-eduperez-mwlwifi / Linksys WRT3200ACM-eduperez-mwlwifi
   * https://cdn.corifeus.com/lede/17.01.2/targets/mvebu/generic/
 * D-Link DIR-860l B1
   * https://cdn.corifeus.com/lede/17.01.2/targets/ramips/mt7621/
@@ -121,6 +121,22 @@ docker pull patrikx3/lede-insomnia:latest
 # All set for the .config. feeds.conf and in the image builder in the repositories.confg
 
 # the default packages http url is http://cdn.corifeus.com/lede/17.01.2
+
+# but if you use the appropriate firmware, since a lot is pre-built,
+# adding in new modules, etc, the built will be super fast
+docker pull patrikx3/lede-insomnia:d-link-dir-860l-b1
+docker pull patrikx3/lede-insomnia:linksys-wrt1900acs
+docker pull patrikx3/lede-insomnia:linksys-wrt1900acs-eduperez-mwlwifi
+docker pull patrikx3/lede-insomnia:linksys-wrt3200acm
+docker pull patrikx3/lede-insomnia:linksys-wrt3200acm-eduperez-mwlwifi
+
+# then you just change the .config and kernel
+make -j1 V=s
+make -j9 kernel_menuconfig
+# and in the /build/image-builder-* you can build there as well
+make -j9 image PROFILE=etc-linksys-wrt1900acs PACKAGES="pkg1 pkg2 pkg3 pkg-etc"
+
+# for real raw generation you use below
 
 # for d-link dir 860l b1
 # the make will ask for a question you can just enter out to 
