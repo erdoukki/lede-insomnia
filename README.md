@@ -102,6 +102,15 @@ docker pull patrikx3/lede-insomnia:latest
 ./make-linksys-wrt1900acs-eduperez-mwlwifi
 ./make-linksys-wrt3200acm-eduperez-mwlwifi
 
+# DEBUG DEBUG DEBUG
+# find -iname '*iwlwifi*'
+# find -iname '*iwlwifi*' -exec rm -rf {} +
+# rm /build/source/staging_dir/packages/mvbeu/kmod-iwlwifi_4.4.71+2017-01-31-2_arm_cortex-a9_vfpv3.ipk
+# rm /build/source/bin/targets/mvebu/generic/packages/kmod-iwlwifi_4.4.71+2017-01-31-2_arm_cortex-a9_vfpv3.ipk
+# rm /build/source/build_dir/target-arm_cortex-a9+vfpv3_musl-1.1.16_eabi/lede-imagebuilder-17.01.2-mvebu.Linux-x86_64/packages/kmod-iwlwifi_4.4.71+2017-01-31-2_arm_cortex-a9_vfpv3.ipk
+# make package/kernel/mwlwifi/{clean,prepare,compile}
+
+
 # but you can use you own url
 # where you upload your own targets/packages
 # it is important to not have a slash at the end 
