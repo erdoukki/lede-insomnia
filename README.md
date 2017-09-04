@@ -138,7 +138,7 @@ https://hub.docker.com/r/patrikx3/lede-insomnia/tags/
 https://cdn.corifeus.com/lede/  
 
 # Linksys WRT Radar Detection
-Tested on WRT1900ACSv2 and WRT3200ACM, I think will work.  
+Tested on WRT1900ACSv2 and WRT3200ACM, works.  
 [README](linksys-wrt-radar-detection.md)
 
 ## How I built these Dockers via these links
@@ -162,7 +162,7 @@ Tested on WRT1900ACSv2 and WRT3200ACM, I think will work.
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.11-58
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.13-60
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 
