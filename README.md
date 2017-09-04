@@ -73,7 +73,7 @@ In the **Configuration** tab, comment like this:
 ## Docker
 
 ## Some helper is the source with all the add-ons
-These are the helpers for the raw image (```patrikx3/lede-insomnia:latest```) that creates new images from raw. Of course, if you use the ```Docker Images``` with the tag, have pre-built, so if you use add / remove anything, the build will be much faster, because some will not will be needed ```compiled```.  
+These are the helpers for the raw image (```patrikx3/lede-insomnia:latest```) that creates new images from raw. Of course, if you use the ```Docker Images``` with the tag, have pre-built, so if you use add / remove anything, the build will be much faster, because some will not will be needed again ```compiled``` only when you added.  
 
 The tags are here:
 https://hub.docker.com/r/patrikx3/lede-insomnia/tags/  
