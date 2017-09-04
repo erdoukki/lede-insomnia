@@ -54,7 +54,7 @@ country FR: DFS-ETSI
 	(57000 - 66000 @ 2160), (N/A, 40), (N/A)
 ```
 
-What you need to test in the WIFI is to make sure that use the same country even though you bought like in Hungary. So if **phy#1**, **phy0** says **FR** or something else, then you need to set in your WIFI in LUCI for example at the same country!!!
+What you need to test in the WIFI is to make sure that use the same country even though you bought like in Hungary. So if **phy#1**, **phy#0** says **FR** or something else, then you need to set in your WIFI in LUCI for example at the same country!!!
 
 It is this you have to setup based on the country above:  
 [https://192.168.1.1/cgi-bin/luci/admin/network/wireless/radio0.network1](https://192.168.1.1/cgi-bin/luci/admin/network/wireless/radio0.network1])  
@@ -67,7 +67,7 @@ On the ```Advanced Settings``` tab, so make sure all WIFI use that! I think in E
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.10-39
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.11-58
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 

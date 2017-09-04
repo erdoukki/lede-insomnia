@@ -1,3 +1,10 @@
+[//]: #@corifeus-header
+
+## Latest Stable LEDE Version with many plus packages
+
+---
+                        
+[//]: #@corifeus-header:end
 # DEBUG DEBUG DEBUG
 
 ```bash
@@ -15,3 +22,13 @@ make clean
 make dirclean # remove the toolchain as well 
 make package/kernel/mwlwifi/{clean,prepare,compile}
 ```
+
+[//]: #@corifeus-footer
+
+---
+
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.11-58
+
+[Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
+
+[//]: #@corifeus-footer:end
