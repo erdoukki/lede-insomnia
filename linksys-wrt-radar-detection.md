@@ -14,11 +14,13 @@ https://github.com/kaloz/mwlwifi/issues/173#issuecomment-307984048
 
 ## To make it work
 
-You need to remove these:
+You need to remove these **(unless you use ```lede-insomnia```, because it is pre-removed)**:
 
 ```bash
 opkg remove mwifiex-sdio-firmware kmod-mwifiex-sdio
 ```
+
+## But the important, that you most likely need to setup
 
 In the router, check the status:
 
@@ -52,9 +54,15 @@ country FR: DFS-ETSI
 	(57000 - 66000 @ 2160), (N/A, 40), (N/A)
 ```
 
-What you need to test in the WIFI is to make sure that use the same country even though you bought like in Hungary. So if phy#1, phy0 says **FR**, then you need to set in you WIFI, the same country!!!
+What you need to test in the WIFI is to make sure that use the same country even though you bought like in Hungary. So if **phy#1**, **phy0** says **FR** or something else, then you need to set in your WIFI in LUCI for example at the same country!!!
 
-It is this https://192.168.78.1/cgi-bin/luci/admin/network/wireless/radio0.network1 at the ```Advanced Settings```, so make sure all WIFI use that! I think in Europe it is always France.
+It is this you have to setup based on the country above:  
+[https://192.168.1.1/cgi-bin/luci/admin/network/wireless/radio0.network1](https://192.168.1.1/cgi-bin/luci/admin/network/wireless/radio0.network1])  
+and  
+[http://192.168.81.1/cgi-bin/luci/admin/network/wireless/radio1.network1](http://192.168.81.1/cgi-bin/luci/admin/network/wireless/radio1.network1)  
+
+On the ```Advanced Settings``` tab, so make sure all WIFI use that! I think in Europe it is always France.
+
 [//]: #@corifeus-footer
 
 ---

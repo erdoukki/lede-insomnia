@@ -77,7 +77,7 @@ uci commit
 reboot && exit
 
 # wait so that the network is connected
-ssh root@192.168.81.1 # if you have existing then there like 192.168.81.1
+ssh root@192.168.1.1 # if you have existing then there like 192.168.1.1
 
 uci show fstab 
 cat /etc/config/fstab
@@ -106,9 +106,9 @@ reboot && exit
 
 * If it was true virgin, totally no data
 * When all it is done and working 
-* http://192.168.78.1/cgi-bin/luci/admin/system/flashops
+* http://192.168.1.1/cgi-bin/luci/admin/system/flashops
 * CHOOSE FILE => Upload archive
-* http://192.168.78.1/cgi-bin/luci/admin/system/packages/ipkg
+* http://192.168.1.1/cgi-bin/luci/admin/system/packages/ipkg
   * you might need to remove check_signature 1
 * Distribution feeds might needs to changed to cdn.corifeus.com
 
