@@ -33,6 +33,28 @@ https://nodejs.org/en/download/package-manager/
 
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM and D-Link DIR860l B1 is already built, but based on the READMEs, you can built a new one easy.  
 
+### The packages that are pre-built in all ```insomnia``` firmwares
+* bash
+* luci-mod-admin-full
+* firewall
+* dropbear
+* ca-certificates
+* nano
+* miniupnpd
+* watch
+* whereis 
+* everything to you need to create ext-root via USB
+* curl
+* git
+* wget
+* openvpn
+* samba
+* bootstrap
+* openssh-sftp-server
+* openvpn-easy-rsa
+* rsync
+* and all packages have luci settings as well
+
 ## Requirements
 
 **Docker CE**
@@ -67,6 +89,18 @@ Since, I still do not know have to generate signatures, for now, you need to dis
   
 In the **Configuration** tab, comment like this:  
 ```#option check_signature 1```
+  
+You can also set it up via SSH as:
+```text
+root@digi:~# cat /etc/opkg.conf
+dest root /
+dest ram /tmp
+lists_dir ext /var/opkg-lists
+option overlay_root /overlay
+#option check_signature 1
+```  
+
+Just edit there, ```nano``` is installed.
   
 #### Once, I get there generating signatures, I will fix it as well...
 
