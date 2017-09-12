@@ -5,7 +5,7 @@
 ---
                         
 [//]: #@corifeus-header:end
-# Ext-root via USB driver
+# Ext-root via USB driver Virgin
 
 https://lede-project.org/docs/user-guide/extroot_configuration
 
@@ -104,6 +104,30 @@ cd router-scripts-lede
 reboot && exit
 ```
 
+# Ext-root via USB driver with existing data
+
+```bash
+ssh root@192.168.1.1
+
+block detect > /etc/config/fstab; sed -i s/option$'\t'enabled$'\t'\'0\'/option$'\t'enabled$'\t'\'1\'/ /etc/config/fstab; sed -i s#/mnt/sda1#/overlay# /etc/config/fstab; cat /etc/config/fstab;
+
+uci show fstab 
+cat /etc/config/fstab
+df -h 
+
+uci commit
+reboot && exit
+
+# wait so that the network is connected
+ssh root@192.168.1.1 # if you have existing then there like 192.168.1.1
+
+uci show fstab 
+cat /etc/config/fstab
+df -h 
+
+
+```
+
 * If it was true virgin, totally no data
 * When all it is done and working 
 * http://192.168.1.1/cgi-bin/luci/admin/system/flashops
@@ -145,7 +169,7 @@ src/gz reboot_redis http://cdn.corifeus.com/lede/17.01.2/packages/mipsel_24kc/re
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.16-66
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.17-69
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 

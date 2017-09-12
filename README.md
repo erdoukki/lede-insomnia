@@ -16,7 +16,7 @@ This is an open source project. Just code.
    
 ### Built on Node 
 ``` 
-v8.4.0
+v8.5.0
 ```   
    
 The ```async``` and ```await``` keywords are required.
@@ -32,6 +32,10 @@ https://nodejs.org/en/download/package-manager/
 # LEDE Latest Stable build with custom NodeJs > 8.4, LUCI dark matter, eduperez/mwlwifi_LEDE's WIFI driver, Redis 4
 
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM and D-Link DIR860l B1 is already built, but based on the READMEs, you can built a new one easy.  
+
+## D-Link DIR-860l B1
+I switched to a Linksys WRT3200ACM, so I do not test it anymore, but I think it works, last time with the same build it was working.
+Linksys WRT1900ACS and WRT3200ACM is the bomber.
 
 ### The packages that are pre-built in all ```insomnia``` firmwares
 * bash
@@ -212,7 +216,7 @@ Tested on WRT1900ACSv2 and WRT3200ACM, works.
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.16-66
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.17-69
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 
