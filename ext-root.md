@@ -128,13 +128,12 @@ df -h
 
 ```
 
-* If it was true virgin, totally no data
 * When all it is done and working 
 * http://192.168.1.1/cgi-bin/luci/admin/system/flashops
 * CHOOSE FILE => Upload archive
 * http://192.168.1.1/cgi-bin/luci/admin/system/packages/ipkg
   * you might need to remove check_signature 1
-* Distribution feeds might needs to changed to cdn.corifeus.com
+* Distribution feeds might needs to changed to cdn.corifeus.com with older versions, but the current is built in.
 
 Though it is pre-built, but before I had a ```sysupgrade``` and I had to add in by hand, by now you don't need it.
 
