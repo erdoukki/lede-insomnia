@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-docker run -t -i patrikx3/lede-insomnia:linksys-wrt3200acm-eduperez-mwlwifi bash

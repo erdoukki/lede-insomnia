@@ -4,7 +4,7 @@
 # docker attach <id>
 # docker run -t -i patrikx3/lede-insomnia bash
 FROM debian:latest
-MAINTAINER patrikx3/lede-insomnia - Patrik Laszlo
+MAINTAINER patrikx3/lede-insomnia - Patrik Laszlo - alabard@gmail.com
 
 ARG LEDE_VERSION_TOTAL=17.01.2
 ARG LEDE_BRANCH=lede-17.01
@@ -12,13 +12,14 @@ ENV LEDE_VERSION_TOTAL=${LEDE_VERSION_TOTAL}
 ENV LEDE_BRANCH=${LEDE_BRANCH}
 ENV DEBIAN_FRONTEND=noninteractive
 ENV FORCE_UNSAFE_CONFIGURE=1
+ENV SHELL=/bin/bash
 
 RUN apt-get -y update
 RUN apt-get -y upgrade
 
 # libboost1.55-dev => libboost-dev
 # openjdk-8-jdk => openjdk-7-jdk
-RUN apt -y install asciidoc bash bc bcc bin86 binutils build-essential bzip2 curl ncdu fastjar file flex gawk gcc genisoimage gettext git git-core intltool jikespg libboost-dev libboost-dev libgtk2.0-dev libncurses5-dev libssl-dev libusb-dev libxml-parser-perl make mc nano openjdk-8-jdk patch perl-modules python python-dev rsync ruby sdcc sharutils software-properties-common subversion sudo quilt unzip util-linux wget xsltproc xz-utils zlib1g-dev
+RUN apt -y install asciidoc bash bc bcc bin86 binutils build-essential bzip2 cmake curl ncdu fastjar file flex gawk gcc genisoimage gettext git git-core intltool jikespg libboost-dev libboost-dev libgtk2.0-dev libncurses5-dev libssl-dev libusb-dev libxml-parser-perl make mc nano openjdk-8-jdk patch perl-modules python python-dev rsync ruby sdcc sshpass sharutils software-properties-common subversion sudo quilt unzip util-linux wget xsltproc xz-utils zlib1g-dev
 #before it was needed nethack*, still?
 # nethack
 RUN mkdir build
@@ -62,6 +63,14 @@ WORKDIR build
 #RUN wget ${LEDE_D_LINK_DIR_860L_B1_URL_SEED} -O ${LEDE_D_LINK_DIR_860L_B1_URL_SEED_CUSTOM_FILE}
 #RUN wget ${LEDE_D_LINK_DIR_860L_B1_URL_MANIFEST}
 
+RUN git clone https://git.openwrt.org/project/usign.git
+WORKDIR /build/usign
+RUN cmake .
+RUN make
+RUN cp ./usign /usr/bin/usign
+RUN chmod +x /usr/bin/usign
+
+WORKDIR /build
 RUN git clone -b ${LEDE_BRANCH} git://git.lede-project.org/source.git
 WORKDIR /build/source
 RUN git checkout tags/v${LEDE_VERSION_TOTAL}
@@ -72,25 +81,27 @@ RUN echo 'src-git darkmatter git://github.com/apollo-ng/luci-theme-darkmatter.gi
 RUN echo 'src-git redis https://github.com/patrikx3/lede-redis.git' >> feeds.conf
 RUN ./scripts/feeds update -a
 RUN ./scripts/feeds install -a
-RUN rm ./package/feeds/packages/node
-RUN rm ./package/feeds/packages/node-arduino-firmata
-RUN rm ./package/feeds/packages/node-cylon
-RUN rm ./package/feeds/packages/node-hid
-RUN rm ./package/feeds/packages/node-serialport
+RUN rm -rf ./package/feeds/packages/node*
 RUN ./scripts/feeds install -a -p node
 RUN ./scripts/feeds update -a -p darkmatter
 RUN ./scripts/feeds install luci-theme-darkmatter
 RUN ./scripts/feeds update -a -p redis
 RUN ./scripts/feeds install redis
+
+
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 RUN mkdir -p /etc/sudoers.d
 RUN echo 'docker ALL=NOPASSWD: ALL' > /etc/sudoers.d/openwrt
-COPY patches /build/patches
+
 COPY make-scripts /build/source
-COPY router /build/router
+
 RUN chown -R docker:docker /build
+
 USER docker
+
 RUN echo "set linenumbers" > "/home/docker/.nanorc"
 RUN echo "alias ll='ls -l'" >> /home/docker/.bashrc
+RUN echo "sudo chown -R docker:docker /build" >> /home/docker/.bashrc
 RUN echo "SELECTED_EDITOR=\"/bin/nano\"" > /home/docker/.selected_editor
 CMD /bin/bash
+

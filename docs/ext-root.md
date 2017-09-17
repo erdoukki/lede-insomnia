@@ -35,6 +35,8 @@ block detect > /etc/config/fstab; sed -i s/option$'\t'enabled$'\t'\'0\'/option$'
 uci commit
 reboot && exit
 
+ssh root@192.168.1.1
+
 blkid
 df -h
 # check the partitions are as wanted, and overlay is working, then we are done
@@ -135,7 +137,7 @@ df -h
   * you might need to remove check_signature 1
 * Distribution feeds might needs to changed to cdn.corifeus.com with older versions, but the current is built in.
 
-Though it is pre-built, but before I had a ```sysupgrade``` and I had to add in by hand, by now you don't need it.
+**Though it is pre-built, but before I had a ```sysupgrade``` and I had to add in by hand, by now you don't need it.**
 
 **Linksys WRT1900ACS**  
 **Linksys WRT3200ACM**  
@@ -168,7 +170,7 @@ src/gz reboot_redis http://cdn.corifeus.com/lede/17.01.2/packages/mipsel_24kc/re
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.17-69
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.18-89
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 

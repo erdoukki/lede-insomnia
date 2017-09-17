@@ -421,7 +421,7 @@ cat .config | grep CONFIG_VERSION_REPO
 ./scripts/feeds update -a -p darkmatter
 ./scripts/feeds install luci-theme-darkmatter
 
-# i usually start here, like from nodejs 8.4 to 8.4.1 or 8.5
+# i usually start here, like from nodejs 8.5 to 8.5.1 or 8.6
 ./scripts/feeds install -a -p node
 
 # or new redis version like 4.0.1 to 4.0.2 or 4.1 etc..
@@ -465,7 +465,7 @@ For the firmware there are some hacks (Linksys works with the image builder, D-L
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.17-69
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.18-89
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 

@@ -12,4 +12,4 @@ pre-build
 patches-and-feeds
 setup-config-and-build $ROUTER_PROFILE $1
 setup-image-builder-and-build $IMAGE_BUILDER_FILE $ROUTER_PROFILE $FIRMWARE_NAME $1
-post-build
+post-build $1 $2

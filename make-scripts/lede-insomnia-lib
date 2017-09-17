@@ -2,8 +2,17 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 function pre-build() {
+    cp -R /build/make-scripts/* /build/source
     ./scripts/feeds update -a
     ./scripts/feeds install -a
+    rm -rf ./package/feeds/packages/node*
+    ./scripts/feeds update -a -p darkmatter
+    ./scripts/feeds install luci-theme-darkmatter
+    # i usually start here, like from nodejs 8.5 to 8.5.1 or 8.6
+    ./scripts/feeds install -a -p node
+    # or new redis version like 4.0.1 to 4.0.2 or 4.1 etc..
+    ./scripts/feeds update -a -p redis
+    ./scripts/feeds install redis
 }
 
 function patches-and-feeds() {
@@ -17,7 +26,7 @@ function feeds() {
 }
 
 function fix-paths() {
-    sed -i.bak "s#http://downloads.lede-project.org/releases/17.01.2#${1}#g" .config
+    sed -i.bak "s#http://downloads.lede-project.org/releases/${LEDE_VERSION_TOTAL}#${1}#g" .config
     sed -i.bak 's#CONFIG_TARGET_INIT_PATH="/usr/sbin#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-lede:/usr/sbin#g' .config
     cat .config | grep CONFIG_TARGET_INIT_PATH
     cat .config | grep CONFIG_VERSION_REPO
@@ -25,23 +34,27 @@ function fix-paths() {
 
 function setup-config-and-build() {
 
-    if [ -z "$2" ]
+    make defconfig
+    cp -avr /build/router/$1/source/. /build/source
+
+    ./scripts/diffconfig.sh > configdiff
+    cp configdiff .config
+    make defconfig;make oldconfig
+
+    cp $DIR/.config /build/router/${ROUTER_PROFILE}/source/.config
+
+    if [ -z "$2" ] || [ "$2" = "nosign" ]
     then
-        CDN_REPO="http://cdn.corifeus.com/lede/17.01.2"
+        CDN_REPO="http://cdn.corifeus.com/lede/${LEDE_VERSION_TOTAL}"
     else
         CDN_REPO=$2
     fi
 
-    cp -avr /build/router/$1/source/. /build/source
-    touch .config
-
-    sed -i.bak "s#http://downloads.lede-project.org/releases/17.01.2#$CDN_REPO#g" package/base-files/image-config.in
+    sed -i.bak "s#http://downloads.lede-project.org/releases/${LEDE_VERSION_TOTAL}#$CDN_REPO#g" package/base-files/image-config.in
     sed -i.bak 's#default "/usr/sbin#default "/opt/router-scripts-lede:/usr/sbin#g' package/base-files/image-config.in
     cat package/base-files/image-config.in | grep default
 
     fix-paths $CDN_REPO
-
-    read -p "Press any key if you are ready to build otherwise click CONTROL+C..."
 
     make -j1 V=s
 }
@@ -52,7 +65,7 @@ function setup-image-builder-and-build() {
     FIRMWARE_NAME=$3
     if [ -z "$4" ];
     then
-        CDN_REPO="http://cdn.corifeus.com/lede/17.01.2"
+        CDN_REPO="http://cdn.corifeus.com/lede/${LEDE_VERSION_TOTAL}"
     else
         CDN_REPO=$4
     fi
@@ -63,7 +76,8 @@ function setup-image-builder-and-build() {
     sed -i.bak 's#src/gz#src#g' repositories.conf
     sed -i.bak "s#$4#file:///build/source/bin#g" repositories.conf
 
-    make image PROFILE=$ROUTER_PROFILE PACKAGES="$(< /build/router/${ROUTER_PROFILE}/opkg-list-installed.txt)"
+    cp -R /build/image-builder-files files/
+    make image PROFILE=$ROUTER_PROFILE PACKAGES="$(< /build/router/${ROUTER_PROFILE}/opkg-list-installed.txt)" FILES=files/
 
     for FIND_PATH in $(find ${IMAGE_BUILDER_PATH}/bin -type f -iname '*lede*')
     do
@@ -87,9 +101,27 @@ function image-builder-uncompress() {
 }
 
 function post-build() {
+    delete-firmware-lede-files
+    if [ "$1" != "nosign" ] && [ "$2" != "nosign" ]
+    then
+        $DIR/sign
+    fi
     echo "All files are in /build/source/bin"
 }
 
+function generate-firmware-dir() {
+    declare -gx firmware_files_sums="$(find /build/source/bin -name config.seed)"
+    declare -gx firmware_files_dir="$(dirname $firmware_files_sums)"
+    declare -gx firmware_files="$(find $firmware_files_dir -maxdepth 1 -type f)"
+}
+
+function delete-firmware-lede-files() {
+    generate-firmware-dir
+    find $firmware_files_dir -maxdepth 1 -type f -name "lede-${LEDE_VERSION_TOTAL}*" -delete
+}
+
+export -f delete-firmware-lede-files
+export -f generate-firmware-dir
 export -f image-builder-uncompress
 export -f patches-and-feeds
 export -f feeds
