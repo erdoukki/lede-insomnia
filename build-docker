@@ -1,2 +1,6 @@
 #!/usr/bin/env bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+sudo mkdir -p $DIR/build
+sudo chmod 0777 -R $DIR/build
+rm -R $DIR/build
 docker build -t patrikx3/lede-insomnia .

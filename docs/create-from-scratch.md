@@ -5,6 +5,11 @@
 ---
                         
 [//]: #@corifeus-header:end
+
+# Start
+
+By now, the whole build system is automated. This is just for historical documentary.
+
 # First save the existing packages
 
 * SSH into the router
@@ -38,37 +43,6 @@ The same, if you have a server instead ```cdn.corifeus.com```, you can change it
 
 For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package, they are in ```lede-insomnia/patches```, you can copy them safely into the ```/build/source```. 
 
-```bash
-# For apache errors and there is a newer mwlwifi faster,
-# newer package, they are in lede-insomnia/patches, you can copy them safely into the /build/source with the command below. 
-/build/patches/sync-the-patches-into-the-source
-
-# When there will be newer releases it will be dynamic, right now it is static
-LEDE_VERSION_TOTAL=17.01.2
-
-# *************************************
-# please copy from lede-insomnia/router/${router}
-# so create the image builder first and
-# work after
-# *************************************
-
-# Linksys WRT1900ACS and Linksys WRT3200ACM
-cp ../lede-imagebuilder-17.01.2-mvebu.Linux-x86_64/.config .
-
-# D-Link DIR-860l B1
-cp ../lede-imagebuilder-17.01.2-ramips-mt7621.Linux-x86_64/.config .
-
-sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.2#http://cdn.corifeus.com/lede/17.01.2#g' package/base-files/image-config.in
-sed -i.bak 's#default "/usr/sbin#default "/opt/router-scripts-lede:/usr/sbin#g' package/base-files/image-config.in
-sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.2#http://cdn.corifeus.com/lede/17.01.2#g' .config
-sed -i.bak 's#CONFIG_TARGET_INIT_PATH="/usr/sbin#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-lede:/usr/sbin#g' .config
-cat package/base-files/image-config.in | grep default
-cat .config | grep CONFIG_TARGET_INIT_PATH
-cat .config | grep CONFIG_VERSION_REPO
-
-make -j9 menuconfig
-```
-
 * Target System  
   * Linksys WRT1900ACS => Marvell Armada 37x/38x/XP  
   * Linksys WRT3200ACM => Marvell Armada 37x/38x/XP
@@ -86,9 +60,13 @@ make -j9 menuconfig
   * Select all kernel module packages by default
   * Select all userspace pakcages by default   
 * LUCI
+  * Modules
+    * Translations
+      * Hungarian = M
   * Collections
     * luci-ssl-openssl
   * Applications
+    * luci-app-mwan3
     * luci-add-ntpc
     * luci-app-openvpn
     * luci-app-qos
@@ -96,6 +74,7 @@ make -j9 menuconfig
     * luci-app-statistics
     * luci-app-upnp
     * luci-app-wol
+    * luci-app-uhttpd
   * Themes
     * luci-theme-material
     * luci-theme-darkmatter
@@ -129,77 +108,101 @@ make -j9 menuconfig
 * Mail
   * msmtp
 * Network
- * File Transfer
-   * curl
-   * rsync
-   * rsyncd
-   * wget
- * SSH
-   * openssh-client
-   * openssh-client-utils
-   * openssh-sftp-server
- * VPN
-   * openvpn-easy-rsa
-   * openvpn-openssl
- * Web Servers/Proxies
-   * apache (**if you added the patches**)
-   * nginx - Select then Enter
-     * Configuration
-       * Select all
- * 6in4
- * cifsmount
- * iputils-* all
- * memcached
- * redis
- * samba36-client
+  * File Transfer
+    * curl
+    * rsync
+    * rsyncd
+    * wget
+  * Firewall
+    * iptables
+      * Enter
+        * iptables-mod-ipsec
+  * Open vSwitch
+    * openswitch-ipsec   
+  * Routing and Redirection
+    * mwan3
+    * ip-full
+  * SSH
+    * openssh-client
+    * openssh-client-utils
+    * openssh-sftp-server
+  * VPN
+    * ipsec-tools
+    * openvpn-easy-rsa
+    * openvpn-openssl
+    * strongswan-full
+    * strongswan-mod-kernel-libipsec 
+    * xl2tpd
+  * Web Servers/Proxies
+    * apache (**if you added the patches**)
+    * nginx - Select then Enter
+      * Configuration
+        * Select all
+  * 6in4
+  * cifsmount
+  * iputils-* all
+  * memcached
+  * ppp
+    * ppp-mod-passwordfd
+    * ppp-mod-pppoa
+    * ppp-mod-pppol2tp
+    * ppp-mod-pptp
+    * ppp-mod-radius
+  * ppp-multilink
+    * pppdump
+    * pppoe-discovery
+  * pppossh
+  * pppstats
+  * redis
+  * samba36-client
 * Utilities
- * Compression
-   * Select all
- * Disc
-   * blkid
-   * fdisk
-   * findfs
-   * hdparm
- * Editors
-   * nano
- * Filesystem
-   * e2fsprogs
-   * ncdu
-   * swap-utils
- * Zoneinfo
-   * Select all
- * Database
-   * mysql-server
-   * pgsql-cli     
-   * pgsql-cli-extra
-   * pgsql-server
-   * sqlite3-cli
- * bonniexx
- * coreutils - select then enter to choose
-   * select all
- * dmesg
- * extract
- * file
- * findutils-find
- * findutils-locate
- * findutils-xargs
- * grep
- * hwclock
- * kmod
- * less
- * less-wide
- * logrotate
- * mc - select then enter
-   * Configuration
-     * Select all
- * mount-utils
- * openldap-utils
- * procps-ng - select then enter 
-   * select all as a module
- * rename
- * smartmontools
- * tar
- * whereis       
+  * Compression
+    * Select all
+  * Disc
+    * blkid
+    * fdisk
+    * findfs
+    * hdparm
+  * Editors
+    * nano
+  * Filesystem
+    * e2fsprogs
+    * ncdu
+    * swap-utils
+  * Zoneinfo
+    * Select all
+  * Database
+    * mysql-server
+    * pgsql-cli     
+    * pgsql-cli-extra
+    * pgsql-server
+    * sqlite3-cli
+  * bonniexx
+  * coreutils - select then enter to choose
+    * select all
+  * dmesg
+  * extract
+  * file
+  * findutils-find
+  * findutils-locate
+  * findutils-xargs
+  * grep
+  * hwclock
+  * kmod
+  * less
+  * less-wide
+  * logrotate
+  * mc - select then enter
+    * Configuration
+      * Select all
+  * mount-utils
+  * openldap-utils
+  * procps-ng - select then enter 
+    * select all as a module
+  * rename
+  * smartmontools
+  * tar
+  * whereis       
 * Exit
 * YES
 * mc
@@ -219,6 +222,11 @@ make -j9 kernel_menuconfig
   * MT7621  
 * Kernel type
   * Check MIPS FPU EMULATOR
+* Device Drivers
+  * Check DMA Engine support
+    * Press Enter
+      * RALINK DMA support = M
+      * MTK HSDMA support = M 
 * Save  
 * Exit  
 
@@ -378,9 +386,7 @@ make -j9 image PROFILE=dir-860l-b1 PACKAGES="firmware-opkg-list-installed.txt"
 
 * Start the Docker with these images
   * ./run-d-link-dir-860l-b1
-  * ./run-linksys-wrt1900acs
-  * ./run-linksys-wrt3200acm
-  * ./run-linksys-wrt3200acm-eduperez-mwlwifi
+  * ./run-linksys-wrt
  
 * If you want to copy .config, you are able to do like 
 * mc

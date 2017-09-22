@@ -56,10 +56,20 @@ mkfs.ext4 /dev/sda1
 # but the HD is virgin you need an ext4 filesytem 
 mkfs.ext4 /dev/sda3
 # say yes
+swapon /dev/sda2
 
 blkid
 
 block detect > /etc/config/fstab; sed -i s/option$'\t'enabled$'\t'\'0\'/option$'\t'enabled$'\t'\'1\'/ /etc/config/fstab; sed -i s#/mnt/sda1#/overlay# /etc/config/fstab; cat /etc/config/fstab;
+
+mkdir /media/storage
+
+nano /etc/config/fstab
+
+# set /dev/sda3 -> /media/storage
+
+uci commit fstab
+uci commit
 
 # check the partitions are as wanted
 df -h # just test
@@ -134,7 +144,6 @@ df -h
 * http://192.168.1.1/cgi-bin/luci/admin/system/flashops
 * CHOOSE FILE => Upload archive
 * http://192.168.1.1/cgi-bin/luci/admin/system/packages/ipkg
-  * you might need to remove check_signature 1
 * Distribution feeds might needs to changed to cdn.corifeus.com with older versions, but the current is built in.
 
 **Though it is pre-built, but before I had a ```sysupgrade``` and I had to add in by hand, by now you don't need it.**

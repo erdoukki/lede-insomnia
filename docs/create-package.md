@@ -25,7 +25,7 @@ Like ```opkg remove node```, ```opkg remove node-npm``` and then ```opkg install
 
 ```bash
 ./run
-make menuconfig
+make -j9 menuconfig
 ```
 
 * Target System
@@ -46,7 +46,7 @@ If your target machine is MIPS and there is no hardware FPU, you need MIPS_FPU_E
 
 ### Then you need first
 ```bash
-make kernel_menuconfig
+make -j9 kernel_menuconfig
 ```
 
 * Target System  

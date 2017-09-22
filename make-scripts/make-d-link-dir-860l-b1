@@ -8,9 +8,13 @@ ROUTER_SUB_TARGER="mt7621"
 FIRMWARE_NAME="insomnia"
 IMAGE_BUILDER_FILE="/build/source/bin/targets/${ROUTER_TARGET}/${ROUTER_SUB_TARGER}/lede-imagebuilder-${LEDE_VERSION_TOTAL}-${ROUTER_TARGET}-${ROUTER_SUB_TARGER}.Linux-x86_64.tar.xz"
 
+tag="d-link-dir-860l-b1"
+
 pre-build
 feeds
-setup-config-and-build $ROUTER_PROFILE $1
+setup-config-and-build $ROUTER_PROFILE $tag $1
+$DIR/server-upload-delete-and-upload
 setup-image-builder-and-build $IMAGE_BUILDER_FILE $ROUTER_PROFILE $FIRMWARE_NAME $1
 post-build $1 $2
 $DIR/server-upload-delete-and-upload
+final "$tag"

@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $DIR/lede-insomnia-lib
+
+tag="linksys-wrt"
+
 $DIR/make-linksys-wrt1900acs $1 $2
 $DIR/server-upload-delete-and-upload
 $DIR/make-linksys-wrt1900acs $1 $2
@@ -9,3 +13,4 @@ $DIR/server-upload-delete-and-upload
 $DIR/make-linksys-wrt1900acs-eduperez-mwlwifi $1 $2
 $DIR/make-linksys-wrt3200acm-eduperez-mwlwifi $1 $2
 $DIR/server-upload-delete-and-upload
+final "$tag"

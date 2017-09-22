@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $DIR/../lede-insomnia-lib
+container_test_tag=$(cat /etc/hostname)
+final "test-docker-${container_test_tag}"

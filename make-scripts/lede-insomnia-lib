@@ -1,18 +1,22 @@
 #!/usr/bin/env bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+build_host_path=/build/host-build
+
 function pre-build() {
+
     cp -R /build/make-scripts/* /build/source
     ./scripts/feeds update -a
     ./scripts/feeds install -a
-    rm -rf ./package/feeds/packages/node*
+    rm -rf ./package/feeds/packages/node* || true
     ./scripts/feeds update -a -p darkmatter
     ./scripts/feeds install luci-theme-darkmatter
-    # i usually start here, like from nodejs 8.5 to 8.5.1 or 8.6
+    # i usually start here, like from nodejs 8.5 <
     ./scripts/feeds install -a -p node
-    # or new redis version like 4.0.1 to 4.0.2 or 4.1 etc..
+    # or new redis version like 4.0.1 <
     ./scripts/feeds update -a -p redis
     ./scripts/feeds install redis
+
 }
 
 function patches-and-feeds() {
@@ -34,6 +38,8 @@ function fix-paths() {
 
 function setup-config-and-build() {
 
+    tag=$2
+
     make defconfig
     cp -avr /build/router/$1/source/. /build/source
 
@@ -41,9 +47,9 @@ function setup-config-and-build() {
     cp configdiff .config
     make defconfig;make oldconfig
 
-    cp $DIR/.config /build/router/${ROUTER_PROFILE}/source/.config
+    sudo cp $DIR/.config /build/router/${ROUTER_PROFILE}/source/.config
 
-    if [ -z "$2" ] || [ "$2" = "nosign" ]
+    if [ -z "$3" ] || [ "$3" = "nosign" ]
     then
         CDN_REPO="http://cdn.corifeus.com/lede/${LEDE_VERSION_TOTAL}"
     else
@@ -56,7 +62,16 @@ function setup-config-and-build() {
 
     fix-paths $CDN_REPO
 
-    make -j1 V=s
+    sudo chmod +rwx $build_host_path || true
+    is_downloaded="$build_host_path/${tag}-downloaded"
+    if [ ! -e "$is_downloaded" ];
+    then
+        sudo touch $is_downloaded || true
+        sudo chmod ugo+rwx $is_downloaded || true
+        make V=s download
+    fi
+
+    make V=s
 }
 
 function setup-image-builder-and-build() {
@@ -120,6 +135,29 @@ function delete-firmware-lede-files() {
     find $firmware_files_dir -maxdepth 1 -type f -name "lede-${LEDE_VERSION_TOTAL}*" -delete
 }
 
+function final() {
+    container_id=$(cat /etc/hostname)
+    docker_tag="${1}"
+    command="$build_host_path/final-commit-and-push"
+    sudo chmod +rwx $build_host_path || true
+    sudo mkdir -p $build_host_path
+    sudo chmod +rwx $build_host_path || true
+    pushd $build_host_path
+    sudo chmod +rwx $command || true
+    if [ ! -e "$command" ];
+    then
+        echo "#!/usr/bin/env bash" > $command
+        echo "docker push patrikx3/lede-insomnia:latest" >> $command
+        echo "" >> $command
+        sudo chmod +rwx $command
+    fi
+    echo "docker commit ${container_id} patrikx3/lede-insomnia:${docker_tag}" >> $command
+    echo "docker push patrikx3/lede-insomnia:${docker_tag}" >> $command
+    echo "" >> $command
+    popd
+    sudo rm $build_host_path/${docker_tag}-downloaded || true
+}
+
 export -f delete-firmware-lede-files
 export -f generate-firmware-dir
 export -f image-builder-uncompress
@@ -130,3 +168,4 @@ export -f fix-paths
 export -f setup-image-builder-and-build
 export -f post-build
 export -f pre-build
+export -f final
