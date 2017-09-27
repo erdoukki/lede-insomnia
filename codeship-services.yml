@@ -1,0 +1,8 @@
+app:
+  build:
+    image: patrikx3/lede-insomnia
+#    context: app
+    dockerfile: Dockerfile
+#    volumes_from:
+#        - data
+
