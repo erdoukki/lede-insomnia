@@ -62,15 +62,6 @@ function setup-config-and-build() {
 
     fix-paths $CDN_REPO
 
-    sudo chmod +rwx $build_host_path || true
-    is_downloaded="$build_host_path/${tag}-downloaded"
-    if [ ! -e "$is_downloaded" ];
-    then
-        sudo touch $is_downloaded || true
-        sudo chmod ugo+rwx $is_downloaded || true
-        make V=s download
-    fi
-
     make V=s
 }
 
@@ -155,7 +146,6 @@ function final() {
     echo "docker push patrikx3/lede-insomnia:${docker_tag}" >> $command
     echo "" >> $command
     popd
-    sudo rm $build_host_path/${docker_tag}-downloaded || true
 }
 
 export -f delete-firmware-lede-files

@@ -89,7 +89,7 @@ RUN ./scripts/feeds update -a -p redis
 RUN ./scripts/feeds install redis
 
 
-RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
+RUN useradd -u 10000 -g 10000 -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 RUN mkdir -p /etc/sudoers.d
 RUN echo 'docker ALL=NOPASSWD: ALL' > /etc/sudoers.d/openwrt
 
