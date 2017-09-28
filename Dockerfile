@@ -103,5 +103,8 @@ RUN echo "set linenumbers" > "/home/docker/.nanorc"
 RUN echo "alias ll='ls -l'" >> /home/docker/.bashrc
 RUN echo "sudo chown -R docker:docker /build" >> /home/docker/.bashrc
 RUN echo "SELECTED_EDITOR=\"/bin/nano\"" > /home/docker/.selected_editor
+
 CMD /bin/bash
+
+
 

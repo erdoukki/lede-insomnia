@@ -16,7 +16,7 @@ This is an open source project. Just code.
    
 ### Built on Node 
 ``` 
-v8.5.0
+v8.6.0
 ```   
    
 The ```async``` and ```await``` keywords are required.
@@ -282,7 +282,7 @@ Tested on WRT1900ACSv2 and WRT3200ACM, works.
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.29-239
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.30-250
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 
