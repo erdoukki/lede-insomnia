@@ -78,7 +78,7 @@ function setup-image-builder-and-build() {
     IMAGE_BUILDER_PATH=$1
     ROUTER_PROFILE=$2
     FIRMWARE_NAME=$3
-    if [ -z "$4" ];
+    if [ -z "$4" ] || [ "$4" = "nosign" ] ;
     then
         CDN_REPO="http://cdn.corifeus.com/lede/${LEDE_VERSION_TOTAL}"
     else

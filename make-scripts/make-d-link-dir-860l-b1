@@ -13,8 +13,18 @@ tag="d-link-dir-860l-b1"
 pre-build
 feeds
 setup-config-and-build $ROUTER_PROFILE $tag $1
-$DIR/server-upload-delete-and-upload
+
+if [ "$1" != "nosign" ] && [ "$2" != "nosign" ];
+then
+    $DIR/server-upload-delete-and-upload
+fi
+
 setup-image-builder-and-build $IMAGE_BUILDER_FILE $ROUTER_PROFILE $FIRMWARE_NAME $1
 post-build $1 $2
-$DIR/server-upload-delete-and-upload
+
+if [ "$1" != "nosign" ] && [ "$2" != "nosign" ];
+then
+    $DIR/server-upload-delete-and-upload
+fi
+
 final "$tag"

@@ -165,9 +165,11 @@ Right now, it is not found to automatic use the passphrase for ```gpg```, so you
 
 Before it asks for the passphrase, it will show on the terminal so you copy and then just paste it. It will as twice.
 
-They files to generate are in the same link above.
+They files to generate are in the same link above. So, if you want to sign, you might need to contact to me.
 
 ![GPG and USIGN structure in the repo](artifacts/images/gpg-and-usign.png "GPG and USIGN structure in the repo") 
+
+If you have this signed gpg and usign data nad keys, I can help you to signed firmwares and packages.
 
 ## Docker
 
@@ -226,22 +228,25 @@ make -j1 V=s
 # and in the /build/image-builder-* you can build there as well
 make -j9 image PROFILE=etc-linksys-wrt1900acs PACKAGES="pkg1 pkg2 pkg3 pkg-etc"
 
-./make-d-link-dir-860l-b1 "http://cdn.mine.com/lede/18.01" 
+# also you need to disable signing like this, because if you want
+# to sign with this repo, you need to contact with me
+# because some scripts are not in the repo in GitHub
+./make-d-link-dir-860l-b1 nosign
+./make-d-link-dir-860l-b1 "http://cdn.mine.com/lede/18.01" nosign
 
-./make-linksys-wrt1900acs "http://cdn.mine.com/lede/18.01"
-./make-linksys-wrt1900acs-eduperez-mwlwifi "http://cdn.mine.com/lede/18.01"  
+./make-linksys-wrt1900acs nosign
+./make-linksys-wrt1900acs "http://cdn.mine.com/lede/18.01"  nosign
 
+./make-linksys-wrt1900acs-eduperez-mwlwifi nosign
+./make-linksys-wrt1900acs-eduperez-mwlwifi "http://cdn.mine.com/lede/18.01" nosign  
+
+./make-linksys-wrt3200acm nosign
 ./make-linksys-wrt3200acm "http://cdn.mine.com/lede/18.01"
-./make-linksys-wrt3200acm-eduperez-mwlwifi "http://cdn.mine.com/lede/18.01"
 
-# also you disable signing like this
-./make-linksys-wrt3200acm-eduperez-mwlwifi "http://cdn.mine.com/lede/18.01" nosign
-
-# or
 ./make-linksys-wrt3200acm-eduperez-mwlwifi nosign
+./make-linksys-wrt3200acm-eduperez-mwlwifi "http://cdn.mine.com/lede/18.01"  nosign
 
-# or you can build everything at once like this:
-./make-linksys-wrt "http://cdn.mine.com/lede/18.01" nosign
+./make-linksys-wrt3200acm-eduperez-mwlwifi "http://cdn.mine.com/lede/18.01" nosign
 ```
 
 All built packages and firmwares including the ```insomnia``` firmwares are in ```/build/source/bin```. 
@@ -282,7 +287,7 @@ Tested on WRT1900ACSv2 and WRT3200ACM, works.
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.30-250
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.31-253
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 
