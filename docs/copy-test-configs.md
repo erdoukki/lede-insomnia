@@ -5,17 +5,12 @@
 ---
                         
 [//]: #@corifeus-header:end
-# Kernel
-
-#### ```CONFIG_IMG_MDC_DMA=y```
-
 ```bash
 cp -avr /build/router/dir-860l-b1/source/. /build/source
-./scripts/diffconfig.sh
-grep -r "IMG_MDC_DMA" /build/source
+cp -avr /build/router/linksys-wrt1900acs/source/. /build/source
+cp -avr /build/router/linksys-wrt3200acm/source/. /build/source
 ```
 
-Disable IMG_MDC_DMA
 [//]: #@corifeus-footer
 
 ---

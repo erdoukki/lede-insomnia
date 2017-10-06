@@ -30,7 +30,7 @@ function feeds() {
 }
 
 function fix-paths() {
-    sed -i.bak "s#http://downloads.lede-project.org/releases/${LEDE_VERSION_TOTAL}#${1}#g" .config
+    sed -i.bak "s|CONFIG_VERSION_REPO.*|CONFIG_VERSION_REPO=\"$1\"|g" .config
     sed -i.bak 's#CONFIG_TARGET_INIT_PATH="/usr/sbin#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-lede:/usr/sbin#g' .config
     cat .config | grep CONFIG_TARGET_INIT_PATH
     cat .config | grep CONFIG_VERSION_REPO
@@ -60,7 +60,7 @@ function setup-config-and-build() {
     sed -i.bak 's#default "/usr/sbin#default "/opt/router-scripts-lede:/usr/sbin#g' package/base-files/image-config.in
     cat package/base-files/image-config.in | grep default
 
-    fix-paths $CDN_REPO
+    fix-paths "$CDN_REPO"
 
     sudo chmod +rwx $build_host_path || true
     is_downloaded="$build_host_path/${tag}-downloaded"

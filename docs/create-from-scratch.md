@@ -278,13 +278,13 @@ For Linksys the raw build there is some bug, or needed a patch, so I use the ima
 
 ```bash
 # Linksys WRT1900ACS
-cd /build/lede-imagebuilder-17.01.2-mvebu.Linux-x86_64
-sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.2#http://cdn.corifeus.com/lede/17.01.2#g' .config
+cd /build/lede-imagebuilder-17.01.3-mvebu.Linux-x86_64
+sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.3#http://cdn.corifeus.com/lede/17.01.3#g' .config
 sed -i.bak 's#CONFIG_TARGET_INIT_PATH="/usr/sbin#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-lede:/usr/sbin#g' .config
-sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.2#http://cdn.corifeus.com/lede/17.01.2#g' repositories.conf
-echo 'src/gz reboot_darkmatter http://cdn.corifeus.com/lede/17.01.2/packages/arm_cortex-a9_vfpv3/darkmatter' >> repositories.conf
-echo 'src/gz reboot_redis http://cdn.corifeus.com/lede/17.01.2/packages/arm_cortex-a9_vfpv3/redis' >> repositories.conf
-echo 'src/gz reboot_node http://cdn.corifeus.com/lede/17.01.2/packages/arm_cortex-a9_vfpv3/node' >> repositories.conf
+sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.3#http://cdn.corifeus.com/lede/17.01.3#g' repositories.conf
+echo 'src/gz reboot_darkmatter http://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/darkmatter' >> repositories.conf
+echo 'src/gz reboot_redis http://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/redis' >> repositories.conf
+echo 'src/gz reboot_node http://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/node' >> repositories.conf
 cat .config | grep CONFIG_TARGET_INIT_PATH
 cat .config | grep CONFIG_VERSION_REPO
 cat repositories.conf 
@@ -303,13 +303,13 @@ For Linksys the raw build there is some bug, or needed a patch, so I need the im
 
 ```bash
 # Linksys WRT3200ACM
-cd /build/lede-imagebuilder-17.01.2-mvebu.Linux-x86_64
-sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.2#http://cdn.corifeus.com/lede/17.01.2#g' .config
+cd /build/lede-imagebuilder-17.01.3-mvebu.Linux-x86_64
+sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.3#http://cdn.corifeus.com/lede/17.01.3#g' .config
 sed -i.bak 's#CONFIG_TARGET_INIT_PATH="/usr/sbin#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-lede:/usr/sbin#g' .config
-sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.2#http://cdn.corifeus.com/lede/17.01.2#g' repositories.conf
-echo 'src/gz reboot_darkmatter http://cdn.corifeus.com/lede/17.01.2/packages/arm_cortex-a9_vfpv3/darkmatter' >> repositories.conf
-echo 'src/gz reboot_redis http://cdn.corifeus.com/lede/17.01.2/packages/arm_cortex-a9_vfpv3/redis' >> repositories.conf
-echo 'src/gz reboot_node http://cdn.corifeus.com/lede/17.01.2/packages/arm_cortex-a9_vfpv3/node' >> repositories.conf
+sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.3#http://cdn.corifeus.com/lede/17.01.3#g' repositories.conf
+echo 'src/gz reboot_darkmatter http://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/darkmatter' >> repositories.conf
+echo 'src/gz reboot_redis http://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/redis' >> repositories.conf
+echo 'src/gz reboot_node http://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/node' >> repositories.conf
 cat .config | grep CONFIG_TARGET_INIT_PATH
 cat .config | grep CONFIG_VERSION_REPO
 cat repositories.conf 
@@ -327,13 +327,13 @@ For Linksys the raw build there is some bug, or needed a patch, so I need the im
 
 ```bash
 # Linksys WRT3200ACM-eduperez-mwlwifi
-cd /build/lede-imagebuilder-17.01.2-mvebu.Linux-x86_64
-sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.2#http://cdn.corifeus.com/lede/17.01.2#g' .config
+cd /build/lede-imagebuilder-17.01.3-mvebu.Linux-x86_64
+sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.3#http://cdn.corifeus.com/lede/17.01.3#g' .config
 sed -i.bak 's#CONFIG_TARGET_INIT_PATH="/usr/sbin#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-lede:/usr/sbin#g' .config
-sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.2#http://cdn.corifeus.com/lede/17.01.2#g' repositories.conf
-echo 'src/gz reboot_darkmatter http://cdn.corifeus.com/lede/17.01.2/packages/arm_cortex-a9_vfpv3/darkmatter' >> repositories.conf
-echo 'src/gz reboot_redis http://cdn.corifeus.com/lede/17.01.2/packages/arm_cortex-a9_vfpv3/redis' >> repositories.conf
-echo 'src/gz reboot_redis http://cdn.corifeus.com/lede/17.01.2/packages/arm_cortex-a9_vfpv3/node' >> repositories.conf
+sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.3#http://cdn.corifeus.com/lede/17.01.3#g' repositories.conf
+echo 'src/gz reboot_darkmatter http://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/darkmatter' >> repositories.conf
+echo 'src/gz reboot_redis http://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/redis' >> repositories.conf
+echo 'src/gz reboot_redis http://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/node' >> repositories.conf
 cat .config | grep CONFIG_TARGET_INIT_PATH
 cat .config | grep CONFIG_VERSION_REPO
 cat repositories.conf 
@@ -351,13 +351,13 @@ But this is not needed, the source works, but just in case ...
 You can use the image builder for D-Link DIR-860l B1 as well.   
   
 ```bash
-cd /build/lede-imagebuilder-17.01.2-ramips-mt7621.Linux-x86_64/
-sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.2#http://cdn.corifeus.com/lede/17.01.2#g' .config
+cd /build/lede-imagebuilder-17.01.3-ramips-mt7621.Linux-x86_64/
+sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.3#http://cdn.corifeus.com/lede/17.01.3#g' .config
 sed -i.bak 's#CONFIG_TARGET_INIT_PATH="/usr/sbin#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-lede:/usr/sbin#g' .config
-sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.2#http://cdn.corifeus.com/lede/17.01.2#g' repositories.conf
-echo 'src/gz reboot_darkmatter http://cdn.corifeus.com/lede/17.01.2/packages/mipsel_24kc/darkmatter' >> repositories.conf
-echo 'src/gz reboot_redis http://cdn.corifeus.com/lede/17.01.2/packages/mipsel_24kc/redis' >> repositories.conf
-echo 'src/gz reboot_node http://cdn.corifeus.com/lede/17.01.2/packages/mipsel_24kc/node' >> repositories.conf
+sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.3#http://cdn.corifeus.com/lede/17.01.3#g' repositories.conf
+echo 'src/gz reboot_darkmatter http://cdn.corifeus.com/lede/17.01.3/packages/mipsel_24kc/darkmatter' >> repositories.conf
+echo 'src/gz reboot_redis http://cdn.corifeus.com/lede/17.01.3/packages/mipsel_24kc/redis' >> repositories.conf
+echo 'src/gz reboot_node http://cdn.corifeus.com/lede/17.01.3/packages/mipsel_24kc/node' >> repositories.conf
 cat .config | grep CONFIG_TARGET_INIT_PATH
 cat .config | grep CONFIG_VERSION_REPO
 cat repositories.conf 
@@ -394,10 +394,10 @@ make -j9 image PROFILE=dir-860l-b1 PACKAGES="firmware-opkg-list-installed.txt"
    
 * **MAKE SURE TOUCH ALL .config FILES**   
   * touch .config
-  * touch ../lede-imagebuilder-17.01.2-mvebu.Linux-x86_64/.config
-  * touch ../lede-imagebuilder-17.01.2-mvebu.Linux-x86_64/repositories.conf
-  * touch ../lede-imagebuilder-17.01.2-ramips-mt7621.Linux-x86_64/.config
-  * touch ../lede-imagebuilder-17.01.2-ramips-mt7621.Linux-x86_64/repositories.conf
+  * touch ../lede-imagebuilder-17.01.3-mvebu.Linux-x86_64/.config
+  * touch ../lede-imagebuilder-17.01.3-mvebu.Linux-x86_64/repositories.conf
+  * touch ../lede-imagebuilder-17.01.3-ramips-mt7621.Linux-x86_64/.config
+  * touch ../lede-imagebuilder-17.01.3-ramips-mt7621.Linux-x86_64/repositories.conf
    
 
 * check the source
@@ -461,7 +461,7 @@ make V=s
 After the ```make``` it creates the packages from ```/build/source/``` ... It is above somewhere how to do it including the pre-build packages for your full router, like below...
 
 For the firmware it is better to use the image-builder.  
-It is in ```/build/lede-imagebuilder-17.01.2-mvebu.Linux-x86_64``` or ```/build/lede-imagebuilder-17.01.2-ramips-mt7621.Linux-x86_64```.
+It is in ```/build/lede-imagebuilder-17.01.3-mvebu.Linux-x86_64``` or ```/build/lede-imagebuilder-17.01.3-ramips-mt7621.Linux-x86_64```.
    
 Voile, your packages all updated.
 For the firmware there are some hacks (Linksys works with the image builder, D-Link works from the source).
@@ -471,7 +471,7 @@ For the firmware there are some hacks (Linksys works with the image builder, D-L
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.18-89
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.37-262
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 

@@ -61,10 +61,10 @@ make -j9 kernel_menuconfig
 
 ```bash
 sed -i.bak 's#CONFIG_TARGET_INIT_PATH="#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-lede:#g' .config
-sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.2#http://cdn.corifeus.com/lede/17.01.2#g' .config
-sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.2#http://cdn.corifeus.com/lede/17.01.2#g' package/base-files/image-config.in
+sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.3#http://cdn.corifeus.com/lede/17.01.3#g' .config
+sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.3#http://cdn.corifeus.com/lede/17.01.3#g' package/base-files/image-config.in
 sed -i.bak 's#default "/usr/sbin#default "/opt/router-scripts-lede:/usr/sbin#g' package/base-files/image-config.in
-echo "CONFIG_VERSION_REPO=\"http://cdn.corifeus.com/lede/17.01.2\"" >> .config
+echo "CONFIG_VERSION_REPO=\"http://cdn.corifeus.com/lede/17.01.3\"" >> .config
 cat package/base-files/image-config.in | grep default
 cat .config | grep CONFIG_VERSION_REPO
 cat .config | grep CONFIG_TARGET_INIT_PATH 
@@ -78,7 +78,7 @@ make -j1 V=s
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.18-89
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.37-262
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 

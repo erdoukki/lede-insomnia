@@ -75,7 +75,7 @@ Besides, the most important packages are there, like:
 
 I cant's list all of it, there is enough for now. See what is in [create from scratch](docs/create-from-scratch.md).
 
-[Redis 4 is here!](https://cdn.corifeus.com/lede/17.01.2/packages/arm_cortex-a9_vfpv3/redis/) but in D-Link DIR860l B1 as well.
+[Redis 4 is here!](https://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/redis/) but in D-Link DIR860l B1 as well.
 
 ## Requirements
 
@@ -89,14 +89,14 @@ This is a LEDE Docker builder and a living Docker repo as well, ready to build, 
 # Routers pre-built
 
 If you want to install right away with LUCI:
-https://cdn.corifeus.com/lede/17.01.2/
+https://cdn.corifeus.com/lede/17.01.3/
 
 * Linksys WRT1900ACS / Linksys WRT3200ACM / Linksys WRT1900ACS-eduperez-mwlwifi / Linksys WRT3200ACM-eduperez-mwlwifi
-  * https://cdn.corifeus.com/lede/17.01.2/targets/mvebu/generic/
+  * https://cdn.corifeus.com/lede/17.01.3/targets/mvebu/generic/
     * ***If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```***, then it works.
 
 * D-Link DIR-860l B1
-  * https://cdn.corifeus.com/lede/17.01.2/targets/ramips/mt7621/
+  * https://cdn.corifeus.com/lede/17.01.3/targets/ramips/mt7621/
     * If it is not working, with D-Link DIR-860l B1, you have to reset the router and re-load the firmware via emergency upload, like this
       1. Plug the Ethernet cable that connects your computer, that was plugged into one of the LAN ports, 
       1. Setup your PC with static IP - ex: 192.168.0.2 (different from 192.168.0.1), the gateway is 192.168.0.1, netmask 255.255.255.0
@@ -183,7 +183,7 @@ All the latest stable LEDE versions.
 * RAW
   * docker pull patrikx3/lede-insomnia:latest
 
-You run them, but these here, the built is in: http://cdn.corifeus.com/lede/17.01.2, all the built packages and firmwares in ```/build/source/bin```, you move to a host, install the firmware and you are done, because in the ```insomnia``` firmwares there is a lot in, but this is the default, so you need to change your own hostname here:
+You run them, but these here, the built is in: http://cdn.corifeus.com/lede/17.01.3, all the built packages and firmwares in ```/build/source/bin```, you move to a host, install the firmware and you are done, because in the ```insomnia``` firmwares there is a lot in, but this is the default, so you need to change your own hostname here:
 [http://192.168.1.1/cgi-bin/luci/admin/system/packages/ipkg](http://192.168.1.1/cgi-bin/luci/admin/system/packages/ipkg) at ```Configuration``` tab. If you do not want to build at all you can choose to your host  
 
 ## Some helper is the source with all the add-ons
@@ -202,9 +202,9 @@ docker pull patrikx3/lede-insomnia:latest
 ./run
 
 # All adds the plus feeds (node, redis, darkmatter), image builder and node, redis 4, fixes Apache builder
-# All set for the .config. feeds.conf and in the image builder in the repositories.confg
+# All set for the .config. feeds.conf and in the image builder in the repositories.config
 
-# the default packages http url is http://cdn.corifeus.com/lede/17.01.2
+# the default packages http url is http://cdn.corifeus.com/lede/17.01.3
 
 # but if you use the appropriate firmware, since a lot is pre-built,
 # adding in new modules, etc, the built will be super fast
@@ -283,11 +283,15 @@ Tested on WRT1900ACSv2 and WRT3200ACM, works.
 [README](docs/create-from-scratch.md)
 
 
+# Copy configs
+[README](docs/copy-test-configs.md)
+
+
 [//]: #@corifeus-footer
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.31-253
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.36-262
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 

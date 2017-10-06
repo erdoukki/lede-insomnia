@@ -1,3 +1,10 @@
+[//]: #@corifeus-header
+
+## Latest Stable LEDE Version with many plus packages
+
+---
+                        
+[//]: #@corifeus-header:end
 # Generate GPG and USIGN files
 
 https://lede-project.org/docs/user-guide/keygen#generate_key_pair
@@ -31,3 +38,12 @@ git commit -sm "LEDE usign key of Patrik Laszlo / patrikx3"
 
 usign public key 25ad50a827ee6b11
 ```
+[//]: #@corifeus-footer
+
+---
+
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.37-262
+
+[Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
+
+[//]: #@corifeus-footer:end

@@ -62,7 +62,7 @@ blkid
 
 block detect > /etc/config/fstab; sed -i s/option$'\t'enabled$'\t'\'0\'/option$'\t'enabled$'\t'\'1\'/ /etc/config/fstab; sed -i s#/mnt/sda1#/overlay# /etc/config/fstab; cat /etc/config/fstab;
 
-mkdir /media/storage
+mkdir -p /media/storage
 
 nano /etc/config/fstab
 
@@ -101,7 +101,10 @@ df -h
 # setup the internet
 # if it is not built in like Linksys
 # my opkg-list-installed.txt 
-opkg instal "opkg-list-installed.txt"
+pkg update
+rm /usr/lib/opkg/info/kmod-lib-zlib-inflate.postinst || true
+rm /usr/lib/opkg/info/kmod-lib-zlib-deflate.postinst || true
+opkg install "opkg-list-installed.txt"
 
 # this is my own setup, you don't needed
 # just in my /dev/sda3 i have monthly, weekly and daily backup
@@ -151,35 +154,35 @@ df -h
 **Linksys WRT1900ACS**  
 **Linksys WRT3200ACM**  
 ```text
-src/gz reboot_core http://cdn.corifeus.com/lede/17.01.2/targets/mvebu/generic/packages
-src/gz reboot_base http://cdn.corifeus.com/lede/17.01.2/packages/arm_cortex-a9_vfpv3/base
-src/gz reboot_luci http://cdn.corifeus.com/lede/17.01.2/packages/arm_cortex-a9_vfpv3/luci
-src/gz reboot_packages http://cdn.corifeus.com/lede/17.01.2/packages/arm_cortex-a9_vfpv3/packages
-src/gz reboot_routing http://cdn.corifeus.com/lede/17.01.2/packages/arm_cortex-a9_vfpv3/routing
-src/gz reboot_telephony http://cdn.corifeus.com/lede/17.01.2/packages/arm_cortex-a9_vfpv3/telephony
-src/gz reboot_node htt://cdn.corifeus.com/lede/17.01.2/packages/arm_cortex-a9_vfpv3/node
-src/gz reboot_darkmatter http://cdn.corifeus.com/lede/17.01.2/packages/arm_cortex-a9_vfpv3/darkmatter
-src/gz reboot_redis http://cdn.corifeus.com/lede/17.01.2/packages/arm_cortex-a9_vfpv3/redis
+src/gz reboot_core http://cdn.corifeus.com/lede/17.01.3/targets/mvebu/generic/packages
+src/gz reboot_base http://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/base
+src/gz reboot_luci http://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/luci
+src/gz reboot_packages http://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/packages
+src/gz reboot_routing http://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/routing
+src/gz reboot_telephony http://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/telephony
+src/gz reboot_node htt://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/node
+src/gz reboot_darkmatter http://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/darkmatter
+src/gz reboot_redis http://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/redis
 ``` 
 
 **D-Link DIR-860l B1**
 ```text
-src/gz reboot_core http://cdn.corifeus.com/lede/17.01.2/targets/ramips/mt7621/packages
-src/gz reboot_base http://cdn.corifeus.com/lede/17.01.2/packages/mipsel_24kc/base
-src/gz reboot_luci http://cdn.corifeus.com/lede/17.01.2/packages/mipsel_24kc/luci
-src/gz reboot_packages http://cdn.corifeus.com/lede/17.01.2/packages/mipsel_24kc/packages
-src/gz reboot_routing http://cdn.corifeus.com/lede/17.01.2/packages/mipsel_24kc/routing
-src/gz reboot_telephony http://cdn.corifeus.com/lede/17.01.2/packages/mipsel_24kc/telephony
-src/gz reboot_node http://cdn.corifeus.com/lede/17.01.2/packages/mipsel_24kc/node
-src/gz reboot_darkmatter http://cdn.corifeus.com/lede/17.01.2/packages/mipsel_24kc/darkmatter
-src/gz reboot_redis http://cdn.corifeus.com/lede/17.01.2/packages/mipsel_24kc/redis
+src/gz reboot_core http://cdn.corifeus.com/lede/17.01.3/targets/ramips/mt7621/packages
+src/gz reboot_base http://cdn.corifeus.com/lede/17.01.3/packages/mipsel_24kc/base
+src/gz reboot_luci http://cdn.corifeus.com/lede/17.01.3/packages/mipsel_24kc/luci
+src/gz reboot_packages http://cdn.corifeus.com/lede/17.01.3/packages/mipsel_24kc/packages
+src/gz reboot_routing http://cdn.corifeus.com/lede/17.01.3/packages/mipsel_24kc/routing
+src/gz reboot_telephony http://cdn.corifeus.com/lede/17.01.3/packages/mipsel_24kc/telephony
+src/gz reboot_node http://cdn.corifeus.com/lede/17.01.3/packages/mipsel_24kc/node
+src/gz reboot_darkmatter http://cdn.corifeus.com/lede/17.01.3/packages/mipsel_24kc/darkmatter
+src/gz reboot_redis http://cdn.corifeus.com/lede/17.01.3/packages/mipsel_24kc/redis
 ``` 
 
 [//]: #@corifeus-footer
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.18-89
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.37-262
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 

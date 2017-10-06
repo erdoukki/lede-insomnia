@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-sudo mkdir -p $DIR/build
-sudo chmod 0777 -R $DIR/build
-sudo chown $USER:$USER -R $DIR/build
-docker run -v $DIR/build:/build/host-build -v $DIR/patches:/build/patches -v $DIR/secure:/build/secure -v $DIR/make-scripts:/build/make-scripts -v $DIR/router:/build/router -v $DIR/image-builder-files:/build/image-builder-files -t -i patrikx3/lede-insomnia bash
+
+source $DIR/build-lib
+
+docker run -v $DIR/$BUILD_DIR:/build/host-build -v $DIR/patches:/build/patches -v $DIR/secure:/build/secure -v $DIR/make-scripts:/build/make-scripts -v $DIR/router:/build/router -v $DIR/image-builder-files:/build/image-builder-files -t -i patrikx3/lede-insomnia bash

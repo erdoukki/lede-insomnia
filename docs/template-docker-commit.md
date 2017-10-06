@@ -1,3 +1,10 @@
+[//]: #@corifeus-header
+
+## Latest Stable LEDE Version with many plus packages
+
+---
+                        
+[//]: #@corifeus-header:end
 # Info 
 About updating new node version it is in README.md and create-from-scratch.md
 
@@ -31,3 +38,12 @@ docker push patrikx3/lede-insomnia:d-link-dir-860l-b1
 docker commit CONTAINER_ID patrikx3/lede-insomnia:linksys-wrt
 docker push patrikx3/lede-insomnia:linksys-wrt
 ```
+[//]: #@corifeus-footer
+
+---
+
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.37-262
+
+[Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
+
+[//]: #@corifeus-footer:end

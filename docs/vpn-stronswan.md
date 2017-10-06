@@ -1,3 +1,10 @@
+[//]: #@corifeus-header
+
+## Latest Stable LEDE Version with many plus packages
+
+---
+                        
+[//]: #@corifeus-header:end
 # Strongswan VPN
 
 Set config:
@@ -43,3 +50,13 @@ cp -avr /build/router/linksys-wrt3200acm/source/. /build/source
     * ipsec-tools
     * strongswan-full
     * strongswan-mod-kernel-libipsec
+
+[//]: #@corifeus-footer
+
+---
+
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.37-262
+
+[Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
+
+[//]: #@corifeus-footer:end
