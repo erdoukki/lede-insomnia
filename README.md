@@ -1,6 +1,6 @@
 [//]: #@corifeus-header
 
-  [![Build Status](https://travis-ci.org/patrikx3/lede-insomnia.svg?branch=master)](https://travis-ci.org/patrikx3/lede-insomnia)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/lede-insomnia/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/lede-insomnia/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/lede-insomnia/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/lede-insomnia/?branch=master) 
+  [![Build Status](https://travis-ci.org/patrikx3/.svg?branch=master)](https://travis-ci.org/patrikx3/)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3//badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3//?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3//badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3//?branch=master) 
 
 ---
 
