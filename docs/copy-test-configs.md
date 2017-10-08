@@ -15,7 +15,7 @@ cp -avr /build/router/linksys-wrt3200acm/source/. /build/source
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/) Build v1.1.40-277
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/) Build v1.1.41-279
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 
