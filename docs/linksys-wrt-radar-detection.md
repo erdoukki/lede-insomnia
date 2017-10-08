@@ -67,7 +67,7 @@ On the ```Advanced Settings``` tab, so make sure all WIFI use that! I think in E
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/) Build v1.1.41-279
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.42-280
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 
