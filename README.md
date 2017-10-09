@@ -93,7 +93,7 @@ https://cdn.corifeus.com/lede/17.01.3/
 
 * Linksys WRT1900ACS / Linksys WRT3200ACM / Linksys WRT1900ACS-eduperez-mwlwifi / Linksys WRT3200ACM-eduperez-mwlwifi
   * https://cdn.corifeus.com/lede/17.01.3/targets/mvebu/generic/
-    * ***If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```***, then it works.
+    * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works.
 
 * D-Link DIR-860l B1
   * https://cdn.corifeus.com/lede/17.01.3/targets/ramips/mt7621/
