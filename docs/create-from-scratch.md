@@ -140,6 +140,7 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
         * Select all
   * 6in4
   * cifsmount
+  * hostpad-utils
   * iputils-* all
   * memcached
   * ppp
@@ -155,6 +156,7 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
   * pppstats
   * redis
   * samba36-client
+  * wpad
 * Utilities
   * Compression
     * Select all
@@ -471,7 +473,7 @@ For the firmware there are some hacks (Linksys works with the image builder, D-L
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.44-287 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.45-298 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
  

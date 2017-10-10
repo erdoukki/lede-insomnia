@@ -5,17 +5,16 @@
 ---
                         
 [//]: #@corifeus-header:end
-# Kernel
+# Firmware sizes
 
-#### ```CONFIG_IMG_MDC_DMA=y```
+## D-Link DIR-860l B1
+16 MBytes
 
-```bash
-cp -avr /build/router/dir-860l-b1/source/. /build/source
-./scripts/diffconfig.sh
-grep -r "IMG_MDC_DMA" /build/source
-```
+## Linksys WRT1900ACS
+34 MBytes
 
-Disable IMG_MDC_DMA
+## Linksys WRTI3200ACM
+74 Mbytes
 [//]: #@corifeus-footer
 
 ---

@@ -58,6 +58,7 @@ https://nodejs.org/en/download/package-manager/
 * openssh-sftp-server
 * openvpn-easy-rsa
 * rsync
+* wpad & hostapd-utils so you can use ***WPS***
 * and all packages have luci settings as well
 
 Besides, the most important packages are there, like:  
@@ -285,6 +286,13 @@ Tested on WRT1900ACSv2 and WRT3200ACM, works.
 
 # Copy configs
 [README](docs/copy-test-configs.md)
+
+
+# Firmware sizes
+[README](docs/firmware-sizes.md)
+
+# WPS
+[README](docs/wps.md)
 
 
 [//]: #@corifeus-footer
