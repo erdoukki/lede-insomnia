@@ -15,6 +15,7 @@
 
 ## Linksys WRTI3200ACM
 74 Mbytes
+
 [//]: #@corifeus-footer
 
 ---
