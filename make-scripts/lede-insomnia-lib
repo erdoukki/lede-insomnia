@@ -15,6 +15,7 @@ function pre-build() {
     ./scripts/feeds install -a -p luci-theme-darkmatter
 
     # i usually start here, like from nodejs 8.5 <
+    ./scripts/feeds update node
     ./scripts/feeds install -a -p node
 
     # or new redis version like 4.0.1 <
