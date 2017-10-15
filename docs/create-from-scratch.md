@@ -174,6 +174,8 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
   * Zoneinfo
     * Select all
   * Database
+    * mariadb
+      * ENTER and select all
     * mysql-server
     * pgsql-cli     
     * pgsql-cli-extra

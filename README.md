@@ -73,10 +73,13 @@ Besides, the most important packages are there, like:
 * perl
 * redis 4
 * msmtp
+* mariadb 5.5
 
 I cant's list all of it, there is enough for now. See what is in [create from scratch](docs/create-from-scratch.md).
 
 [Redis 4 is here!](https://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/redis/) but in D-Link DIR860l B1 as well.
+
+[MariaDB 5.5 is here!](https://cdn.corifeus.com/lede/17.01.3/packages/arm_cortex-a9_vfpv3/mariadb/) but in D-Link DIR860l B1 as well.
 
 ## Requirements
 
