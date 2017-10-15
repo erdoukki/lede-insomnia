@@ -88,14 +88,22 @@ RUN cp feeds.conf.default feeds.conf
 RUN echo 'src-git node https://github.com/nxhack/openwrt-node-packages.git' >> feeds.conf
 RUN echo 'src-git darkmatter git://github.com/apollo-ng/luci-theme-darkmatter.git' >> feeds.conf
 RUN echo 'src-git redis https://github.com/patrikx3/lede-redis.git' >> feeds.conf
+RUN echo 'src-git redis https://github.com/patrikx3/lede-mariadb.git' >> feeds.conf
 RUN ./scripts/feeds update -a
 RUN ./scripts/feeds install -a
+
 RUN rm -rf ./package/feeds/packages/node*
+
 RUN ./scripts/feeds install -a -p node
-RUN ./scripts/feeds update -a -p darkmatter
-RUN ./scripts/feeds install luci-theme-darkmatter
-RUN ./scripts/feeds update -a -p redis
-RUN ./scripts/feeds install redis
+
+RUN ./scripts/feeds update darkmatter
+RUN ./scripts/feeds install -a -p luci-theme-darkmatter
+
+RUN ./scripts/feeds update redis
+RUN ./scripts/feeds install -a -p redis
+
+RUN ./scripts/feeds update mariadb
+RUN ./scripts/feeds install -a -p mariadb
 
 COPY make-scripts /build/source
 

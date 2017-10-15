@@ -202,6 +202,8 @@ docker pull patrikx3/lede-insomnia:latest
 # then
 ./run
 
+# for some reason it always calls chown docker:docker /build, but you can press CONTROL+C and it will still be docker user, weird, it does that, I never do that, only in the Dockerfile
+
 # All adds the plus feeds (node, redis, darkmatter), image builder and node, redis 4, fixes Apache builder
 # All set for the .config. feeds.conf and in the image builder in the repositories.config
 

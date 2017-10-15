@@ -8,14 +8,21 @@ function pre-build() {
     cp -R /build/make-scripts/* /build/source
     ./scripts/feeds update -a
     ./scripts/feeds install -a
+
     rm -rf ./package/feeds/packages/node* || true
-    ./scripts/feeds update -a -p darkmatter
-    ./scripts/feeds install luci-theme-darkmatter
+
+    ./scripts/feeds update darkmatter
+    ./scripts/feeds install -a -p luci-theme-darkmatter
+
     # i usually start here, like from nodejs 8.5 <
     ./scripts/feeds install -a -p node
+
     # or new redis version like 4.0.1 <
-    ./scripts/feeds update -a -p redis
-    ./scripts/feeds install redis
+    ./scripts/feeds update redis
+    ./scripts/feeds install -a -p redis
+
+    ./scripts/feeds update mariadb
+    ./scripts/feeds install -a -p mariadb
 
 }
 
