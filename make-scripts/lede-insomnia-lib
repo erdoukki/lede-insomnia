@@ -91,7 +91,7 @@ function setup-image-builder-and-build() {
     sed -i.bak 's#src/gz#src#g' repositories.conf
     sed -i.bak "s#$4#file:///build/source/bin#g" repositories.conf
 
-    cp -R /build/image-builder-files files/
+    cp -R /build/image-builder-files/* files/
     make image PROFILE=$ROUTER_PROFILE PACKAGES="$(< /build/router/${ROUTER_PROFILE}/opkg-list-installed.txt)" FILES=files/
 
     for FIND_PATH in $(find ${IMAGE_BUILDER_PATH}/bin -type f -iname '*lede*')

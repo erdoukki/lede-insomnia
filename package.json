@@ -4,11 +4,11 @@
         "prefix": "p3x-",
         "type": "p3x",
         "cdn": true,
-        "nodejs": "v8.6.0",
+        "nodejs": "v8.7.0",
         "icon": "fa fa-coffee",
         "code": "Insomnia"
     },
-    "version": "1.1.45-298",
+    "version": "1.1.47-304",
     "description": "Latest Stable LEDE Version with many plus packages",
     "main": "src/index.js",
     "directories": {
@@ -32,7 +32,7 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^1.7.913-174"
+        "corifeus-builder": "^1.7.916-176"
     },
     "engines": {
         "node": ">=7.8.0"

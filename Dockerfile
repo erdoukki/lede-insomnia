@@ -22,7 +22,16 @@ RUN apt-get -y upgrade
 RUN apt -y install asciidoc bash bc bcc bin86 binutils build-essential bzip2 cmake curl ncdu fastjar file flex gawk gcc genisoimage gettext git git-core intltool jikespg libboost-dev libboost-dev libgtk2.0-dev libncurses5-dev libssl-dev libusb-dev libxml-parser-perl make mc nano openjdk-8-jdk patch perl-modules python python-dev rsync ruby sdcc sshpass sharutils software-properties-common subversion sudo quilt unzip util-linux wget xsltproc xz-utils zlib1g-dev
 #before it was needed nethack*, still?
 # nethack
+
+RUN echo "docker:x:10000:docker" >> "/etc/group"
+RUN useradd -u 10000 -g 10000 -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
+RUN mkdir -p /etc/sudoers.d
+RUN echo 'docker ALL=NOPASSWD: ALL' > /etc/sudoers.d/openwrt
+
 RUN mkdir build
+RUN chown docker:docker /build
+
+USER docker
 
 WORKDIR build
 
@@ -67,8 +76,8 @@ RUN git clone https://git.openwrt.org/project/usign.git
 WORKDIR /build/usign
 RUN cmake .
 RUN make
-RUN cp ./usign /usr/bin/usign
-RUN chmod +x /usr/bin/usign
+RUN sudo cp ./usign /usr/bin/usign
+RUN sudo chmod +x /usr/bin/usign
 
 WORKDIR /build
 RUN git clone -b ${LEDE_BRANCH} git://git.lede-project.org/source.git
@@ -88,16 +97,7 @@ RUN ./scripts/feeds install luci-theme-darkmatter
 RUN ./scripts/feeds update -a -p redis
 RUN ./scripts/feeds install redis
 
-RUN echo "docker:x:10000:docker" >> "/etc/group"
-RUN useradd -u 10000 -g 10000 -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
-RUN mkdir -p /etc/sudoers.d
-RUN echo 'docker ALL=NOPASSWD: ALL' > /etc/sudoers.d/openwrt
-
 COPY make-scripts /build/source
-
-RUN chown -R docker:docker /build
-
-USER docker
 
 RUN echo "set linenumbers" > "/home/docker/.nanorc"
 RUN echo "alias ll='ls -l'" >> /home/docker/.bashrc
