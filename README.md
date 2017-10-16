@@ -29,7 +29,7 @@ https://nodejs.org/en/download/package-manager/
                         
 [//]: #@corifeus-header:end
 
-# LEDE Latest Stable build with custom NodeJs > 8.5, LUCI dark matter, eduperez/mwlwifi_LEDE's WIFI driver, Redis 4
+# LEDE Latest Stable build with latest NodeJs, LUCI dark matter, eduperez/mwlwifi_LEDE's WIFI driver, Redis 4, MariaDB
 
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM and D-Link DIR860l B1 is already built, but based on the READMEs, you can built a new one easy.  
 
