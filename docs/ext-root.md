@@ -182,7 +182,7 @@ src/gz reboot_redis http://cdn.corifeus.com/lede/17.01.3/packages/mipsel_24kc/re
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.47-304 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.49-330 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
  

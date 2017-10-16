@@ -17,7 +17,7 @@ https://wiki.openwrt.org/toh/linksys/wrt_ac_series
 
 34 MBytes
 
-## Linksys WRTI3200ACM
+## Linksys WRT3200ACM
 https://wiki.openwrt.org/toh/linksys/wrt_ac_series
 
 74 Mbytes
@@ -26,7 +26,7 @@ https://wiki.openwrt.org/toh/linksys/wrt_ac_series
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.47-304 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.49-330 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
  

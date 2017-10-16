@@ -2,34 +2,15 @@
 
   [![Build Status](https://travis-ci.org/patrikx3/lede-insomnia.svg?branch=master)](https://travis-ci.org/patrikx3/lede-insomnia)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/lede-insomnia/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/lede-insomnia/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/lede-insomnia/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/lede-insomnia/?branch=master) 
 
+# Latest Stable LEDE Version with many plus packages
+
 ---
 
  
-# Latest Stable LEDE Version with many plus packages
-
-This is an open source project. Just code.
-
-### Node Version Requirement 
-``` 
->=7.8.0 
-```  
-   
-### Built on Node 
-``` 
-v8.7.0
-```   
-   
-The ```async``` and ```await``` keywords are required.
-
-Install NodeJs:    
-https://nodejs.org/en/download/package-manager/    
-
-# Description  
-
                         
 [//]: #@corifeus-header:end
 
-# LEDE Latest Stable build with latest NodeJs, LUCI dark matter, eduperez/mwlwifi_LEDE's WIFI driver, Redis 4, MariaDB
+LEDE Latest Stable build with latest NodeJs, LUCI dark matter, eduperez/mwlwifi_LEDE's WIFI driver, Redis 4, MariaDB
 
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM and D-Link DIR860l B1 is already built, but based on the READMEs, you can built a new one easy.  
 
@@ -304,7 +285,7 @@ Tested on WRT1900ACSv2 and WRT3200ACM, works.
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v1.1.47-304 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.49-330 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
  
