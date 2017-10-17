@@ -175,7 +175,7 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
     * Select all
   * Database
     * mariadb
-      * ENTER and select all
+      * ENTER and select all, except LITE
     * mysql-server
     * pgsql-cli     
     * pgsql-cli-extra

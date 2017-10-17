@@ -9,19 +9,24 @@ function pre-build() {
     ./scripts/feeds update -a
     ./scripts/feeds install -a
 
-    rm -rf ./package/feeds/packages/node* || true
+    # node
+    ./scripts/feeds update node
+    rm ./package/feeds/packages/node || true
+    rm ./package/feeds/packages/node-arduino-firmata || true
+    rm ./package/feeds/packages/node-cylon || true
+    rm ./package/feeds/packages/node-hid || true
+    rm ./package/feeds/packages/node-serialport || true
+    ./scripts/feeds install -a -p node
 
+    # luci darkmatter
     ./scripts/feeds update darkmatter
     ./scripts/feeds install -a -p luci-theme-darkmatter
 
-    # i usually start here, like from nodejs 8.5 <
-    ./scripts/feeds update node
-    ./scripts/feeds install -a -p node
-
-    # or new redis version like 4.0.1 <
+    # redis
     ./scripts/feeds update redis
     ./scripts/feeds install -a -p redis
 
+    # mariadb
     ./scripts/feeds update mariadb
     ./scripts/feeds install -a -p mariadb
 

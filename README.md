@@ -52,7 +52,7 @@ Besides, the most important packages are there, like:
 * perl
 * redis 4
 * msmtp
-* mariadb 5.5
+* mariadb 10
 
 I cant's list all of it, there is enough for now. See what is in [create from scratch](docs/create-from-scratch.md).
 
@@ -278,6 +278,9 @@ Tested on WRT1900ACSv2 and WRT3200ACM, works.
 # WPS
 [README](docs/wps.md)
 
+# Packages and patches
+
+[README](docs/packages-patches.md)
 
 [//]: #@corifeus-footer
 
