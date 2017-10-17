@@ -61,9 +61,9 @@ function setup-config-and-build() {
     make defconfig;make oldconfig
 
     # disable mariadb lite
-    #echo "We build full MariaDB, it will be not be synced but it is, I just removed a line ..."
-    #sed -i.bak -e "/config_mariadb_lite/Id" $DIR/.config
-    #cat .config | grep mariadb
+    echo "We build full MariaDB, it will be not be synced but it is, I just removed a line ..."
+    sed -i.bak -e "/config_mariadb_lite/Id" $DIR/.config
+    cat .config | grep mariadb
 
     sudo cp $DIR/.config /build/router/${ROUTER_PROFILE}/source/.config
 
