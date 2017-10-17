@@ -1,8 +1,8 @@
 {
-    "name": "p3x-lede-insomnia",
+    "name": "p3x-lede",
     "corifeus": {
         "prefix": "p3x-",
-        "type": "p3x",
+        "type": "lede",
         "cdn": true,
         "nodejs": "v8.7.0",
         "icon": "fa fa-coffee",

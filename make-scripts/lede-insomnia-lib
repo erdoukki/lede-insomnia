@@ -29,7 +29,7 @@ function pre-build() {
     # mariadb
     ./scripts/feeds update mariadb
     ./scripts/feeds install -a -p mariadb
-
+    sed -e "/config_mariadb_lite/Id" .config
 }
 
 function patches-and-feeds() {

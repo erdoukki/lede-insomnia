@@ -96,7 +96,7 @@ RUN rm ./package/feeds/packages/node
 RUN rm ./package/feeds/packages/node-arduino-firmata
 RUN rm ./package/feeds/packages/node-cylon
 RUN rm ./package/feeds/packages/node-hid
-RUN rm ./package/feeds/packages/node-serialportRUN
+RUN rm ./package/feeds/packages/node-serialport
 RUN ./scripts/feeds install -a -p node
 RUN ./scripts/feeds update darkmatter
 RUN ./scripts/feeds install -a -p luci-theme-darkmatter
