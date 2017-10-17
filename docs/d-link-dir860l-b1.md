@@ -16,6 +16,7 @@ grep -r "IMG_MDC_DMA" /build/source
 ```
 
 Disable IMG_MDC_DMA
+
 [//]: #@corifeus-footer
 
 ---
