@@ -173,7 +173,7 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
     * swap-utils
   * Zoneinfo
     * Select all
-  * Database
+  * database
     * mariadb
       * ENTER and select all, except LITE
     * mysql-server

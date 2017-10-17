@@ -29,7 +29,6 @@ function pre-build() {
     # mariadb
     ./scripts/feeds update mariadb
     ./scripts/feeds install -a -p mariadb
-
 }
 
 function patches-and-feeds() {
@@ -48,10 +47,6 @@ function fix-paths() {
     cat .config | grep CONFIG_TARGET_INIT_PATH
     cat .config | grep CONFIG_VERSION_REPO
 
-    # disable mariadb lite
-    echo "We build full MariaDB"
-    sed -i.bak -e "/config_mariadb_lite/Id" $DIR/.config
-    cat .config | grep mariadb
 }
 
 function setup-config-and-build() {
@@ -64,6 +59,11 @@ function setup-config-and-build() {
     ./scripts/diffconfig.sh > configdiff
     cp configdiff .config
     make defconfig;make oldconfig
+
+    # disable mariadb lite
+    echo "We build full MariaDB, it will be not be synced but it is, I just removed a line ..."
+    sed -i.bak -e "/config_mariadb_lite/Id" $DIR/.config
+    cat .config | grep mariadb
 
     sudo cp $DIR/.config /build/router/${ROUTER_PROFILE}/source/.config
 
