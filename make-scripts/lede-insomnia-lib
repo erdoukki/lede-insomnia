@@ -29,7 +29,7 @@ function pre-build() {
     # mariadb
     ./scripts/feeds update mariadb
     ./scripts/feeds install -a -p mariadb
-    sed -e "/config_mariadb_lite/Id" .config
+
 }
 
 function patches-and-feeds() {
@@ -47,6 +47,11 @@ function fix-paths() {
     sed -i.bak 's#CONFIG_TARGET_INIT_PATH="/usr/sbin#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-lede:/usr/sbin#g' .config
     cat .config | grep CONFIG_TARGET_INIT_PATH
     cat .config | grep CONFIG_VERSION_REPO
+
+    # disable mariadb lite
+    echo "We build full MariaDB"
+    sed -i.bak -e "/config_mariadb_lite/Id" $DIR/.config
+    cat .config | grep mariadb
 }
 
 function setup-config-and-build() {
