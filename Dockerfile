@@ -92,11 +92,11 @@ RUN echo 'src-git mariadb https://github.com/patrikx3/lede-mariadb.git' >> feeds
 RUN ./scripts/feeds update -a
 RUN ./scripts/feeds install -a
 RUN ./scripts/feeds update node
-RUN rm ./package/feeds/packages/node
-RUN rm ./package/feeds/packages/node-arduino-firmata
-RUN rm ./package/feeds/packages/node-cylon
-RUN rm ./package/feeds/packages/node-hid
-RUN rm ./package/feeds/packages/node-serialport
+RUN rm ./package/feeds/packages/node*
+#RUN rm ./package/feeds/packages/node-arduino-firmata
+#RUN rm ./package/feeds/packages/node-cylon
+#RUN rm ./package/feeds/packages/node-hid
+#RUN rm ./package/feeds/packages/node-serialport
 RUN ./scripts/feeds install -a -p node
 RUN ./scripts/feeds update darkmatter
 RUN ./scripts/feeds install -a -p luci-theme-darkmatter
