@@ -42,7 +42,6 @@ LEDE Latest Stable build with latest NodeJs, LUCI dark matter, eduperez/mwlwifi_
 
 Besides, the most important packages are there, like:  
 
-* mysql
 * postresql
 * nginx
 * apache
@@ -52,6 +51,8 @@ Besides, the most important packages are there, like:
 * perl
 * redis 4
 * msmtp
+* mysql 5.1
+  * or replace with mariadb
 * mariadb 5.5
 
 I cant's list all of it, there is enough for now. See what is in [create from scratch](docs/create-from-scratch.md).
