@@ -37,7 +37,7 @@ LEDE Latest Stable build with latest NodeJs, eduperez/mwlwifi_LEDE's WIFI driver
 * openssh-sftp-server
 * openvpn-easy-rsa
 * rsync
-* wpad & hostapd-utils so you can use ***WPS***
+* wpad & hostapd-utils so you can use ***WPS*** (```Linksys```)
 * and all packages have luci settings as well
 
 Besides, the most important packages are there, like:  
@@ -71,6 +71,13 @@ This is a LEDE Docker builder and a living Docker repo as well, ready to build, 
 If you want to install right away with LUCI:
 https://cdn.corifeus.com/lede/17.01.4/
 
+## Ext-root issue
+
+If you have ```ext-root``` before ```sysupgrade``` you need to execute ```rm -f /overlay/etc/.extroot-uuid```. After restart, please ```reboot``` again and it works. 
+
+Based on:  
+https://forum.lede-project.org/t/solved-sd-card-extroot-stop-auto-mount-after-firmware-upgrade/4310/1
+
 ## Wifi Issue
 
 When you are flashed the firmware (I think only on Linksys), first setup the Wifi (enable), so it works. When it is working, then you can start working, because otherwise it doesn't generate the ```wlan``` interfaces automatically and the ```WIFI``` will not work.
@@ -78,11 +85,6 @@ When you are flashed the firmware (I think only on Linksys), first setup the Wif
 Here ```ENABLE```:  
 https://192.168.1.1/cgi-bin/luci/admin/network/wireless  
 
-
-## Ext-root issue
-
-If you have ```ext-root``` before ```sysupgrade``` you need to execute ```rm -f /overlay/etc/.extroot-uuid```. Based on:  
-https://forum.lede-project.org/t/solved-sd-card-extroot-stop-auto-mount-after-firmware-upgrade/4310/1
 
 ## The release
 

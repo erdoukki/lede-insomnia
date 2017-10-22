@@ -8,8 +8,6 @@ ROUTER_SUB_TARGER="mt7621"
 FIRMWARE_NAME="insomnia"
 IMAGE_BUILDER_FILE="/build/source/bin/targets/${ROUTER_TARGET}/${ROUTER_SUB_TARGER}/lede-imagebuilder-${ROUTER_TARGET}-${ROUTER_SUB_TARGER}.Linux-x86_64.tar.xz"
 
-lede-imagebuilder-ramips-mt7621.Linux-x86_64.tar.xz
-
 tag="d-link-dir-860l-b1"
 
 pre-build
