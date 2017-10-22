@@ -96,8 +96,8 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
     * php7
     * PHP7 Filter support
     * SELECT ALL
- * Python
-   * python
+   * Python
+     * python
 * Libraries
   * **IN THE FUTURE, I WILL ADD ALL LIBRARIRES** ?
   * liblzo
