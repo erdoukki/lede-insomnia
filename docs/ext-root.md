@@ -29,7 +29,6 @@ opkg install kmod-usb3 blkid kmod-usb-storage-extras blkid block-mount fdisk e2f
 
 insmod xhci-mtk
 
-
 mkfs.ext4 /dev/sda1
 # say yes
 

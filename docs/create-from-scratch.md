@@ -58,6 +58,8 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
 * Global build settings
   * Select all target specific packages by default
   * Select all kernel module packages by default
+* Build the LEDE Image Build
+  * Include package repositories  
 * LUCI
   * Collections
     * luci
@@ -157,6 +159,9 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
   * bonniexx
   * coreutils - select then enter to choose
     * coreutils-date
+    * coreutils-dirname
+    * coreutils-md5sum
+    * coreutils-nice
     * coreutils-printf
     * coreutils-readlink
     * coreutils-realpath
@@ -189,15 +194,17 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
   * whereis       
 * Exit
 * YES
-* mc
-   * via Midnight Commander you add to your repo via shell patrikx3@192.168.78.30/home/patrikx3/Projects/patrikx3/p3x/lede-insomnia/router
-* Copy the .config file to {router-name}/.config
+
+Copy the .config file to {router-name}/.config
 
 **If your target machine is MIPS and there is no hardware FPU we need MIPS_FPU_EMULATOR**
 
 ```bash
 make -j9 kernel_menuconfig
 ```
+ 
+For DIR DIR-860L B1, there is no option ```CONFIG_IMG_MDC_DMA=y```, so you have to add in here:
+```lede-insomnia/router/dir-860l-b1/source/target/linux/ramips/mt7621/config-4.4```. 
  
 * Target System  
   * D-Link DIR-860l B1 MediaTek MT7621AT, target ```ramips / mt7621```, type ```mipsel_24kc```
