@@ -42,17 +42,13 @@ LEDE Latest Stable build with latest NodeJs, eduperez/mwlwifi_LEDE's WIFI driver
 
 Besides, the most important packages are there, like:  
 
-* postresql
 * nginx
 * apache
 * sqllite
 * php7
 * python 2
-* perl
 * redis 4
 * msmtp
-* mysql 5.1
-  * or replace with mariadb
 * mariadb 5.5
 
 I cant's list all of it, there is enough for now. See what is in [create from scratch](docs/create-from-scratch.md).
