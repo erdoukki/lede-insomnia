@@ -6,7 +6,7 @@
 FROM debian:latest
 MAINTAINER patrikx3/lede-insomnia - Patrik Laszlo - alabard@gmail.com
 
-ARG LEDE_VERSION_TOTAL=17.01.3
+ARG LEDE_VERSION_TOTAL=17.01.4
 ARG LEDE_BRANCH=lede-17.01
 ENV LEDE_VERSION_TOTAL=${LEDE_VERSION_TOTAL}
 ENV LEDE_BRANCH=${LEDE_BRANCH}
@@ -35,42 +35,6 @@ USER docker
 
 WORKDIR build
 
-#ARG LEDE_LINKSYS1900ACSV2_URL_BASE=https://downloads.lede-project.org/releases/${LEDE_VERSION_TOTAL}/targets/mvebu/generic
-#ARG LEDE_LINKSYS1900ACSV2_FILE=lede-imagebuilder-${LEDE_VERSION_TOTAL}-mvebu.Linux-x86_64.tar.xz
-#ARG LEDE_LINKSYS1900ACSV2_FILE_SDK=lede-sdk-${LEDE_VERSION_TOTAL}-mvebu_gcc-5.4.0_musl-1.1.16_eabi.Linux-x86_64.tar.xz
-#ARG LEDE_LINKSYS1900ACSV2_URL=${LEDE_LINKSYS1900ACSV2_URL_BASE}/${LEDE_LINKSYS1900ACSV2_FILE}
-#ARG LEDE_LINKSYS1900ACSV2_URL_SDK=${LEDE_LINKSYS1900ACSV2_URL_BASE}/${LEDE_LINKSYS1900ACSV2_FILE_SDK}
-#ARG LEDE_LINKSYS1900ACSV2_URL_SEED=${LEDE_LINKSYS1900ACSV2_URL_BASE}/config.seed
-#ARG LEDE_LINKSYS1900ACSV2_URL_SEED_CUSTOM_FILE=mvebu-generic.config.seed
-#ARG LEDE_LINKSYS1900ACSV2_URL_MANIFEST=${LEDE_LINKSYS1900ACSV2_URL_BASE}/lede-${LEDE_VERSION_TOTAL}-mvebu.manifest
-
-#RUN wget ${LEDE_LINKSYS1900ACSV2_URL}
-#RUN tar xf ${LEDE_LINKSYS1900ACSV2_FILE}
-#RUN rm ${LEDE_LINKSYS1900ACSV2_FILE}
-#RUN wget ${LEDE_LINKSYS1900ACSV2_URL_SDK}
-#RUN tar xf ${LEDE_LINKSYS1900ACSV2_FILE_SDK}
-#RUN rm ${LEDE_LINKSYS1900ACSV2_FILE_SDK}
-#RUN wget ${LEDE_LINKSYS1900ACSV2_URL_SEED} -O ${LEDE_LINKSYS1900ACSV2_URL_SEED_CUSTOM_FILE}
-#RUN wget ${LEDE_LINKSYS1900ACSV2_URL_MANIFEST}
-
-
-#ARG LEDE_D_LINK_DIR_860L_B1_URL_BASE=https://downloads.lede-project.org/releases/${LEDE_VERSION_TOTAL}/targets/ramips/mt7621
-#ARG LEDE_D_LINK_DIR_860L_B1_FILE=lede-imagebuilder-${LEDE_VERSION_TOTAL}-ramips-mt7621.Linux-x86_64.tar.xz
-#ARG LEDE_D_LINK_DIR_860L_B1_URL=${LEDE_D_LINK_DIR_860L_B1_URL_BASE}/${LEDE_D_LINK_DIR_860L_B1_FILE}
-#ARG LEDE_D_LINK_DIR_860L_B1_FILE_SDK=lede-sdk-${LEDE_VERSION_TOTAL}-ramips-mt7621_gcc-5.4.0_musl-1.1.16.Linux-x86_64.tar.xz
-#ARG LEDE_D_LINK_DIR_860L_B1_URL_SDK=${LEDE_D_LINK_DIR_860L_B1_URL_BASE}/${LEDE_D_LINK_DIR_860L_B1_FILE_SDK}
-#ARG LEDE_D_LINK_DIR_860L_B1_URL_SEED=${LEDE_D_LINK_DIR_860L_B1_URL_BASE}/config.seed
-#ARG LEDE_D_LINK_DIR_860L_B1_URL_SEED_CUSTOM_FILE=ramips-mt7621.config.seed
-#ARG LEDE_D_LINK_DIR_860L_B1_URL_MANIFEST=${LEDE_D_LINK_DIR_860L_B1_URL_BASE}/lede-${LEDE_VERSION_TOTAL}-ramips-mt7621.manifest
-
-#RUN wget ${LEDE_D_LINK_DIR_860L_B1_URL}
-#RUN tar xf ${LEDE_D_LINK_DIR_860L_B1_FILE}
-#RUN rm ${LEDE_D_LINK_DIR_860L_B1_FILE}
-#RUN wget ${LEDE_D_LINK_DIR_860L_B1_URL_SDK}
-#RUN tar xf ${LEDE_D_LINK_DIR_860L_B1_FILE_SDK}
-#RUN rm ${LEDE_D_LINK_DIR_860L_B1_FILE_SDK}
-#RUN wget ${LEDE_D_LINK_DIR_860L_B1_URL_SEED} -O ${LEDE_D_LINK_DIR_860L_B1_URL_SEED_CUSTOM_FILE}
-#RUN wget ${LEDE_D_LINK_DIR_860L_B1_URL_MANIFEST}
 
 RUN git clone https://git.openwrt.org/project/usign.git
 WORKDIR /build/usign
@@ -86,7 +50,6 @@ RUN git checkout tags/v${LEDE_VERSION_TOTAL}
 
 RUN cp feeds.conf.default feeds.conf
 RUN echo 'src-git node https://github.com/nxhack/openwrt-node-packages.git' >> feeds.conf
-RUN echo 'src-git darkmatter git://github.com/apollo-ng/luci-theme-darkmatter.git' >> feeds.conf
 RUN echo 'src-git redis https://github.com/patrikx3/lede-redis.git' >> feeds.conf
 RUN echo 'src-git mariadb https://github.com/patrikx3/lede-mariadb.git' >> feeds.conf
 RUN ./scripts/feeds update -a
@@ -98,8 +61,6 @@ RUN rm ./package/feeds/packages/node*
 #RUN rm ./package/feeds/packages/node-hid
 #RUN rm ./package/feeds/packages/node-serialport
 RUN ./scripts/feeds install -a -p node
-RUN ./scripts/feeds update darkmatter
-RUN ./scripts/feeds install -a -p luci-theme-darkmatter
 RUN ./scripts/feeds update redis
 RUN ./scripts/feeds install -a -p  redis
 RUN ./scripts/feeds update mariadb

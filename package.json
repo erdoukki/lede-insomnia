@@ -8,7 +8,7 @@
         "icon": "fa fa-coffee",
         "code": "Insomnia"
     },
-    "version": "17.1.53-366",
+    "version": "17.1.54-389",
     "description": "Latest Stable LEDE Version with many plus packages",
     "main": "src/index.js",
     "directories": {

@@ -15,9 +15,9 @@ find -iname '*kmod-mwlwifi*'
 find -iname '*iwlwifi*'
 find -iname '*iwlwifi*' -exec rm -rf {} +
 find -iname '*kmod-iwlwifi*'
-rm /build/source/staging_dir/packages/mvbeu/kmod-iwlwifi_4.4.71+2017-01-31-2_arm_cortex-a9_vfpv3.ipk
-rm /build/source/bin/targets/mvebu/generic/packages/kmod-iwlwifi_4.4.71+2017-01-31-2_arm_cortex-a9_vfpv3.ipk
-rm /build/source/build_dir/target-arm_cortex-a9+vfpv3_musl-1.1.16_eabi/lede-imagebuilder-17.01.3-mvebu.Linux-x86_64/packages/kmod-iwlwifi_4.4.71+2017-01-31-2_arm_cortex-a9_vfpv3.ipk
+rm /build/source/staging_dir/packages/mvbeu/kmod-iwlwifi_4.4.71+2017.01.41-2_arm_cortex-a9_vfpv3.ipk
+rm /build/source/bin/targets/mvebu/generic/packages/kmod-iwlwifi_4.4.71+2017.01.41-2_arm_cortex-a9_vfpv3.ipk
+rm /build/source/build_dir/target-arm_cortex-a9+vfpv3_musl-1.1.16_eabi/lede-imagebuilder-17.01.4-mvebu.Linux-x86_64/packages/kmod-iwlwifi_4.4.71+2017.01.41-2_arm_cortex-a9_vfpv3.ipk
 make clean
 make dirclean # remove the toolchain as well 
 make package/kernel/mwlwifi/{clean,prepare,compile}
@@ -27,7 +27,7 @@ make package/kernel/mwlwifi/{clean,prepare,compile}
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.53-366 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.54-389 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
  
