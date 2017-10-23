@@ -8,7 +8,11 @@
                         
 [//]: #@corifeus-header:end
 
-LEDE Latest Stable build with latest NodeJs, eduperez/mwlwifi_LEDE's WIFI driver, Redis 4, MariaDB
+### Build info
+Always check out the original image builder if it changed (like sources urls).
+
+
+# LEDE Latest Stable build with latest NodeJs, eduperez/mwlwifi_LEDE's WIFI driver, Redis 4, MariaDB
 
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM and D-Link DIR860l B1 is already built, but based on the READMEs, you can built a new one easy.  
 
@@ -221,6 +225,7 @@ docker pull patrikx3/lede-insomnia:d-link-dir-860l-b1
 
 # the linksys latest wrt builds are in hierarchically in order 
 docker pull patrikx3/lede-insomnia:linksys-wrt
+# the .config in the repo is the insomnia-eduperez-mwlwifi-lede-mvebu-linksys-wrt3200acm
 
 # then you just change the .config and kernel
 

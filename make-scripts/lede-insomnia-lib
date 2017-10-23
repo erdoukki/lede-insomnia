@@ -38,10 +38,10 @@ function feeds() {
 }
 
 function fix-paths() {
-    sed -i.bak "s|CONFIG_VERSION_REPO.*|CONFIG_VERSION_REPO=\"$1\"|g" .config
+#    sed -i.bak "s|CONFIG_VERSION_REPO.*|CONFIG_VERSION_REPO=\"$1\"|g" .config
     sed -i.bak 's#CONFIG_TARGET_INIT_PATH="/usr/sbin#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-lede:/usr/sbin#g' .config
     cat .config | grep CONFIG_TARGET_INIT_PATH
-    cat .config | grep CONFIG_VERSION_REPO
+#    cat .config | grep CONFIG_VERSION_REPO
 
 }
 
@@ -105,7 +105,14 @@ function setup-image-builder-and-build() {
     sed -i.bak 's#src/gz#src#g' repositories.conf
     sed -i.bak "s#$4#file:///build/source/bin#g" repositories.conf
 
+    DIST_FEEDS=$(find -name distfeeds.conf)
+    sed -i "s#http://downloads.lede-project.org/releases/${LEDE_VERSION_TOTAL}#$CDN_REPO#g" $DIST_FEEDS
+    cat $DIST_FEEDS
+
     cp -R /build/image-builder-files/* files/
+    DIST_FEEDS_DIR=files/etc/opkg
+    mkdir -p $DIST_FEEDS_DIR
+    cp $DIST_FEEDS $DIST_FEEDS_DIR
     make image PROFILE=$ROUTER_PROFILE PACKAGES="$(< /build/router/${ROUTER_PROFILE}/opkg-list-installed.txt)" FILES=files/
 
     for FIND_PATH in $(find ${IMAGE_BUILDER_PATH}/bin -type f -iname '*lede*')
@@ -146,7 +153,7 @@ function generate-firmware-dir() {
 
 function delete-firmware-lede-files() {
     generate-firmware-dir
-    find $firmware_files_dir -maxdepth 1 -type f -name "lede-${LEDE_VERSION_TOTAL}*" -delete
+    find $firmware_files_dir -maxdepth 1 -type f -name "lede-${ROUTER_TARGET}*" -delete
 }
 
 function final() {

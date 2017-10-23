@@ -114,6 +114,10 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
     * wget
   * Firewall
     * iptables
+      * Enter
+        * iptables-mod-ipsec
+  * Routing and Redirection
+    * ip-full
   * SSH
     * openssh-client
     * openssh-client-utils
@@ -121,6 +125,8 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
   * VPN
     * openvpn-easy-rsa
     * openvpn-openssl
+    * ipsec-tools
+    * xl2tpd   
   * Version Control Systems
     * git
     * git-http
@@ -131,8 +137,14 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
         * Select all
   * 6in4
   * cifsmount
+  * hostpad-utils
+  * ppp
+    * ppp-mod-pppol2tp
+    * ppp-mod-pptp
   * redis
   * samba36-client
+  * wpad
+  
 * Utilities
   * Compression
     * Select all

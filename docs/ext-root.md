@@ -88,25 +88,7 @@ reboot && exit
 
 # Ext-root via USB driver with existing data
 
-```bash
-ssh root@192.168.1.1
-
-block detect > /etc/config/fstab; sed -i s/option$'\t'enabled$'\t'\'0\'/option$'\t'enabled$'\t'\'1\'/ /etc/config/fstab; sed -i s#/mnt/sda1#/overlay# /etc/config/fstab; cat /etc/config/fstab;
-
-uci show fstab 
-cat /etc/config/fstab
-df -h 
-
-uci commit
-reboot && exit
-
-# wait so that the network is connected
-ssh root@192.168.1.1 # if you have existing then there like 192.168.1.1
-
-uci show fstab 
-cat /etc/config/fstab
-df -h 
-```
+I was unable to solve ```ext-root``` with existing data right now.
 
 [//]: #@corifeus-footer
 
