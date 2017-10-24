@@ -41,7 +41,7 @@ Always check out the original image builder if it changed (like sources urls).
 * openssh-sftp-server
 * openvpn-easy-rsa
 * rsync
-* wpad & hostapd-utils so you can use ***WPS*** (```Linksys```)
+* wpad & hostapd-utils so you can use ***WPS*** (```Right now only works with D-LINK DIR-860-L B1, Linksys is broken```)
 * and all packages have luci settings as well
 
 Besides, the most important packages are there, like:  
