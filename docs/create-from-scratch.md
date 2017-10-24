@@ -215,9 +215,6 @@ Copy the .config file to {router-name}/.config
 make -j9 kernel_menuconfig
 ```
  
-For DIR DIR-860L B1, there is no option ```CONFIG_IMG_MDC_DMA=y```, so you have to add in here:
-```lede-insomnia/router/dir-860l-b1/source/target/linux/ramips/mt7621/config-4.4```. 
- 
 * Target System  
   * D-Link DIR-860l B1 MediaTek MT7621AT, target ```ramips / mt7621```, type ```mipsel_24kc```
     * MediaTek Ralink MIPS       
@@ -233,6 +230,9 @@ For DIR DIR-860L B1, there is no option ```CONFIG_IMG_MDC_DMA=y```, so you have 
 * Save  
 * Exit  
 
+For DIR DIR-860L B1, there is no option ```CONFIG_IMG_MDC_DMA=y```, so you have to add in here:
+```lede-insomnia/router/dir-860l-b1/source/target/linux/ramips/mt7621/config-4.4```. 
+ 
 # In an another terminal you can increase the buidling 
 
 ```bash
