@@ -9,13 +9,41 @@
 
 https://lede-project.org/docs/user-guide/wifi_configuration#wps_options
 
+Right now it only works with D-LINK DIR-860L B1. Linksys is broken.
+
+There were some changes. So this is how it works with ```17.01.4```.
+
 Minimal steps needed to get WPS running:
 
-* Add ```option wps_pushbutton '1'``` to a config ```wifi-iface``` section that is configured for WPA2-PSK in ```/etc/config/wireless```
-* opkg update
-* opkg remove wpad-mini
-* opkg install wpad hostapd-utils
-* reboot && exit
+In ```/etc/config/wireless``` it is important in the ```wifi-iface```only in the 2.4 GHZ.
+```text
+    option wps_pushbutton '1'
+```
+
+But you can do it with ```LUCI``` as well.
+
+```bash
+opkg update
+opkg remove wpad-mini
+# if you remove it, it will not work
+opkg install wpad hostapd-utils
+reboot
+
+# wait about 2 minutes
+hostapd_cli wps_pbc
+```
+
+```bash
+reboot && exit
+
+# regenerate the wifi interface
+rm -f /etc/config/wireless
+wifi config
+
+iw reg get
+iw dev
+```
+
 
 ## Actual Linksys 3200ACM WPS
 
@@ -24,23 +52,15 @@ Do what it says above. Then on router on the bottom right there is the WPS butto
 ### Example
 
 ```text
-config wifi-iface 'default_radio0'
-    option device 'radio0'
-    option mode 'ap'
-    option ssid 'patrikx3-digi'
-    option encryption 'psk2'
-    option key ''*********'
-    option network 'lan'
-    option wps_pushbutton '1'
-    
 config wifi-iface 'default_radio1'
-    option device 'radio1'
-    option mode 'ap'
-    option ssid 'patrikx3-digi-slow'
-    option encryption 'psk2'
-    option key '*********'
-    option network 'lan'
-    option wps_pushbutton '1'
+	option device 'radio1'
+	option network 'lan'
+	option mode 'ap'
+	option ssid 'your-ssid'
+	option key 'your-secret'
+	option encryption 'psk2+ccmp'
+	option wps_pushbutton '1'
+
 ```
 
 

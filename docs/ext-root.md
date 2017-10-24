@@ -81,6 +81,9 @@ git clone https://git-user:[********]@git.patrikx3.com/router-scripts-lede.git
 
 cd router-scripts-lede
 npm install
+
+# before start, create the sygnus vpn
+
 ./init-router
 
 reboot && exit
