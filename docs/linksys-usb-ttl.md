@@ -1,3 +1,10 @@
+[//]: #@corifeus-header
+
+## Latest Stable LEDE Version with many plus packages
+
+---
+                        
+[//]: #@corifeus-header:end
 # Linksys USB-TTL
 
 ```bash
@@ -18,3 +25,13 @@ run update_both_images
 ```bash
 ufw enable
 ```
+[//]: #@corifeus-footer
+
+---
+
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.56-466 
+
+[![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
+ 
+
+[//]: #@corifeus-footer:end
