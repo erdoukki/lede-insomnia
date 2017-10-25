@@ -137,6 +137,7 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
         * Select all
   * 6in4
   * cifsmount
+  * hostapd-common
   * hostpad-utils
   * ppp
     * ppp-mod-pppol2tp

@@ -3,6 +3,8 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 build_host_path=/build/host-build
 
+# grep -rnw  -e 'downloads.lede-project.org'
+
 function pre-build() {
 
     cp -R /build/make-scripts/* /build/source
@@ -109,6 +111,8 @@ function setup-image-builder-and-build() {
     sed -i "s#http://downloads.lede-project.org/releases/${LEDE_VERSION_TOTAL}#$CDN_REPO#g" $DIST_FEEDS
     cat $DIST_FEEDS
 
+    rm -rf ./files
+    mkdir files
     cp -R /build/image-builder-files/* files/
     DIST_FEEDS_DIR=files/etc/opkg
     mkdir -p $DIST_FEEDS_DIR

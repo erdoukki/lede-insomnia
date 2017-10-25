@@ -77,16 +77,21 @@ df -h
 mkdir -p /opt/ 
 cd /opt 
 git config --global http.sslVerify "false" 
-git clone https://git-user:[********]@git.patrikx3.com/router-scripts-lede.git 
+git clone https://git.patrikx3.com/router-scripts-lede.git 
 
 cd router-scripts-lede
+opkg update
+opkg install node node-npm
 npm install
 
 # before start, create the sygnus vpn
-
+# restore config
 ./init-router
 
 reboot && exit
+
+# wps.md
+# vpn-client.create.md
 ```
 
 # Ext-root via USB driver with existing data

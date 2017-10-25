@@ -9,7 +9,7 @@
 
 https://lede-project.org/docs/user-guide/wifi_configuration#wps_options
 
-Right now it only works with D-LINK DIR-860L B1. Linksys is broken.
+It is only working, if only these are built in the firmware: ```hostapd-common wpad-mini```, nothing other like that. If not, it will not work.
 
 There were some changes. So this is how it works with ```17.01.4```.
 
@@ -30,7 +30,7 @@ opkg install wpad hostapd-utils
 reboot
 
 # wait about 2 minutes
-hostapd_cli wps_pbc
+hostapd_cli -i wlan1 wps_pbc
 ```
 
 ```bash

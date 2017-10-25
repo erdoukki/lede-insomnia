@@ -41,7 +41,7 @@ Always check out the original image builder if it changed (like sources urls).
 * openssh-sftp-server
 * openvpn-easy-rsa
 * rsync
-* wpad & hostapd-utils so you can use ***WPS*** (```Right now only works with D-LINK DIR-860-L B1, Linksys is broken```)
+* wpad & hostapd-utils so you can use ***WPS*** 
 * and all packages have luci settings as well
 
 Besides, the most important packages are there, like:  
@@ -82,29 +82,20 @@ If you have ```ext-root``` before ```sysupgrade``` you need to execute ```rm -f 
 Based on:  
 https://forum.lede-project.org/t/solved-sd-card-extroot-stop-auto-mount-after-firmware-upgrade/4310/1
 
-## Wifi Issue
+#### For me it is not working, looking for a better solution.
 
-When you are flashed the firmware (I think only on Linksys), first setup the Wifi (enable), so it works. When it is working, then you can start working, because otherwise it doesn't generate the ```wlan``` interfaces automatically and the ```WIFI``` will not work.
+## Wifi and WPS Issue
 
-Here ```ENABLE```:  
-https://192.168.1.1/cgi-bin/luci/admin/network/wireless  
-
+It is only working, if only these are built in the firmware: ```hostapd-common wpad-mini```, nothing other like that. If not, it will not work. [WPS](docs/wps.md) info.
 
 ## The release
 
 * Linksys WRT1900ACS / Linksys WRT3200ACM / Linksys WRT1900ACS-eduperez-mwlwifi / Linksys WRT3200ACM-eduperez-mwlwifi
   * https://cdn.corifeus.com/lede/17.01.4/targets/mvebu/generic/
-    * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works.
+    * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works. If you have a bricked firmware, you need a USB-TTL. [Linksys USB-TTL](docs/linksys-usb-ttl.md).
 
-If you have a bricked firmware, you need a USB-TTL cable and do like this:
-```text
-Hit any key to stop autoboot:  0 
-Marvell>> setenv 192.168.1.1
-Marvell>> setenv netmask 255.255.255.0
-Marvell>> setenv serverip 192.168.1.33
-Marvell>> setenv firmwareName insomnia-eduperez-mwlwifi-lede-17.01.4-mvebu-linksys-wrt3200acm-squashfs-factory.img
-Marvell>> run update_both_images
-```
+
+
 
 * D-Link DIR-860l B1
   * https://cdn.corifeus.com/lede/17.01.4/targets/ramips/mt7621/
@@ -313,6 +304,9 @@ Tested on WRT1900ACSv2 and WRT3200ACM, works.
 
 # Linksys WRT 3200ACM 160 Mhz
 [README](docs/linksys-wrt-3200acm-160mhz.md)
+
+# Linksys USB-TTL
+[README](docs/linksys-usb-ttl.md)
 
 [//]: #@corifeus-footer
 
