@@ -31,6 +31,11 @@ RUN echo 'docker ALL=NOPASSWD: ALL' > /etc/sudoers.d/openwrt
 RUN mkdir build
 RUN chown docker:docker /build
 
+# clean up
+RUN apt-get autoremove -y
+RUN apt-get autoclean -y
+RUN apt-get clean -y
+
 USER docker
 
 WORKDIR build

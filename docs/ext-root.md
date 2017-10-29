@@ -71,7 +71,7 @@ cat /etc/config/fstab
 df -h 
 
 # THIS IS MY OWN SETUP
-
+# if the WAN is not DHCP then have to restore the config first
 # this is my own setup, you don't needed
 # just in my /dev/sda3 i have monthly, weekly and daily backup
 mkdir -p /opt/ 
@@ -84,14 +84,14 @@ opkg update
 opkg install node node-npm
 npm install
 
-# before start, create the sygnus vpn
+# wps.md
+# vpn-client.create.md
 # restore config
+opkg update
 ./init-router
 
 reboot && exit
 
-# wps.md
-# vpn-client.create.md
 ```
 
 # Ext-root via USB driver with existing data
@@ -102,7 +102,7 @@ I was unable to solve ```ext-root``` with existing data right now.
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.56-466 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.59-488 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
  

@@ -40,10 +40,10 @@ function feeds() {
 }
 
 function fix-paths() {
-#    sed -i.bak "s|CONFIG_VERSION_REPO.*|CONFIG_VERSION_REPO=\"$1\"|g" .config
+    sed -i.bak "s|CONFIG_VERSION_REPO.*|CONFIG_VERSION_REPO=\"$1\"|g" .config
     sed -i.bak 's#CONFIG_TARGET_INIT_PATH="/usr/sbin#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-lede:/usr/sbin#g' .config
     cat .config | grep CONFIG_TARGET_INIT_PATH
-#    cat .config | grep CONFIG_VERSION_REPO
+    cat .config | grep CONFIG_VERSION_REPO
 
 }
 
@@ -60,7 +60,7 @@ function setup-config-and-build() {
 
     # disable mariadb lite
     echo "We build full MariaDB, it will be not be synced but it is, I just removed a line ..."
-    sed -i.bak -e "/config_mariadb_lite/Id" $DIR/.config
+    sed -i.bak 's#CONFIG_MARIADB_LITE=y#\# CONFIG_MARIADB_LITE is not set#g' $DIR/.config
     cat .config | grep mariadb
 
     sudo cp $DIR/.config /build/router/${ROUTER_PROFILE}/source/.config
@@ -84,10 +84,10 @@ function setup-config-and-build() {
     then
         sudo touch $is_downloaded || true
         sudo chmod ugo+rwx $is_downloaded || true
-        make V=s download
+        make download #V=s
     fi
 
-    make V=s
+    make #V=s
 }
 
 function setup-image-builder-and-build() {
@@ -107,9 +107,9 @@ function setup-image-builder-and-build() {
     sed -i.bak 's#src/gz#src#g' repositories.conf
     sed -i.bak "s#$4#file:///build/source/bin#g" repositories.conf
 
-    DIST_FEEDS=$(find -name distfeeds.conf)
-    sed -i "s#http://downloads.lede-project.org/releases/${LEDE_VERSION_TOTAL}#$CDN_REPO#g" $DIST_FEEDS
-    cat $DIST_FEEDS
+#    DIST_FEEDS=$(find -name distfeeds.conf)
+#    sed -i "s#http://downloads.lede-project.org/releases/${LEDE_VERSION_TOTAL}#$CDN_REPO#g" $DIST_FEEDS
+#    cat $DIST_FEEDS
 
     rm -rf ./files
     mkdir files
@@ -157,7 +157,7 @@ function generate-firmware-dir() {
 
 function delete-firmware-lede-files() {
     generate-firmware-dir
-    find $firmware_files_dir -maxdepth 1 -type f -name "lede-${ROUTER_TARGET}*" -delete
+    find $firmware_files_dir -maxdepth 1 -type f -name "lede-${LEDE_VERSION_TOTAL}*" -delete
 }
 
 function final() {

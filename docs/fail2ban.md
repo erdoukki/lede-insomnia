@@ -58,11 +58,12 @@ setup.py install
 ```
 
 by Patrik aka ```p3x-robot / p3x / corifeus```
+
 [//]: #@corifeus-footer
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.56-466 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.59-488 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
  

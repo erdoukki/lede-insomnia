@@ -59,7 +59,15 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
   * Select all target specific packages by default
   * Select all kernel module packages by default
 * Build the LEDE Image Build
-  * Include package repositories  
+  * Include package repositories
+* Image configuration - ENTER
+  * Version configuration options - ENTER
+    * Release version nickname
+      * INSOMNIA    
+    * Manufacturer name
+      * p3x
+    * Manufacturer URL
+      * https://pages.corifeus.com/lede-insomnia
 * LUCI
   * Collections
     * luci
@@ -254,7 +262,7 @@ sudo renice -20 10728 # this was the dockerd PID
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.56-466 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.59-488 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
  

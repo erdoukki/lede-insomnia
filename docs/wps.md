@@ -27,7 +27,7 @@ opkg update
 opkg remove wpad-mini
 # if you remove it, it will not work
 opkg install wpad hostapd-utils
-reboot
+reboot && exit
 
 # wait about 2 minutes
 hostapd_cli -i wlan1 wps_pbc
@@ -69,7 +69,7 @@ config wifi-iface 'default_radio1'
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.56-466 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.59-488 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
  
