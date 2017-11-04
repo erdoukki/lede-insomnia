@@ -12,7 +12,7 @@
 Always check out the original image builder if it changed (like sources urls).
 
 
-# LEDE Latest Stable build with latest NodeJs, eduperez/mwlwifi_LEDE's WIFI driver, Redis 4, MariaDB
+# LEDE Latest Stable build with latest NodeJs 9, eduperez/mwlwifi_LEDE's WIFI driver, Redis 4, MariaDB 5.5
 
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM and D-Link DIR860l B1 is already built, but based on the READMEs, you can built a new one easy.  
 
@@ -54,6 +54,7 @@ Besides, the most important packages are there, like:
 * redis 4
 * msmtp
 * mariadb 5.5
+* nodejs latest
 
 I cant's list all of it, there is enough for now. See what is in [create from scratch](docs/create-from-scratch.md).
 
@@ -312,7 +313,7 @@ Tested on WRT1900ACSv2 and WRT3200ACM, works.
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.65-494 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.68-515 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LFRV89WPRMMVE&lc=HU&item_name=Patrik%20Laszlo&item_number=patrikx3&currency_code=HUF&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted) 
 

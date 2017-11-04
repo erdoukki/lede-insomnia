@@ -3,6 +3,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 build_host_path=/build/host-build
 
+#set -e
 # grep -rnw  -e 'downloads.lede-project.org'
 
 function pre-build() {
@@ -60,8 +61,11 @@ function setup-config-and-build() {
 
     # disable mariadb lite
     echo "We build full MariaDB, it will be not be synced but it is, I just removed a line ..."
-    sed -i.bak 's#CONFIG_MARIADB_LITE=y#\# CONFIG_MARIADB_LITE is not set#g' $DIR/.config
+    sed -i 's#CONFIG_MARIADB_LITE=y#\# CONFIG_MARIADB_LITE is not set#g' $DIR/.config
     cat .config | grep mariadb
+
+    # disable node unused packages
+    cat .config | grep node
 
     sudo cp $DIR/.config /build/router/${ROUTER_PROFILE}/source/.config
 
@@ -84,10 +88,10 @@ function setup-config-and-build() {
     then
         sudo touch $is_downloaded || true
         sudo chmod ugo+rwx $is_downloaded || true
-        make download #V=s
+        make download V=s
     fi
 
-    make #V=s
+    make V=s
 }
 
 function setup-image-builder-and-build() {
