@@ -8,7 +8,7 @@
         "icon": "fa fa-coffee",
         "code": "Insomnia"
     },
-    "version": "17.1.76-524",
+    "version": "17.1.77-525",
     "description": "Latest Stable LEDE Version with many plus packages",
     "main": "src/index.js",
     "directories": {
@@ -32,7 +32,7 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^1.7.994-221"
+        "corifeus-builder": "^1.7.996-222"
     },
     "engines": {
         "node": ">=8.9.0"
