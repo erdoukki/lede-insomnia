@@ -62,15 +62,6 @@ I cant's list all of it, there is enough for now. See what is in [create from sc
 
 [MariaDB 5.5 is here!](https://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a9_vfpv3/mariadb/) but in D-Link DIR860l B1 as well.
 
-## Requirements
-
-**Docker CE**
-
-For your workstation you don't really NodeJs, but my Travis, Scrutinizer and my auto generated web sites are required...   
-   
-This is a LEDE Docker builder and a living Docker repo as well, ready to build, a lot already built.
-(A big image / full firmware, the most important packages are built. Ready to use.)  
-
 # Routers pre-built
 
 If you want to install right away with LUCI:
@@ -78,12 +69,25 @@ https://cdn.corifeus.com/lede/17.01.4/
 
 ## Ext-root issue
 
+### Solution 1
+If you use for example:  
+ https://cdn.corifeus.com/lede/version/arhitecture/target/type/file-firmware-squashfs-sysupgrade.bin 
+ 
+So a **sysypgrade** firmware. Then I can re-use the old ```ext-root```, that I had before. 
+ 
+But, if you use a factory, like:  
+https://cdn.corifeus.com/lede/version/arhitecture/target/type/file-firmware-squashfs-factory.bin
+
+Then it doesn't work, you have to re-build to ```ext-root```. 
+
+### Solution 2 
+
 If you have ```ext-root``` before ```sysupgrade``` you need to execute ```rm -f /overlay/etc/.extroot-uuid```. After restart, please ```reboot``` again and it works. 
 
 Based on:  
 https://forum.lede-project.org/t/solved-sd-card-extroot-stop-auto-mount-after-firmware-upgrade/4310/1
 
-#### For me it is not working, looking for a better solution.
+#### For me it is not working, I use solution 1.
 
 ## Wifi and WPS Issue
 
@@ -94,8 +98,6 @@ It is only working, if only these are built in the firmware: ```hostapd-common w
 * Linksys WRT1900ACS / Linksys WRT3200ACM / Linksys WRT1900ACS-eduperez-mwlwifi / Linksys WRT3200ACM-eduperez-mwlwifi
   * https://cdn.corifeus.com/lede/17.01.4/targets/mvebu/generic/
     * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works. If you have a bricked firmware, you need a USB-TTL. [Linksys USB-TTL](docs/linksys-usb-ttl.md).
-
-
 
 
 * D-Link DIR-860l B1
@@ -175,6 +177,15 @@ They files to generate are in the same link above. So, if you want to sign, you 
 If you have this signed gpg and usign data nad keys, I can help you to signed firmwares and packages.
 
 ## Docker
+
+### Requirements
+
+**Docker CE**
+
+For your workstation you don't really NodeJs, but my Travis, Scrutinizer and my auto generated web sites are required...   
+   
+This is a LEDE Docker builder and a living Docker repo as well, ready to build, a lot already built.
+(A big image / full firmware, the most important packages are built. Ready to use.)  
 
 #### Changing the firmware pre-built, so the build will be fast!!!
 
@@ -313,7 +324,7 @@ Tested on WRT1900ACSv2 and WRT3200ACM, works.
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.92-535 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.98-539 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LFRV89WPRMMVE&lc=HU&item_name=Patrik%20Laszlo&item_number=patrikx3&currency_code=HUF&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted) 
 
