@@ -96,7 +96,8 @@ reboot && exit
 
 # Ext-root via USB driver with existing data
 
-I was unable to solve ```ext-root``` with existing data right now.
+See info about here:  
+https://pages.corifeus.com/github/lede-insomnia/
 
 [//]: #@corifeus-footer
 
