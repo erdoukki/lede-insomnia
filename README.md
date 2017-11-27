@@ -17,7 +17,6 @@ Always check out the original image builder if it changed (like sources urls).
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM and D-Link DIR860l B1 is already built, but based on the READMEs, you can built a new one easy.  
 
 ### The packages that are pre-built in all ```insomnia``` firmwares
-* bash
 * luci-mod-admin-full
 * luci ssl
 * luci-app-firewall
@@ -35,7 +34,6 @@ Always check out the original image builder if it changed (like sources urls).
 * miniupnpd
 * watch
 * whereis 
-* everything to you need to create ext-root via USB
 * curl
 * git
 * git-http
