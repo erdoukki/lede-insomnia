@@ -15,7 +15,14 @@ cp -avr /build/router/dir-860l-b1/source/. /build/source
 grep -r "IMG_MDC_DMA" /build/source
 ```
 
-Disable IMG_MDC_DMA
+Disable IMG_MDC_DMA.
+
+Should look like this:
+```text
+docker@8b705d1661b2:/build/source$ grep -r "IMG_MDC_DMA" /build/source
+/build/source/target/linux/ramips/mt7621/config-4.4:CONFIG_IMG_MDC_DMA=y
+/build/source/tmp/.kconfig-ramips_mt7621:CONFIG_IMG_MDC_DMA=n
+```
 
 [//]: #@corifeus-footer
 

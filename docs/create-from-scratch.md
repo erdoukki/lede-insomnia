@@ -76,12 +76,8 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
     * luci-base
     * luc-mode-admin-full
   * Applications
-    * luci-add-ntpc
     * luci-app-openvpn
-    * luci-app-qos
     * luci-app-samba
-    * luci-app-statistics
-    * luci-add-uhttpd
     * luci-app-upnp
     * luci-app-wol
 * Base system
@@ -90,7 +86,6 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
   * procd
     * configuration
       * Print the shutdown to the console as well as logging it to syslog
-  * qos-scripts
 * Kernel modules
   * Select everything, but I think, it is now already added, except remove the below  
   * Wireless Drivers **(Required for Linksys WRT routers)**
@@ -101,7 +96,7 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
       * Configuration
         * Version Selection
           * 9.x
-    * SELECT ALL
+    * node-npm
   * PHP
     * php7
     * PHP7 Filter support
@@ -131,9 +126,9 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
     * openssh-client-utils
     * openssh-sftp-server
   * VPN
+    * ipsec-tools
     * openvpn-easy-rsa
     * openvpn-openssl
-    * ipsec-tools
     * xl2tpd   
   * Version Control Systems
     * git
@@ -240,7 +235,10 @@ make -j9 kernel_menuconfig
 * Exit  
 
 For DIR DIR-860L B1, there is no option ```CONFIG_IMG_MDC_DMA=y```, so you have to add in here:
-```lede-insomnia/router/dir-860l-b1/source/target/linux/ramips/mt7621/config-4.4```. 
+```lede-insomnia/router/dir-860l-b1/source/target/linux/ramips/mt7621/config-4.4``` . 
+ 
+More info: [D-Link DIR-860l B1](docs/d-link-dir860l-b1.md) .
+ 
  
 # In an another terminal you can increase the buidling 
 

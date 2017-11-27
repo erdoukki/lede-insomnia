@@ -23,6 +23,7 @@ Always check out the original image builder if it changed (like sources urls).
 * luci-app-openvpn
 * luci-app-samba
 * luci-app-upnp
+* luci-app-wol
 * luci-theme-bootstrap
 * firewall
 * dropbear
@@ -73,12 +74,14 @@ https://cdn.corifeus.com/lede/17.01.4/
 If you use for example:  
  https://cdn.corifeus.com/lede/version/arhitecture/target/type/file-firmware-squashfs-sysupgrade.bin 
  
-So a **sysypgrade** firmware. Then I can re-use the old ```ext-root```, that I had before. 
+So it is a **sysypgrade** firmware. Then I can re-use the old ```ext-root```, that I had before. 
  
 But, if you use a factory, like:  
 https://cdn.corifeus.com/lede/version/arhitecture/target/type/file-firmware-squashfs-factory.bin
 
 Then it doesn't work, you have to re-build to ```ext-root```. 
+
+There is a ```Solution 2```, but for me it didn't work, but by using a ***sysupgrade*** firmware. It will re-use the ```ext-root```.
 
 ### Solution 2 
 
@@ -97,8 +100,19 @@ It is only working, if only these are built in the firmware: ```hostapd-common w
 
 * Linksys WRT1900ACS / Linksys WRT3200ACM / Linksys WRT1900ACS-eduperez-mwlwifi / Linksys WRT3200ACM-eduperez-mwlwifi
   * https://cdn.corifeus.com/lede/17.01.4/targets/mvebu/generic/
-    * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works. If you have a bricked firmware, you need a USB-TTL. [Linksys USB-TTL](docs/linksys-usb-ttl.md).
+    * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works. 
+  * If you have a bricked firmware, you need a USB-TTL. [Linksys USB-TTL](docs/linksys-usb-ttl.md).
 
+# Error code: 18005
+
+When trying to install a firmware image, I get the following error:
+
+Error code: 18005, Upgrade unsuccessfully because the version of the upgraded file was incorrect. Please check the file name.
+
+Solution: Rename the firmware image to something short, like e.g. factory.bin
+
+Based on 
+https://lede-project.org/faq/before_installation#error_code18005
 
 * D-Link DIR-860l B1
   * https://cdn.corifeus.com/lede/17.01.4/targets/ramips/mt7621/

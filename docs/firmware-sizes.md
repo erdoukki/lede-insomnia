@@ -15,12 +15,12 @@ https://wiki.openwrt.org/toh/d-link/dir-860l
 ## Linksys WRT1900ACS
 https://wiki.openwrt.org/toh/linksys/wrt_ac_series
 
-34 MBytes
+40 MiB = 41.94304 MB
 
 ## Linksys WRT3200ACM
 https://wiki.openwrt.org/toh/linksys/wrt_ac_series
 
-74 Mbytes
+80 MiB = 83.88608 MB
 
 [//]: #@corifeus-footer
 
