@@ -40,8 +40,7 @@ Always check out the original image builder if it changed (like sources urls).
 * midnight commander
 * wget
 * openvpn
-* samba
-* bootstrap
+* samba server
 * openssh-sftp-server
 * openvpn-easy-rsa
 * openvpn-openssl
