@@ -49,7 +49,6 @@ Besides, the most important packages are there, like:
 
 * nginx
 * apache
-* sqllite
 * php 7
 * python 2
 * redis 4
