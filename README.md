@@ -19,6 +19,7 @@ Always check out the original image builder if it changed (like sources urls).
 ### The packages that are pre-built in all ```insomnia``` firmwares
 * bash
 * luci-mod-admin-full
+* luci ssl
 * luci-app-firewall
 * luci-app-openvpn
 * luci-app-samba
@@ -29,31 +30,42 @@ Always check out the original image builder if it changed (like sources urls).
 * dropbear
 * ca-certificates
 * nano
+* ncdu
+* bash
 * miniupnpd
 * watch
 * whereis 
 * everything to you need to create ext-root via USB
 * curl
 * git
+* git-http
+* midnight commander
 * wget
 * openvpn
 * samba
 * bootstrap
 * openssh-sftp-server
 * openvpn-easy-rsa
+* openvpn-openssl
 * rsync
+* rsyncd
+* logrotate
+* tar
+* whereis
 * wpad & hostapd-utils so you can use ***WPS*** 
+* all required packages to create ```ext-root```
 * and all packages have luci settings as well
 
 Besides, the most important packages are there, like:  
 
+* samba client
 * nginx
 * apache
 * php 7
 * python 2
 * redis 4
 * msmtp
-* mariadb 5.5
+* mariadb 5.5.58
 * nodejs v9 latest
 
 I cant's list all of it, there is enough for now. See what is in [create from scratch](docs/create-from-scratch.md).
