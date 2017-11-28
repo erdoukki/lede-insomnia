@@ -106,20 +106,15 @@ It is only working, if only these are built in the firmware: ```hostapd-common w
 
 ## The release
 
-* Linksys WRT1900ACS / Linksys WRT3200ACM / Linksys WRT1900ACS-eduperez-mwlwifi / Linksys WRT3200ACM-eduperez-mwlwifi
+* Linksys WRT1900ACS-eduperez-mwlwifi / Linksys WRT3200ACM-eduperez-mwlwifi
   * https://cdn.corifeus.com/lede/17.01.4/targets/mvebu/generic/
     * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works. 
   * If you have a bricked firmware, you need a USB-TTL. [Linksys USB-TTL](docs/linksys-usb-ttl.md).
-
-# Error code: 18005
-
-When trying to install a firmware image, I get the following error:
-
-Error code: 18005, Upgrade unsuccessfully because the version of the upgraded file was incorrect. Please check the file name.
-
-Solution: Rename the firmware image to something short, like e.g. factory.bin
-
-Based on 
+  * Error code: 18005
+    * When trying to install a firmware image, I get the following error:
+    * Error code: 18005, Upgrade unsuccessfully because the version of the upgraded file was incorrect. Please check the file name.
+    * Solution: Rename the firmware image to something short, like e.g. factory.bin
+    * Based on 
 https://lede-project.org/faq/before_installation#error_code18005
 
 * D-Link DIR-860l B1
