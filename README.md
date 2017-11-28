@@ -50,7 +50,7 @@ Always check out the original image builder if it changed (like sources urls).
 * tar
 * whereis
 * wpad & hostapd-utils so you can use ***WPS*** 
-* all required packages to create ```ext-root```
+* all required packages are built so you are able to create an ```ext-root```
 * and all packages have luci settings as well
 
 Besides, the most important packages are there, like:  
