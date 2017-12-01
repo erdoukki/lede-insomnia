@@ -109,7 +109,7 @@ function setup-image-builder-and-build() {
     pushd $IMAGE_BUILDER_PATH
 
     sed -i.bak 's#src/gz#src#g' repositories.conf
-    sed -i.bak "s#$4#file:///build/source/bin#g" repositories.conf
+    sed -i.bak "s#$4#file:///build/source/bin#g" repositories.conf || true
 
 #    DIST_FEEDS=$(find -name distfeeds.conf)
 #    sed -i "s#http://downloads.lede-project.org/releases/${LEDE_VERSION_TOTAL}#$CDN_REPO#g" $DIST_FEEDS
@@ -120,14 +120,14 @@ function setup-image-builder-and-build() {
     cp -R /build/image-builder-files/* files/
     DIST_FEEDS_DIR=files/etc/opkg
     mkdir -p $DIST_FEEDS_DIR
-    cp $DIST_FEEDS $DIST_FEEDS_DIR
+    #cp $DIST_FEEDS $DIST_FEEDS_DIR
     make image PROFILE=$ROUTER_PROFILE PACKAGES="$(< /build/router/${ROUTER_PROFILE}/opkg-list-installed.txt)" FILES=files/
 
     for FIND_PATH in $(find ${IMAGE_BUILDER_PATH}/bin -type f -iname '*lede*')
     do
         FILE=$(basename "$FIND_PATH")
         BIN_DIR=$(dirname "$FIND_PATH")
-        mv $FIND_PATH "/build/source/bin/targets/${ROUTER_TARGET}/${ROUTER_SUB_TARGER}/${FIRMWARE_NAME}-${FILE}"
+        mv $FIND_PATH "/build/source/bin/targets/${ROUTER_TARGET}/${ROUTER_SUB_TARGET}/${FIRMWARE_NAME}-${FILE}"
     done
 
     popd
@@ -160,8 +160,9 @@ function generate-firmware-dir() {
 }
 
 function delete-firmware-lede-files() {
-    generate-firmware-dir
-    find $firmware_files_dir -maxdepth 1 -type f -name "lede-${LEDE_VERSION_TOTAL}*" -delete
+##    generate-firmware-dir
+##    find $firmware_files_dir -maxdepth 1 -type f -name "lede-${LEDE_VERSION_TOTAL}*" -delete
+    echo "Disabled delete lede firmwares, keep originals."
 }
 
 function final() {

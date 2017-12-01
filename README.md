@@ -14,7 +14,7 @@ Always check out the original image builder if it changed (like sources urls).
 
 # LEDE Latest Stable build with latest NodeJs 9, eduperez/mwlwifi_LEDE's WIFI driver, latest Redis 4 stable, MariaDB 5.5
 
-... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM and D-Link DIR860l B1 is already built, but based on the READMEs, you can built a new one easy.  
+... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM, D-Link DIR860L B1 and RPI-3 is already built, but based on the READMEs, you can built a new one easy.  
 
 ### The packages that are pre-built in all ```insomnia``` firmwares
 * luci-mod-admin-full
@@ -133,6 +133,8 @@ https://lede-project.org/faq/before_installation#error_code18005
       1. When it is green, you can turn off the static settings for the ethernet and enable DHCP.
       1. The you can open with 192.168.1.1, no password at all, you got LUCI and SSH as well.
       1. It works for sure, it's not like Linksys WRT, that you need an USB-TTL cable…
+* RPI-3
+  * https://cdn.corifeus.com/lede/17.01.4/targets/brcm2708/bcm2710/
 
 For Linksys the firmwares that start with ```insomnia-eduperez-mwlwifi``` worth trying, because your WIFI is will be flying.
 

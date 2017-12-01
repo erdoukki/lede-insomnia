@@ -2,13 +2,13 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $DIR/lede-insomnia-lib
 
-ROUTER_PROFILE="dir-860l-b1"
-ROUTER_TARGET="ramips"
-ROUTER_SUB_TARGET="mt7621"
+ROUTER_PROFILE="rpi-3"
+ROUTER_TARGET="brcm2708"
+ROUTER_SUB_TARGET="bcm2710"
 FIRMWARE_NAME="insomnia"
 IMAGE_BUILDER_FILE="/build/source/bin/targets/${ROUTER_TARGET}/${ROUTER_SUB_TARGET}/lede-imagebuilder-${LEDE_VERSION_TOTAL}-${ROUTER_TARGET}-${ROUTER_SUB_TARGET}.Linux-x86_64.tar.xz"
 
-tag="d-link-dir-860l-b1"
+tag="rpi-3"
 
 pre-build
 feeds

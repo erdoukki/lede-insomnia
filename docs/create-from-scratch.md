@@ -46,15 +46,17 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
 * Target System  
   * Linksys WRT1900ACS => Marvell Armada 37x/38x/XP  
   * Linksys WRT3200ACM => Marvell Armada 37x/38x/XP
-  * D-Link DIR-860l B1 => MediaTek Ralink MIPS  
-* Subtarget (for D-Link, Linksys missing this, not needed)
-  * MT7621   
+  * RPI 3 => Broadcom BCM27xx  
+* Subtarget (Linksys missing this, not needed)
+  * D-Link DIR-860l B1 => MT7621
+  * RPI 3 => BCM2710  
 * Target Profile  
   * Linksys WRT1900ACS => Linksys WRT1900ACS
   * Linksys WRT3200ACM => Linksys WRT3200ACM
   * D-Link DIR-860l B1 => MT7621  
     * Kernel type => MIPS FPU EMULATOR
       * it comes later with ```make -j9 kernel_menuconfig```, after the packages selected, just some info    
+  * RPI 3 => Raspberrry Pi 3 B/CM  
 * Global build settings
   * Select all target specific packages by default
   * Select all kernel module packages by default

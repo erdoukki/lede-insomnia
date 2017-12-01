@@ -4,9 +4,9 @@ source $DIR/lede-insomnia-lib
 
 ROUTER_PROFILE="linksys-wrt1900acs"
 ROUTER_TARGET="mvebu"
-ROUTER_SUB_TARGER="generic"
+ROUTER_SUB_TARGET="generic"
 FIRMWARE_NAME="insomnia"
-IMAGE_BUILDER_FILE="/build/source/bin/targets/${ROUTER_TARGET}/${ROUTER_SUB_TARGER}/lede-imagebuilder-${LEDE_VERSION_TOTAL}-${ROUTER_TARGET}.Linux-x86_64.tar.xz"
+IMAGE_BUILDER_FILE="/build/source/bin/targets/${ROUTER_TARGET}/${ROUTER_SUB_TARGET}/lede-imagebuilder-${LEDE_VERSION_TOTAL}-${ROUTER_TARGET}.Linux-x86_64.tar.xz"
 
 tag="linksys-wrt"
 
