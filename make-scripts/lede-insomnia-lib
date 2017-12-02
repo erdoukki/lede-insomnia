@@ -8,7 +8,7 @@ build_host_path=/build/host-build
 
 function pre-build() {
 
-    cp -R /build/make-scripts/* /build/source
+    $DIR/copy-scripts.sh
     ./scripts/feeds update -a
     ./scripts/feeds install -a
 
@@ -69,7 +69,7 @@ function setup-config-and-build() {
 
     sudo cp $DIR/.config /build/router/${ROUTER_PROFILE}/source/.config
 
-    if [ -z "$3" ] || [ "$3" = "nosign" ]
+    if [ -z "$3" ] || [ "$3" = "nosign" ] || [ "$3" = "corifeus" ]
     then
         CDN_REPO="http://cdn.corifeus.com/lede/${LEDE_VERSION_TOTAL}"
     else
@@ -91,12 +91,7 @@ function setup-config-and-build() {
         make download V=s
     fi
 
-    if [ "$4" = "ignore" ];
-    then
-        ignore="IGNORE_ERRORS=1"
-    fi
-
-    $ignore make V=s
+    IGNORE_ERRORS=1 make V=s
 }
 
 function setup-image-builder-and-build() {

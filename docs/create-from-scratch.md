@@ -76,8 +76,8 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
     * SELECT ALL
 * Kernel modules
   * Select everything, but I think, it is now already added, except remove the below  
-  * Wireless Drivers **(Required for Linksys WRT routers only)**
-    * kmod-mwifiex-sdio **(CLEAR, so not show M or * )**    
+  * Wireless Drivers
+    * kmod-mwifiex-sdio - UNCHECK for Linksys WRT     
 * Languages
   * Node.js
     * node
@@ -100,10 +100,10 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
       * mariadb-client-extra
       * mariadb-server
         * ENTER
-          * clear Mariadb server lite, use full
+          *  Mariadb server lite - UNCHECK
   * mc - select then enter
     * Configuration
-      * Enable internal editor - CLEAR, DISABLE
+      * Enable internal editor - UNCHECK
 * Exit
 * YES
 

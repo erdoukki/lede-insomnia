@@ -78,6 +78,8 @@ RUN echo "alias ll='ls -l'" >> /home/docker/.bashrc
 RUN echo "sudo chown -R docker:docker /build" >> /home/docker/.bashrc
 RUN echo "SELECTED_EDITOR=\"/bin/nano\"" > /home/docker/.selected_editor
 
+ENV PATH="/build/source:${PATH}"
+
 CMD /bin/bash
 
 

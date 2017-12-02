@@ -10,9 +10,17 @@ IMAGE_BUILDER_FILE="/build/source/bin/targets/${ROUTER_TARGET}/${ROUTER_SUB_TARG
 
 tag="rpi-3"
 
+
+if [ -z "$1" ];
+then
+ build="corifeus"
+else
+ build=$1
+fi
+
 pre-build
 feeds
-setup-config-and-build $ROUTER_PROFILE $tag $1 ignore
+setup-config-and-build $ROUTER_PROFILE $tag $build
 
 if [ "$1" != "nosign" ] && [ "$2" != "nosign" ];
 then

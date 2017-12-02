@@ -10,9 +10,16 @@ IMAGE_BUILDER_FILE="/build/source/bin/targets/${ROUTER_TARGET}/${ROUTER_SUB_TARG
 
 tag="linksys-wrt"
 
+if [ -z "$1" ];
+then
+ build="corifeus"
+else
+ build=$1
+fi
+
 pre-build
 patches-and-feeds
-setup-config-and-build $ROUTER_PROFILE $tag $1 ignore
+setup-config-and-build $ROUTER_PROFILE $tag $build
 setup-image-builder-and-build $IMAGE_BUILDER_FILE $ROUTER_PROFILE $FIRMWARE_NAME $1
 #setup-image-builder-and-build $IMAGE_BUILDER_FILE $ROUTER_PROFILE $FIRMWARE_NAME $1
 post-build $1 $2
