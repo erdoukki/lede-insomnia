@@ -12,7 +12,7 @@ tag="d-link-dir-860l-b1"
 
 pre-build
 feeds
-setup-config-and-build $ROUTER_PROFILE $tag $1
+setup-config-and-build $ROUTER_PROFILE $tag $1 ignore
 
 if [ "$1" != "nosign" ] && [ "$2" != "nosign" ];
 then

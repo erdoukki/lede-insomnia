@@ -91,7 +91,12 @@ function setup-config-and-build() {
         make download V=s
     fi
 
-    make V=s
+    if [ "$4" = "ignore" ];
+    then
+        ignore="IGNORE_ERRORS=1"
+    fi
+
+    $ignore make V=s
 }
 
 function setup-image-builder-and-build() {

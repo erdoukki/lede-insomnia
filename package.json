@@ -38,5 +38,7 @@
         "node": ">=8.9.0"
     },
     "homepage": "https://pages.corifeus.com/lede-insomnia",
-    "dependencies": {}
+    "dependencies": {
+        "corifeus-utils": "^1.1.687-236"
+    }
 }

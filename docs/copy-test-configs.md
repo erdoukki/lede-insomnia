@@ -9,6 +9,7 @@
 cp -avr /build/router/dir-860l-b1/source/. /build/source
 cp -avr /build/router/linksys-wrt1900acs/source/. /build/source
 cp -avr /build/router/linksys-wrt3200acm/source/. /build/source
+cp -avr /build/router/rpi-3/source/. /build/source
 ```
 
 [//]: #@corifeus-footer

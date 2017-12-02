@@ -12,7 +12,7 @@ tag="linksys-wrt"
 
 pre-build
 patches-and-feeds
-setup-config-and-build $ROUTER_PROFILE $tag $1
+setup-config-and-build $ROUTER_PROFILE $tag $1 ignore
 setup-image-builder-and-build $IMAGE_BUILDER_FILE $ROUTER_PROFILE $FIRMWARE_NAME $1
 #setup-image-builder-and-build $IMAGE_BUILDER_FILE $ROUTER_PROFILE $FIRMWARE_NAME $1
 post-build $1 $2

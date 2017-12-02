@@ -44,6 +44,7 @@ The same, if you have a server instead ```cdn.corifeus.com```, you can change it
 For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package, they are in ```lede-insomnia/patches```, you can copy them safely into the ```/build/source```. 
 
 * Target System  
+  * D-Link DIR-860l B1 => MediaTek Ralink MIPS
   * Linksys WRT1900ACS => Marvell Armada 37x/38x/XP  
   * Linksys WRT3200ACM => Marvell Armada 37x/38x/XP
   * RPI 3 => Broadcom BCM27xx  
@@ -51,17 +52,18 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
   * D-Link DIR-860l B1 => MT7621
   * RPI 3 => BCM2710  
 * Target Profile  
-  * Linksys WRT1900ACS => Linksys WRT1900ACS
-  * Linksys WRT3200ACM => Linksys WRT3200ACM
   * D-Link DIR-860l B1 => MT7621  
     * Kernel type => MIPS FPU EMULATOR
-      * it comes later with ```make -j9 kernel_menuconfig```, after the packages selected, just some info    
+      * it comes later with ```make -j9 kernel_menuconfig```, after the packages selected, just some info  * Linksys WRT1900ACS => Linksys WRT1900ACS
+  * Linksys WRT3200ACM => Linksys WRT3200ACM  
   * RPI 3 => Raspberrry Pi 3 B/CM  
+* Build the LEDE Image Build
+  * Include package repositories
 * Global build settings
   * Select all target specific packages by default
   * Select all kernel module packages by default
-* Build the LEDE Image Build
-  * Include package repositories
+  * Select all userspace packages by default
+  * Set build defaults for automatic builds
 * Image configuration - ENTER
   * Version configuration options - ENTER
     * Release version nickname
@@ -70,103 +72,28 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
       * p3x
     * Manufacturer URL
       * https://pages.corifeus.com/lede-insomnia
-* LUCI
-  * Collections
-    * luci
-    * luci-ssl-openssl
-  * Modules
-    * luci-base
-    * luc-mode-admin-full
-  * Applications
-    * luci-app-openvpn
-    * luci-app-samba
-    * luci-app-upnp
-    * luci-app-wol
-* Base system
-  * ca-bundle
-  * ca-certificates
-  * procd
-    * configuration
-      * Print the shutdown to the console as well as logging it to syslog
+  * Seperate feed repositories
+    * SELECT ALL
 * Kernel modules
   * Select everything, but I think, it is now already added, except remove the below  
-  * Wireless Drivers **(Required for Linksys WRT routers)**
-    * kmod-mwifiex-sdio **(CLEAR, so not show M or * )**
+  * Wireless Drivers **(Required for Linksys WRT routers only)**
+    * kmod-mwifiex-sdio **(CLEAR, so not show M or * )**    
 * Languages
   * Node.js
     * node
       * Configuration
         * Version Selection
           * 9.x
-    * node-npm
   * PHP
     * php7
     * PHP7 Filter support
     * SELECT ALL
-   * Python
-     * python
-* Libraries
-  * **IN THE FUTURE, I WILL ADD ALL LIBRARIRES** ?
-  * liblzo
-  * librpc
-* Mail
-  * msmtp
 * Network
-  * File Transfer
-    * curl
-    * rsync
-    * rsyncd
-    * wget
-  * Firewall
-    * iptables
-      * Enter
-        * iptables-mod-ipsec
-  * Routing and Redirection
-    * ip-full
-  * SSH
-    * openssh-client
-    * openssh-client-utils
-    * openssh-sftp-server
-  * VPN
-    * ipsec-tools
-    * openvpn-easy-rsa
-    * openvpn-openssl
-    * xl2tpd   
-  * Version Control Systems
-    * git
-    * git-http
   * Web Servers/Proxies
-    * apache (**if you added the patches**)
     * nginx - Select then Enter
       * Configuration
-        * Select all
-  * 6in4
-  * cifsmount
-  * hostapd-common
-  * hostpad-utils
-  * ppp
-    * ppp-mod-pppol2tp
-    * ppp-mod-pptp
-  * redis
-  * samba36-client
-  * wpad
-  
+        * Select all  
 * Utilities
-  * Compression
-    * Select all
-  * Disc
-    * blkid
-    * fdisk
-    * findfs
-    * hdparm
-  * Editors
-    * nano
-  * Filesystem
-    * e2fsprogs
-    * ncdu
-    * swap-utils
-  * Shell
-    * bash 
   * database
     * mariadb
       * mariadb-client
@@ -174,42 +101,9 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
       * mariadb-server
         * ENTER
           * clear Mariadb server lite, use full
-  * bonniexx
-  * coreutils - select then enter to choose
-    * coreutils-date
-    * coreutils-dirname
-    * coreutils-md5sum
-    * coreutils-nice
-    * coreutils-printf
-    * coreutils-readlink
-    * coreutils-realpath
-    * coreutils-rm
-    * coreutils-rmdir
-    * coreutils-sha1sum
-    * coreutils-sha224sum
-    * coreutils-sha256sum
-    * coreutils-sha384sum
-    * coreutils-sha512sum
-    * coreutils-sleep
-    * coreutils-tail
-    * coreutils-touch
-    * coreutils-uname
-  * findutils-find
-  * findutils-locate
-  * findutils-xargs
-  * grep
-  * hwclock
-  * less
-  * less-wide
-  * logrotate
   * mc - select then enter
     * Configuration
       * Enable internal editor - CLEAR, DISABLE
-  * mount-utils
-  * procps-ng - select then enter 
-    * select all as a module
-  * tar
-  * whereis       
 * Exit
 * YES
 

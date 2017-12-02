@@ -53,7 +53,8 @@ Always check out the original image builder if it changed (like sources urls).
 * all required packages are built so you are able to create an ```ext-root```
 * and all packages have luci settings as well
 
-Besides, the most important packages are there, like:  
+
+Besides, all packages are there, like:  
 
 * samba client
 * nginx
@@ -64,12 +65,13 @@ Besides, the most important packages are there, like:
 * msmtp
 * mariadb 5.5.58
 * nodejs v9 latest
+* But **everything** is there as well!
 
 I cant's list all of it, there is enough for now. See what is in [create from scratch](docs/create-from-scratch.md).
 
-[Redis 4 is here!](https://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a9_vfpv3/redis/) but in D-Link DIR860l B1 as well.
+[Redis 4 is here!](https://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a9_vfpv3/redis/)
 
-[MariaDB 5.5 is here!](https://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a9_vfpv3/mariadb/) but in D-Link DIR860l B1 as well.
+[MariaDB 5.5 is here!](https://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a9_vfpv3/mariadb/)
 
 # Routers pre-built
 
@@ -107,16 +109,16 @@ It is only working, if only these are built in the firmware: ```hostapd-common w
 ## The release
 
 * Linksys WRT1900ACS-eduperez-mwlwifi / Linksys WRT3200ACM-eduperez-mwlwifi
+  * For Linksys the firmwares that start with ```insomnia-eduperez-mwlwifi``` worth trying, because your WIFI is will be flying.   
   * https://cdn.corifeus.com/lede/17.01.4/targets/mvebu/generic/
     * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works. 
-  * If you have a bricked firmware, you need a USB-TTL. [Linksys USB-TTL](docs/linksys-usb-ttl.md).
-  * Error code: 18005
-    * When trying to install a firmware image, I get the following error:
-    * Error code: 18005, Upgrade unsuccessfully because the version of the upgraded file was incorrect. Please check the file name.
-    * Solution: Rename the firmware image to something short, like e.g. factory.bin
-    * Based on 
+    * If you have a bricked firmware, you need a USB-TTL. [Linksys USB-TTL](docs/linksys-usb-ttl.md).
+    * Error code: 18005
+      * When trying to install a firmware image, I get the following error:
+        * Error code: 18005, Upgrade unsuccessfully because the version of the upgraded file was incorrect. Please check the file name.
+      * Solution: Rename the firmware image to something short, like e.g. factory.bin
+        * Based on 
 https://lede-project.org/faq/before_installation#error_code18005
-
 * D-Link DIR-860l B1
   * https://cdn.corifeus.com/lede/17.01.4/targets/ramips/mt7621/
     * If it is not working, with D-Link DIR-860l B1, you have to reset the router and re-load the firmware via emergency upload, like this
@@ -135,8 +137,6 @@ https://lede-project.org/faq/before_installation#error_code18005
       1. It works for sure, it's not like Linksys WRT, that you need an USB-TTL cable…
 * RPI-3
   * https://cdn.corifeus.com/lede/17.01.4/targets/brcm2708/bcm2710/
-
-For Linksys the firmwares that start with ```insomnia-eduperez-mwlwifi``` worth trying, because your WIFI is will be flying.
 
 
 # Signatures
