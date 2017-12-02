@@ -32,13 +32,13 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^1.7.1051-235"
+        "corifeus-builder": "^1.7.1052-236"
     },
     "engines": {
         "node": ">=8.9.0"
     },
     "homepage": "https://pages.corifeus.com/lede-insomnia",
     "dependencies": {
-        "corifeus-utils": "^1.1.688-237"
+        "corifeus-utils": "^1.1.689-238"
     }
 }
