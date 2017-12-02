@@ -213,6 +213,7 @@ All the latest stable LEDE versions.
 
 * docker pull patrikx3/lede-insomnia:d-link-dir-860l-b1
 * docker pull patrikx3/lede-insomnia:linksys-wrt
+* docker pull patrikx3/lede-insomnia:rpi-3
 
 * RAW
   * docker pull patrikx3/lede-insomnia:latest
@@ -258,8 +259,8 @@ make -j9 menuconfig
 # configure the kernel
 make -j9 kernel_menuconfig
 
-# build
-make -j1 V=s
+# build all packages can the router can do it
+IGNORE_ERRORS=1 make -j1 V=s
 
 # the final firmware
 # and in the /build/image-builder-* you can build there as well
