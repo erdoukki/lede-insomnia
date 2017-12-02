@@ -137,6 +137,7 @@ https://lede-project.org/faq/before_installation#error_code18005
       1. It works for sure, it's not like Linksys WRT, that you need an USB-TTL cable…
 * RPI-3
   * https://cdn.corifeus.com/lede/17.01.4/targets/brcm2708/bcm2710/
+  * I don't have a RPI-3 in my hand, so I cannot test it, but a dude asked to build this, so he use it.
 
 
 # Signatures
