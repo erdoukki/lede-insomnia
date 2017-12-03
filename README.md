@@ -22,7 +22,7 @@ Always check out the original image builder if it changed (like sources urls).
 * arm_cortex-a53_neon-vfpv4
 * mipsel_24kc
 
-***There are about 4900 packages built.***
+***There are about 4900 packages built per target.***
 
 ### The packages that are pre-built in all ```insomnia``` firmwares
 * luci-mod-admin-full
