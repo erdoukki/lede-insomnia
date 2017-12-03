@@ -16,6 +16,12 @@ Always check out the original image builder if it changed (like sources urls).
 
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM, D-Link DIR860L B1 and RPI-3 is already built, but based on the READMEs, you can built a new one easy.  
 
+## The following CPU-s are fully built
+
+* arm_cortex-a9_vfpv3
+* arm_cortex-a53_neon-vfpv4
+* mipsel_24kc
+
 ### The packages that are pre-built in all ```insomnia``` firmwares
 * luci-mod-admin-full
 * luci ssl

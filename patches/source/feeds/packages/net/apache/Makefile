@@ -7,6 +7,10 @@
 
 include $(TOPDIR)/rules.mk
 
+# not working :)
+# make package/feeds/packages/apache/download V=s
+# make package/feeds/packages/apache/check FIXUP=1 V=s
+# cat package/feeds/packages/apache/Makefile | less
 PKG_NAME:=apache
 PKG_VERSION:=2.4.25
 PKG_RELEASE:=1
@@ -16,7 +20,7 @@ PKG_LICENSE:=Apache License
 
 PKG_SOURCE:=$(PKG_SOURCE_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:=@APACHE/httpd/
-PKG_MD5SUM:=2826f49619112ad5813c0be5afcc7ddb
+PKG_HASH:=f87ec2df1c9fee3e6bfde3c8b855a3ddb7ca1ab20ca877bd0e2b6bf3f05c80b2
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_SOURCE_NAME)-$(PKG_VERSION)
 

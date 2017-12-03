@@ -14,9 +14,9 @@ PKG_RELEASE=1
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
 
-#make package/kernel/mwlwifi/download V=s
-#make package/kernel/mwlwifi/check FIXUP=1 V=s
-#cat package/kernel/mwlwifi/Makefile
+# make package/kernel/mwlwifi/download V=s
+# make package/kernel/mwlwifi/check FIXUP=1 V=s
+# cat package/kernel/mwlwifi/Makefile | less
 PKG_SOURCE_URL:=https://github.com/eduperez/mwlwifi_LEDE
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_VERSION:=08b13ed403d18361bc156105ef3456e3a166b139
