@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR
+
 source $DIR/lede-insomnia-lib
 
 ROUTER_PROFILE="dir-860l-b1"

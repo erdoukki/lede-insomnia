@@ -15,3 +15,4 @@ pushd $IMAGE_BUILDER_PATH
 #rsync -vr /build/router/$ROUTER_NAME/image-builder/. /build/$(basename $IMAGE_BUILDER_PATH)
 make image PROFILE=$ROUTER_PROFILE PACKAGES="$(< /build/router/${ROUTER_NAME}/opkg-list-installed.txt)"
 popd
+

@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=mwlwifi
-PKG_VERSION:=10.3.4.0.git-2017-11-15
+PKG_VERSION:=10.3.4.0.git-2017-12-02
 PKG_RELEASE=1
 
 PKG_LICENSE:=MIT
@@ -19,10 +19,10 @@ PKG_LICENSE_FILES:=LICENSE
 # cat package/kernel/mwlwifi/Makefile | less
 PKG_SOURCE_URL:=https://github.com/eduperez/mwlwifi_LEDE
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_VERSION:=08b13ed403d18361bc156105ef3456e3a166b139
-PKG_MIRROR_HASH:=d677ce47d29db276a4d72f599286ebb7455242743ff61f2c2627ec5f59a5cd98
+PKG_SOURCE_VERSION:=457284a7f757f69a9ac1f141319872c86d4594ba
+PKG_MIRROR_HASH:=ec5ba351c8f8c64501cdfe2900f676cfe4de26d15c29198ab0313f9827f5370a
 
-PKG_MAINTAINER:=Eduardo Pérez and Patrik Laszlo <alabard@gmail.com>
+PKG_MAINTAINER:=Eduardo Perez and Patrik Laszlo <alabard@gmail.com>
 PKG_BUILD_PARALLEL:=1
 
 include $(INCLUDE_DIR)/kernel.mk

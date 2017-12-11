@@ -5,23 +5,11 @@
 ---
                         
 [//]: #@corifeus-header:end
-# Firmware sizes
+# To detach the tty without exiting the shell,
 
-## D-Link DIR-860l B1
-https://wiki.openwrt.org/toh/d-link/dir-860l
+### use the escape sequence Ctrl-p + Ctrl-q
 
-16 MBytes
-
-## Linksys WRT1900ACS
-https://wiki.openwrt.org/toh/linksys/wrt_ac_series
-
-40 MiB = 41.94304 MB
-
-## Linksys WRT3200ACM
-https://wiki.openwrt.org/toh/linksys/wrt_ac_series
-
-80 MiB = 83.88608 MB
-
+### Note: This will continue to exist in a stopped state once exited (see "docker ps -a")
 [//]: #@corifeus-footer
 
 ---

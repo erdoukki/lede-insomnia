@@ -10,4 +10,3 @@ FIRMWARE_NAME="insomnia"
 IMAGE_BUILDER_FILE="/build/source/bin/targets/${ROUTER_TARGET}/${ROUTER_SUB_TARGET}/lede-imagebuilder-${LEDE_VERSION_TOTAL}-${ROUTER_TARGET}-${ROUTER_SUB_TARGET}.Linux-x86_64.tar.xz"
 
 setup-image-builder-and-build $IMAGE_BUILDER_FILE $ROUTER_PROFILE $ROUTER_NAME $FIRMWARE_NAME
-

@@ -92,7 +92,7 @@ https://cdn.corifeus.com/lede/17.01.4/
 If you use for example:  
  https://cdn.corifeus.com/lede/version/arhitecture/target/type/file-firmware-squashfs-sysupgrade.bin 
  
-So it is a **sysypgrade** firmware. Then I can re-use the old ```ext-root```, that I had before. 
+So it is a **sysypgrade -F** firmware. Then I can re-use the old ```ext-root```, that I had before. Actually it only works with the Linksys WRT 3200ACM, with Linksys WRT 1200ACS it was not working, but maybe it still work, I don't know, it could be something changed that made it not work. :) 
  
 But, if you use a factory, like:  
 https://cdn.corifeus.com/lede/version/arhitecture/target/type/file-firmware-squashfs-factory.bin
@@ -353,7 +353,7 @@ Tested on WRT1900ACSv2 and WRT3200ACM, works.
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.104-657 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.106-686 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LFRV89WPRMMVE&lc=HU&item_name=Patrik%20Laszlo&item_number=patrikx3&currency_code=HUF&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
