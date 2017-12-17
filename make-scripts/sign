@@ -7,8 +7,6 @@ source $DIR/lede-insomnia-lib
 rm -rf ~/.gnupg || true
 
 
-sudo chown docker:docker /build/source
-
 tty=`basename $(tty)`
 
 gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 95F12499

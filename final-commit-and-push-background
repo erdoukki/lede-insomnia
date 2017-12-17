@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+$DIR/build-lede/final-commit-and-push >> $DIR/build-lede/final-commit-and-push.log 2>> $DIR/build-lede/final-commit-and-push.error.log &
