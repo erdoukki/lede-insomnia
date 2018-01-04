@@ -14,6 +14,7 @@ PKG_RELEASE=1
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
 
+# have to keep in PKG_MIRROR_HASH
 # cp -avr /build/patches/source /build
 # make package/kernel/mwlwifi/download V=s
 # make package/kernel/mwlwifi/check FIXUP=1 V=s
@@ -21,7 +22,7 @@ PKG_LICENSE_FILES:=LICENSE
 PKG_SOURCE_URL:=https://github.com/eduperez/mwlwifi_LEDE
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_VERSION:=a6552336f832b860703b858da185f9cb17cd36a3
-PKG_MIRROR_HASH:=92c88a97d1dfdb2b0d8c9e2e3180fe1bd65b19b68d54d7b575612ca8ed3a5216
+PKG_MIRROR_HASH:=38b468791b88c80a257b33a59be70a85351ba4d1cf1e09a0079cacdd67990d47
 
 PKG_MAINTAINER:=Eduardo Perez and Patrik Laszlo <alabard@gmail.com>
 PKG_BUILD_PARALLEL:=1
