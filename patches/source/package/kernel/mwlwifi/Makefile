@@ -14,6 +14,9 @@ PKG_RELEASE=1
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
 
+# it actually Eduperez's numbers and versions are showing always even though I re-written, this is only the ipk name.
+# cat /sys/kernel/debug/ieee80211/phy1/mwlwifi/info && cat /sys/kernel/debug/ieee80211/phy0/mwlwifi/info
+# ll /rom/lib/firmware/mwlwifi/ && ll /lib/firmware/mwlwifi/
 # have to keep in PKG_MIRROR_HASH
 # cp -avr /build/patches/source /build
 # make package/kernel/mwlwifi/download V=s
@@ -24,7 +27,7 @@ PKG_SOURCE_PROTO:=git
 PKG_SOURCE_VERSION:=a6552336f832b860703b858da185f9cb17cd36a3
 PKG_MIRROR_HASH:=38b468791b88c80a257b33a59be70a85351ba4d1cf1e09a0079cacdd67990d47
 
-PKG_MAINTAINER:=Eduardo Perez and Patrik Laszlo <alabard@gmail.com>
+PKG_MAINTAINER:=Imre Kaloz <kaloz@openwrt.org> and Eduardo Perez and Patrik Laszlo <alabard@gmail.com>
 PKG_BUILD_PARALLEL:=1
 
 include $(INCLUDE_DIR)/kernel.mk
