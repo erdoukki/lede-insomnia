@@ -14,6 +14,7 @@ PKG_RELEASE=1
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
 
+
 # it actually Eduperez's numbers and versions are showing always even though I re-written, this is only the ipk name.
 # cat /sys/kernel/debug/ieee80211/phy1/mwlwifi/info && cat /sys/kernel/debug/ieee80211/phy0/mwlwifi/info
 # ll /rom/lib/firmware/mwlwifi/ && ll /lib/firmware/mwlwifi/
