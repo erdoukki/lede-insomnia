@@ -3,7 +3,7 @@
 # docker exec -it <containerIdOrName> bash
 # docker attach <id>
 # docker run -t -i patrikx3/lede-insomnia bash
-FROM debian:latest
+FROM debian:jessie
 MAINTAINER patrikx3/lede-insomnia - Patrik Laszlo - alabard@gmail.com
 
 ARG LEDE_VERSION_TOTAL=17.01.4
@@ -17,26 +17,28 @@ ENV SHELL=/bin/bash
 RUN apt-get -y update
 RUN apt-get -y upgrade
 
+# for stretch / buster / testing / bullseye
 # libboost1.55-dev => libboost-dev
-# openjdk-8-jdk => openjdk-7-jdk
-RUN apt -y install asciidoc bash bc bcc bin86 binutils build-essential bzip2 cmake curl ncdu fastjar file flex gawk gcc genisoimage gettext git git-core intltool jikespg libboost-dev libboost-dev libgtk2.0-dev libncurses5-dev libssl-dev libusb-dev libxml-parser-perl make mc nano openjdk-8-jdk patch perl-modules python python-dev rsync ruby sdcc sshpass sharutils software-properties-common subversion quilt unzip util-linux wget xsltproc xz-utils zlib1g-dev
+# openjdk-7-jdk => openjdk-9-jdk
+# python2.6-dev => python-dev - (though not existing in jessie)
+RUN apt -y install asciidoc bash bc bcc bin86 binutils build-essential bzip2 cmake curl ncdu fastjar file flex gawk gcc genisoimage gettext git git-core intltool jikespg libboost1.55-dev	libgtk2.0-dev libncurses5-dev libssl-dev libusb-dev libxml-parser-perl make mc nano openjdk-7-jdk	patch perl-modules python python-dev rsync ruby sdcc sshpass sharutils software-properties-common subversion quilt unzip util-linux wget xsltproc xz-utils zlib1g-dev mercurial sudo
 #before it was needed nethack*, still?
 # nethack
 
-#RUN echo "docker:x:10000:docker" >> "/etc/group"
-#RUN useradd -u 10000 -g 10000 -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
-#RUN mkdir -p /etc/sudoers.d
-#RUN echo 'docker ALL=NOPASSWD: ALL' > /etc/sudoers.d/openwrt
+RUN echo "docker:x:10000:docker" >> "/etc/group"
+RUN useradd -u 10000 -g 10000 -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
+RUN mkdir -p /etc/sudoers.d
+RUN echo 'docker ALL=NOPASSWD: ALL' > /etc/sudoers.d/openwrt
 
 RUN mkdir build
-#RUN chown docker:docker /build
+RUN chown docker:docker /build
 
 # clean up
 RUN apt-get autoremove -y
 RUN apt-get autoclean -y
 RUN apt-get clean -y
 
-#USER docker
+USER docker
 
 WORKDIR build
 
@@ -44,8 +46,8 @@ RUN git clone https://git.openwrt.org/project/usign.git
 WORKDIR /build/usign
 RUN cmake .
 RUN make
-RUN cp ./usign /usr/bin/usign
-RUN chmod +x /usr/bin/usign
+RUN sudo cp ./usign /usr/bin/usign
+RUN sudo chmod +x /usr/bin/usign
 
 WORKDIR /build
 RUN git clone -b ${LEDE_BRANCH} git://git.lede-project.org/source.git
@@ -73,11 +75,13 @@ RUN ./scripts/feeds install -a -p mariadb
 COPY make-scripts /build/source
 
 #RUN echo "set linenumbers" > "/home/docker/.nanorc"
-#RUN echo "alias ll='ls -l'" >> /home/docker/.bashrc
+RUN echo "alias ll='ls -l'" >> /home/docker/.bashrc
 #RUN echo "sudo chown -R docker:docker /build" >> /home/docker/.bashrc
-#RUN echo "SELECTED_EDITOR=\"/bin/nano\"" > /home/docker/.selected_editor
+RUN echo "SELECTED_EDITOR=\"/bin/nano\"" > /home/docker/.selected_editor
 
 ENV PATH="/build/source:${PATH}"
+
+RUN sudo find /build -user root -exec chown docker:docker {} \;
 
 CMD /bin/bash
 

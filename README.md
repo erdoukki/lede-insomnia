@@ -81,6 +81,11 @@ I cant's list all of it, there is enough for now. See what is in [create from sc
 
 [MariaDB 5.5 is here!](https://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a9_vfpv3/mariadb/)
 
+# NODE.JS INFO
+
+Please check this info, if you wish to use a complex package:  
+https://github.com/nxhack/openwrt-node-packages#note-about-avahi-and-homebridge
+
 # Routers pre-built
 
 If you want to install right away with LUCI:
@@ -348,6 +353,14 @@ Tested on WRT1900ACSv2 and WRT3200ACM, works.
 
 # Linksys USB-TTL
 [README](docs/linksys-usb-ttl.md)
+
+# Linksys WRT 3200ACM
+For some reason it needs this:
+
+```bash
+# based on this https://truica-victor.com/dhcp-packet-received-eth0-2-address/
+echo "except-interface=eth1" >> /etc/dnsmasq.conf
+```
 
 [//]: #@corifeus-footer
 

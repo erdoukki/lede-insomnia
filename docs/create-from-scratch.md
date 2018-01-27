@@ -84,10 +84,22 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
       * Configuration
         * Version Selection
           * 9.x
+    * node-bluetooth-hci-socket
+    * node-ffi
+    * node-hap-nodejs
+    * node-homebridge
+    * node-mdns
+    * node-node-red-contrib-homekit
+    * node-usb
+    
   * PHP
     * php7
     * PHP7 Filter support
     * SELECT ALL
+
+* Libraries
+  * libavahi-compat-libdnssd (*)          
+
 * Network
   * Web Servers/Proxies
     * nginx - Select then Enter
