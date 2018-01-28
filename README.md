@@ -83,8 +83,12 @@ I cant's list all of it, there is enough for now. See what is in [create from sc
 
 # NODE.JS INFO
 
-Please check this info, if you wish to use a complex package:  
+By now, ```dbus``` and ```avahi-daemon``` is enabled by default in the firmwares.
+
+## Based on
 https://github.com/nxhack/openwrt-node-packages#note-about-avahi-and-homebridge
+
+
 
 # Routers pre-built
 

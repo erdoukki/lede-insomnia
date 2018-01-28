@@ -7,13 +7,31 @@
 [//]: #@corifeus-header:end
 # Node not compile
 
+
 ```text
 CONFIG_PACKAGE_node-ffi=m
+
+# i think it was a connectify problem
+CONFIG_PACKAGE_node-ideino-linino-lib=m
+CONFIG_PACKAGE_node-xmpp=m
+CONFIG_PACKAGE_node-xmpp-client=m
+CONFIG_PACKAGE_node-xmpp-component=m
+CONFIG_PACKAGE_node-xmpp-server=m
 ```
 
 ```bash
+# works if you use the PKG_SOURCE ends with .tar.gz
+make package/feeds/node/node-alljoyn/{clean,prepare,compile} package/index V=s
+
 make package/feeds/node/node-ffi/{clean,prepare,compile} package/index V=s
+
+# works if you use the PKG_SOURCE ends with .tar.gz
+make package/feeds/node/node-ideino-linino-lib/{clean,prepare,compile} package/index V=s
+
+# works if you use the PKG_SOURCE ends with .tar.gz
+make package/feeds/node/node-xmpp/{clean,compile} package/index V=s
 ```
+
 [//]: #@corifeus-footer
 
 ---
