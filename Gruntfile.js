@@ -12,3 +12,4 @@ module.exports = (grunt) => {
     grunt.registerTask('default', builder.config.task.build.js);
 
 };
+

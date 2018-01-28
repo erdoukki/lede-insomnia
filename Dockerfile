@@ -84,6 +84,3 @@ ENV PATH="/build/source:${PATH}"
 RUN sudo find /build -user root -exec chown docker:docker {} \;
 
 CMD /bin/bash
-
-
-
