@@ -50,7 +50,8 @@ RUN sudo cp ./usign /usr/bin/usign
 RUN sudo chmod +x /usr/bin/usign
 
 WORKDIR /build
-RUN git clone -b ${LEDE_BRANCH} git://git.lede-project.org/source.git
+#RUN git clone -b ${LEDE_BRANCH} git://git.openwrt.org/source.git
+RUN git clone git://git.openwrt.org/openwrt/openwrt.git source
 WORKDIR /build/source
 RUN git checkout tags/v${LEDE_VERSION_TOTAL}
 

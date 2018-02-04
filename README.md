@@ -18,9 +18,9 @@ Always check out the original image builder if it changed (like sources urls).
 
 ## The following CPU-s are fully built
 
-* arm_cortex-a9_vfpv3
-* arm_cortex-a53_neon-vfpv4
-* mipsel_24kc
+* arm_cortex-a9_vfpv3 (arm a9)
+* arm_cortex-a53_neon-vfpv4 (arm a53)
+* mipsel_24kc (mipsel)
 
 ***There are at least 4500 packages built per target (but more just I decreased 200 counts, because there are the signatures etc).***
 
@@ -94,6 +94,51 @@ https://github.com/nxhack/openwrt-node-packages#note-about-avahi-and-homebridge
 
 If you want to install right away with LUCI:
 https://cdn.corifeus.com/lede/17.01.4/
+
+## If you want some of the packages
+
+```/cgi-bin/luci/admin/system/packages/ipkg```
+
+### Linksys WRT or compatible alike mvebu / arm 9 (arm_cortex-a9_vfpv3)
+
+```text
+src/gz insomnia_core http://cdn.corifeus.com/lede/17.01.4/targets/mvebu/generic/packages
+src/gz insomnia_base http://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a9_vfpv3/base
+src/gz insomnia_luci http://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a9_vfpv3/luci
+src/gz insomnia_mariadb http://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a9_vfpv3/mariadb
+src/gz insomnia_node http://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a9_vfpv3/node
+src/gz insomnia_packages http://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a9_vfpv3/packages
+src/gz insomnia_redis http://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a9_vfpv3/redis
+src/gz insomnia_routing http://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a9_vfpv3/routing
+src/gz insomnia_telephony http://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a9_vfpv3/telephony
+```
+
+### D-Link DIR860L B1 or compatible mipsel (mipsel_24kc)
+
+```text
+src/gz insomnia_core http://cdn.corifeus.com/lede/17.01.4/targets/ramips/mt7621/packages
+src/gz insomnia_base http://cdn.corifeus.com/lede/17.01.4/packages/mipsel_24kc/base
+src/gz insomnia_luci http://cdn.corifeus.com/lede/17.01.4/packages/mipsel_24kc/luci
+src/gz insomnia_mariadb http://cdn.corifeus.com/lede/17.01.4/packages/mipsel_24kc/mariadb
+src/gz insomnia_node http://cdn.corifeus.com/lede/17.01.4/packages/mipsel_24kc/node
+src/gz insomnia_packages http://cdn.corifeus.com/lede/17.01.4/packages/mipsel_24kc/packages
+src/gz insomnia_redis http://cdn.corifeus.com/lede/17.01.4/packages/mipsel_24kc/redis
+src/gz insomnia_routing http://cdn.corifeus.com/lede/17.01.4/packages/mipsel_24kc/routing
+src/gz insomnia_telephony http://cdn.corifeus.com/lede/17.01.4/packages/mipsel_24kc/telephony
+```
+### R-PI 3 or compatible arm (arm_cortex-a53_neon-vfpv4)
+
+```text
+src/gz insomnia_core http://cdn.corifeus.com/lede/17.01.4/targets/brcm2708/bcm2710/packages
+src/gz insomnia_base http://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a53_neon-vfpv4/base
+src/gz insomnia_luci http://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a53_neon-vfpv4/luci
+src/gz insomnia_mariadb http://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a53_neon-vfpv4/mariadb
+src/gz insomnia_node http://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a53_neon-vfpv4/node
+src/gz insomnia_packages http://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a53_neon-vfpv4/packages
+src/gz insomnia_redis http://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a53_neon-vfpv4/redis
+src/gz insomnia_routing http://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a53_neon-vfpv4/routing
+src/gz insomnia_telephony http://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a53_neon-vfpv4/telephony
+```
 
 ## Ext-root issue
 
@@ -370,7 +415,7 @@ echo "except-interface=eth1" >> /etc/dnsmasq.conf
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.138-788 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.142-808 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LFRV89WPRMMVE&lc=HU&item_name=Patrik%20Laszlo&item_number=patrikx3&currency_code=HUF&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
