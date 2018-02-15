@@ -97,7 +97,9 @@ https://cdn.corifeus.com/lede/17.01.4/
 
 ## If you want some of the packages
 
-```/cgi-bin/luci/admin/system/packages/ipkg```
+```text
+/cgi-bin/luci/admin/system/packages/ipkg
+```
 
 ### Linksys WRT or compatible alike mvebu / arm 9 (arm_cortex-a9_vfpv3)
 
@@ -256,7 +258,7 @@ They files to generate are in the same link above. So, if you want to sign, you 
 
 ![GPG and USIGN structure in the repo](artifacts/images/gpg-and-usign.png "GPG and USIGN structure in the repo") 
 
-If you have this signed gpg and usign data nad keys, I can help you to signed firmwares and packages.
+If you have this signed gpg and usign data and keys, I can help you to signed firmwares and packages.
 
 ## Docker
 
@@ -415,7 +417,7 @@ echo "except-interface=eth1" >> /etc/dnsmasq.conf
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.146-814 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.148-846 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LFRV89WPRMMVE&lc=HU&item_name=Patrik%20Laszlo&item_number=patrikx3&currency_code=HUF&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 

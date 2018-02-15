@@ -2,6 +2,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 
+
 build_host_path=/build/host-build
 
 #set -e
@@ -144,9 +145,9 @@ function image-builder-uncompress() {
 # if you want a result, you can only echo once :)
 #    echo "Uncompressing image builder ${IMAGE_BUILDER_FILE} to /build"
     tar xf ${IMAGE_BUILDER_FILE} -C /build/
-    IMAGE_BUILDE_BASENAME=$(basename ${IMAGE_BUILDER_FILE%.*})
-    IMAGE_BUILDE_BASENAME=$(basename ${IMAGE_BUILDE_BASENAME%.*})
-    IMAGE_BUILDER_PATH="/build/${IMAGE_BUILDE_BASENAME}"
+    IMAGE_BUILDER_BASENAME=$(basename ${IMAGE_BUILDER_FILE%.*})
+    IMAGE_BUILDER_BASENAME=$(basename ${IMAGE_BUILDER_BASENAME%.*})
+    IMAGE_BUILDER_PATH="/build/${IMAGE_BUILDER_BASENAME}"
     echo $IMAGE_BUILDER_PATH
 }
 

@@ -7,7 +7,7 @@
 [//]: #@corifeus-header:end
 # Generate GPG and USIGN files
 
-https://lede-project.org/docs/user-guide/keygen#generate_key_pair
+https://lede-project.org/docs/user-guide/keygen
 
 Follow steps in the url aboce.
 
@@ -23,7 +23,7 @@ sudo cp ./usign /usr/bin/usign
 sudo chmod +x /usr/bin/usign
 
 
-./usign -G -c "LEDE usign key of Patrik Laszlo / patrikx3" -s secret.key -p public.key
+./usign -G -c "OpenWrt usign key of Patrik Laszlo / patrikx3" -s secret.key -p public.key
 
 # Use the LEDE keyring
 
@@ -42,7 +42,7 @@ usign public key 25ad50a827ee6b11
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.146-814 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.148-846 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LFRV89WPRMMVE&lc=HU&item_name=Patrik%20Laszlo&item_number=patrikx3&currency_code=HUF&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
