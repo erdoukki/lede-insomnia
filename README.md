@@ -12,7 +12,7 @@
 Always check out the original image builder if it changed (like sources urls).
 
 
-# LEDE Latest Stable build with latest NodeJs 9, eduperez/mwlwifi_LEDE's WIFI driver, latest Redis 4 stable, MariaDB 5.5
+# LEDE Latest Stable build with latest NodeJs 9, always the latest Kaloz mwlwifi's WIFI driver, latest Redis 4 stable, MariaDB 5.5
 
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM, D-Link DIR860L B1 and RPI-3 is already built, but based on the READMEs, you can built a new one easy.  
 
@@ -65,15 +65,15 @@ Always check out the original image builder if it changed (like sources urls).
 Besides, all packages are there, like:  
 
 * samba client
-* nginx
-* apache
-* php 7
-* python 2
+* nginx - full
+* apache 
+* php 7.1
+* python 2 and 3
 * redis 4
 * msmtp
 * mariadb 5.5.58
 * nodejs v9 latest
-* But **everything** is there as well!
+* But **everything** is built, actually!
 
 I cant's list all of it, there is enough for now. See what is in [create from scratch](docs/create-from-scratch.md).
 
@@ -172,8 +172,8 @@ It is only working, if only these are built in the firmware: ```hostapd-common w
 
 ## The release
 
-* Linksys WRT1900ACS-eduperez-mwlwifi / Linksys WRT3200ACM-eduperez-mwlwifi
-  * For Linksys the firmwares that start with ```insomnia-eduperez-mwlwifi``` worth trying, because your WIFI is will be flying.   
+* Linksys WRT1900ACS-latest-mwlwifi / Linksys WRT3200ACM-latest-mwlwifi
+  * For Linksys the firmwares that start with ```insomnia-latest-mwlwifi``` worth trying, because your WIFI is will be flying.   
   * https://cdn.corifeus.com/lede/17.01.4/targets/mvebu/generic/
     * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works. 
     * If you have a bricked firmware, you need a USB-TTL. [Linksys USB-TTL](docs/linksys-usb-ttl.md).
@@ -313,7 +313,7 @@ docker pull patrikx3/lede-insomnia:d-link-dir-860l-b1
 
 # the linksys latest wrt builds are in hierarchically in order 
 docker pull patrikx3/lede-insomnia:linksys-wrt
-# the .config in the repo is the insomnia-eduperez-mwlwifi-lede-mvebu-linksys-wrt3200acm
+# the .config in the repo is the insomnia-latest-mwlwifi-lede-mvebu-linksys-wrt3200acm
 
 # then you just change the .config and kernel
 
@@ -339,16 +339,16 @@ make -j9 image PROFILE=etc-linksys-wrt1900acs PACKAGES="pkg1 pkg2 pkg3 pkg-etc"
 ./make-linksys-wrt1900acs nosign
 ./make-linksys-wrt1900acs "http://cdn.mine.com/lede/18.01"  nosign
 
-./make-linksys-wrt1900acs-eduperez-mwlwifi nosign
-./make-linksys-wrt1900acs-eduperez-mwlwifi "http://cdn.mine.com/lede/18.01" nosign  
+./make-linksys-wrt1900acs-latest-mwlwifi nosign
+./make-linksys-wrt1900acs-latest-mwlwifi "http://cdn.mine.com/lede/18.01" nosign  
 
 ./make-linksys-wrt3200acm nosign
 ./make-linksys-wrt3200acm "http://cdn.mine.com/lede/18.01"
 
-./make-linksys-wrt3200acm-eduperez-mwlwifi nosign
-./make-linksys-wrt3200acm-eduperez-mwlwifi "http://cdn.mine.com/lede/18.01"  nosign
+./make-linksys-wrt3200acm-latest-mwlwifi nosign
+./make-linksys-wrt3200acm-latest-mwlwifi "http://cdn.mine.com/lede/18.01"  nosign
 
-./make-linksys-wrt3200acm-eduperez-mwlwifi "http://cdn.mine.com/lede/18.01" nosign
+./make-linksys-wrt3200acm-latest-mwlwifi "http://cdn.mine.com/lede/18.01" nosign
 ```
 
 All built packages and firmwares including the ```insomnia``` firmwares are in ```/build/source/bin```. 
