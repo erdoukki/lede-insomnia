@@ -66,18 +66,15 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
   * Select all kernel module packages by default
   * Select all userspace packages by default
   * Set build defaults for automatic builds
-  * Collect kernel debug information - UNCHECK / OpenWrt
-  * Kernel build options / OpenWrt
-    * Compile the kernel with MIPS FPU
-      * For D-Link DIR860L B1
-    * Compile the kernel with debug information - UNCHECK / OpenWrt
+  * Collect kernel debug information - UNCHECK
+  * Compile the kernel with debug information - UNCHECK
       
-* Build the LEDE Image Build / Build the OpenWrt Image Build
+* Build the LEDE Image Build
   * Include package repositories
   
 * Image configuration - ENTER
   * Version configuration options - ENTER
-    * Release version nickname / code - OpenWrt
+    * Release version code
       * insomnia    
     * Manufacturer name
       * p3x
