@@ -8,12 +8,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=mwlwifi
-PKG_VERSION:=10.3.4.0.git-2018-02-22
+PKG_VERSION:=10.3.4.0.git-2018-02-26
 PKG_RELEASE=1
 
-PKG_LICENSE:=MIT
-PKG_LICENSE_FILES:=LICENSE
-
+PKG_LICENSE:=ISC
+PKG_LICENSE_FILES:=
 
 # i changed to use the original Kaloz
 # cat /sys/kernel/debug/ieee80211/phy1/mwlwifi/info && cat /sys/kernel/debug/ieee80211/phy0/mwlwifi/info
@@ -23,10 +22,11 @@ PKG_LICENSE_FILES:=LICENSE
 # make package/kernel/mwlwifi/download V=s
 # make package/kernel/mwlwifi/check FIXUP=1 V=s
 # cat package/kernel/mwlwifi/Makefile | less
+# make package/kernel/mwlwifi/{clean,prepare,compile} package/index V=s
 PKG_SOURCE_URL:=https://github.com/kaloz/mwlwifi
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_VERSION:=f4d5f12affbca285b501eb984e4dd9498740e520
-PKG_MIRROR_HASH:=6d7ee20d7146d592d5a6e7646c70e416f9e26ef0a2840d15a978fa13191167fb
+PKG_SOURCE_VERSION:=51350a3e085a811179a270baddcae03ec9384f07
+PKG_MIRROR_HASH:=f7a4264c8b9f4754da322cac29af6d9b22a7c134e2355cbe7875fea91fd7a381
 
 PKG_MAINTAINER:=Imre Kaloz <kaloz@openwrt.org> and Patrik Laszlo <alabard@gmail.com>
 PKG_BUILD_PARALLEL:=1
