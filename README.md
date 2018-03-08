@@ -9,6 +9,7 @@
 [//]: #@corifeus-header:end
 
 ### Build info
+
 Always check out the original image builder if it changed (like sources urls).
 
 
@@ -23,12 +24,13 @@ It is only re-built per request, given I do not use it.
 ## The following CPU-s are fully built
 
 * arm_cortex-a9_vfpv3 (arm a9)
-* arm_cortex-a53_neon-vfpv4 (arm a53)
 * mipsel_24kc (mipsel)
+* arm_cortex-a53_neon-vfpv4 (arm a53) - per request
 
 ***There are at least 4500 packages built per target (but more just I decreased 200 counts, because there are the signatures etc).***
 
 ### The packages that are pre-built in all ```insomnia``` firmwares
+
 * luci-mod-admin-full
 * luci ssl
 * luci-app-firewall
@@ -437,7 +439,7 @@ echo "except-interface=eth1" >> /etc/dnsmasq.conf
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.158-884 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.160-927 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 

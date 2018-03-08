@@ -44,9 +44,10 @@ The same, if you have a server instead ```cdn.corifeus.com```, you can change it
 For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package, they are in ```lede-insomnia/patches```, you can copy them safely into the ```/build/source```. 
 
 * Target System  
-  * D-Link DIR-860l B1 => MediaTek Ralink MIPS
+  * Linksys WRT Multiple  => Marvell Armada 37x/38x/XP
   * Linksys WRT1900ACS => Marvell Armada 37x/38x/XP  
   * Linksys WRT3200ACM => Marvell Armada 37x/38x/XP
+  * D-Link DIR-860l B1 => MediaTek Ralink MIPS
   * RPI 3 => Broadcom BCM27xx  
   
 * Subtarget (Linksys missing this, not needed)
@@ -54,27 +55,36 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
   * RPI 3 => BCM2710  
   
 * Target Profile  
-  * D-Link DIR-860l B1 => MT7621  
+  * D-Link DIR-860l B1 => D-Link DIR-860l B1  
     * Kernel type => MIPS FPU EMULATOR
       * it comes later with ```make -j9 kernel_menuconfig```, after the packages selected, just some info 
+  * Linksys WRT Multiple => Multiple devices
   * Linksys WRT1900ACS => Linksys WRT1900ACS
   * Linksys WRT3200ACM => Linksys WRT3200ACM  
   * RPI 3 => Raspberrry Pi 3 B/CM  
+
 
 * Global build settings
   * Select all target specific packages by default
   * Select all kernel module packages by default
   * Select all userspace packages by default
   * Set build defaults for automatic builds
-  * Collect kernel debug information - UNCHECK
-  * Compile the kernel with debug information - UNCHECK
+      
+For multiple Linksys WRT go back to and select what is you want
+
+* Target Devices (for now is only Linksys WRT Multiple)
+  * Enable all profiles by default - UNCHECK
+  * Use a per-device root filesystem that add profile packages
+  * Linksys WRT1900ACS
+  * Linksys WRT3200ACM
+
       
 * Build the LEDE Image Build
   * Include package repositories
   
 * Image configuration - ENTER
   * Version configuration options - ENTER
-    * Release version code
+    * Release version nickname
       * insomnia    
     * Manufacturer name
       * p3x
@@ -82,12 +92,7 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
       * https://pages.corifeus.com/lede-insomnia
   * Seperate feed repositories
     * SELECT ALL
-    
-* Kernel modules
-  * Select everything, but I think, it is now already added, except remove the below  
-  * Wireless Drivers
-    * kmod-mwifiex-sdio - UNCHECK for Linksys WRT 
-        
+              
 * Languages
   * Node.js
     * node
@@ -113,7 +118,7 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
 * Network
   * Web Servers/Proxies
     * apache
-      * Configuration
+      * Configuration - It is missing in 17.01.4
         * Enable HTTP2
     * nginx - Select then Enter
       * Configuration
@@ -183,7 +188,7 @@ sudo renice -20 10728 # this was the dockerd PID
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.158-884 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.160-927 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 

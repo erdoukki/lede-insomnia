@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR
+
+IMAGE_BUILDER_FILE_WITHOUT_EXTENSION="lede-imagebuilder-${LEDE_VERSION_TOTAL}-${ROUTER_TARGET}.Linux-x86_64"
+
+source $DIR/test-lib
+
+test
