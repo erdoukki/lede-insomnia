@@ -61,10 +61,10 @@ make -j9 kernel_menuconfig
 * Exit  
 
 ```bash
-sed -i.bak 's#CONFIG_TARGET_INIT_PATH="#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-lede:#g' .config
+sed -i.bak 's#CONFIG_TARGET_INIT_PATH="#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-openwrt:#g' .config
 sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.4#http://cdn.corifeus.com/lede/17.01.4#g' .config
 sed -i.bak 's#http://downloads.lede-project.org/releases/17.01.4#http://cdn.corifeus.com/lede/17.01.4#g' package/base-files/image-config.in
-sed -i.bak 's#default "/usr/sbin#default "/opt/router-scripts-lede:/usr/sbin#g' package/base-files/image-config.in
+sed -i.bak 's#default "/usr/sbin#default "/opt/router-scripts-openwrt:/usr/sbin#g' package/base-files/image-config.in
 echo "CONFIG_VERSION_REPO=\"http://cdn.corifeus.com/lede/17.01.4\"" >> .config
 cat package/base-files/image-config.in | grep default
 cat .config | grep CONFIG_VERSION_REPO

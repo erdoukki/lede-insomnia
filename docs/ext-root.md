@@ -77,9 +77,9 @@ df -h
 mkdir -p /opt/ 
 cd /opt 
 git config --global http.sslVerify "false" 
-git clone https://git.patrikx3.com/router-scripts-lede.git 
+git clone https://git.patrikx3.com/router-scripts-openwrt.git 
 
-cd router-scripts-lede
+cd router-scripts-openwrt
 opkg update
 opkg install node node-npm node-yarn
 yarn install

@@ -99,17 +99,10 @@ For multiple Linksys WRT go back to and select what is you want
       * Configuration
         * Version Selection
           * 9.x
-    * node-bluetooth-hci-socket
-    * node-ffi
-    * node-hap-nodejs
-    * node-homebridge
-    * node-mdns
-    * node-node-red-contrib-homekit
-    * node-usb
+    * SELECT ALL
     
   * PHP
     * php7
-    * PHP7 Filter support
     * SELECT ALL
 
 * Libraries
