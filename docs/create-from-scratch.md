@@ -45,8 +45,6 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
 
 * Target System  
   * Linksys WRT Multiple  => Marvell Armada 37x/38x/XP
-  * Linksys WRT1900ACS => Marvell Armada 37x/38x/XP  
-  * Linksys WRT3200ACM => Marvell Armada 37x/38x/XP
   * D-Link DIR-860l B1 => MediaTek Ralink MIPS
   * RPI 3 => Broadcom BCM27xx  
   
@@ -59,8 +57,6 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
     * Kernel type => MIPS FPU EMULATOR
       * it comes later with ```make -j9 kernel_menuconfig```, after the packages selected, just some info 
   * Linksys WRT Multiple => Multiple devices
-  * Linksys WRT1900ACS => Linksys WRT1900ACS
-  * Linksys WRT3200ACM => Linksys WRT3200ACM  
   * RPI 3 => Raspberrry Pi 3 B/CM  
 
 
@@ -84,7 +80,7 @@ For multiple Linksys WRT go back to and select what is you want
   
 * Image configuration - ENTER
   * Version configuration options - ENTER
-    * Release version nickname
+    * Release version code
       * insomnia    
     * Manufacturer name
       * p3x
@@ -181,7 +177,7 @@ sudo renice -20 10728 # this was the dockerd PID
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.162-931 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.164-947 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
