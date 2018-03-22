@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=mwlwifi
-PKG_VERSION:=10.3.4.0.git-2018-03-06
+PKG_VERSION:=10.3.4.0.git-2018-03-19
 PKG_RELEASE=1
 
 PKG_LICENSE:=ISC
@@ -26,8 +26,8 @@ PKG_LICENSE_FILES:=
 # for the package/kernel/mwlwifi/patches must be remove rm -rf package/kernel/mwlwifi/patches
 PKG_SOURCE_URL:=https://github.com/kaloz/mwlwifi
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_VERSION:=b1b9a9e1c1beee30a8cce4038f4109727362ebe0
-PKG_MIRROR_HASH:=7ca5604eb601784224bf2d9e6c4facbc82fbe90b18a19286511782095f3db640
+PKG_SOURCE_VERSION:=38c2f25d393192abfd4b2a9b883a0b867f15fb51
+PKG_MIRROR_HASH:=e947c0827e849e066dd278453bd62caeadbc83e7574011ca46a5f9a61bd2dc47
 
 PKG_MAINTAINER:=Imre Kaloz <kaloz@openwrt.org> and Patrik Laszlo <alabard@gmail.com>
 PKG_BUILD_PARALLEL:=1
