@@ -17,6 +17,11 @@ Always check out the original image builder if it changed (like sources urls).
 
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM, D-Link DIR860L B1 and RPI-3 is already built, but based on the READMEs, you can built a new one easy.  
 
+## Linksys WRT3200ACM Winbond
+
+The info is here:  
+https://cdn.corifeus.com/openwrt/SNAPSHOT/
+
 ## RPI-3
 
 It is only re-built per request, given I do not use it.
