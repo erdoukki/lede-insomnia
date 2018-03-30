@@ -1,12 +1,12 @@
 language: node_js
 node_js:
-  - "node"
-
+- node
 services:
-  - docker
-
+- docker
 before_script:
-  - npm install grunt-cli -g
-
+- npm install grunt-cli -g
 script:
-  - docker build -t patrikx3/lede-insomnia .
+- docker build -t patrikx3/lede-insomnia .
+env:
+  global:
+    secure: c2BflPexH1a8HGdhNVX4zflCalgpVWWFRexmKp0wc/xTmLmFoD5ZhwwA2LwrU1OrcQfFwlMnUNeg28VCa62FkD0Ot7xN3rTKvpEjYhQ7a4p4txo/6j89HkjEwGQ8jjexqgePiwNi0L1kFWd8lQisY7QFYFVp4lrtFfnlWHagD4Nl4rFlrqYl97eMGtUzbVP30dyZ2Xd9oeuJdYUms9EmWGgDxUu0aPkDoJBjqP6YFzE/5KoX7DkTs//DyRlMgrsQWWRzJfkC5QtAdWhWhxtpGr97kRFBYrwnHc1Fw5xtHhOTotsUnU6xw1iKnd/dltVy1Sw6vin9dL8L2WmWpqqRGlgLORQT5MmYqoO7PPGuP3Sp1N816jOOUhvfrhEqdOlTcdTbqXQAY6lKjkw8TZzbPeWtbQSjIOAtwwEZUFdCRCIbwLuyS+GFZ7oUs2Qi9CrDjsVFYG2DQym0ue369nBhL18WbEzK181IgvQUXNNiknqRKLkKchiNLH+i/RScu/TznU6Q8SQJSdvfmOm4mKigUMHMglOH2wfEwowViMcGlIz5LIGPmfDjLS2gE2hqR2HOCXW66ybCT8bCV9sqtxV2mB6g2PIF27NGwxVe4NN+dmqGjey+QnP8DCMsKNhPTUoEEdqLrDcWdW3EJSRgqbXpZGiJ+bbJtEQm0Todc0I88qo=
