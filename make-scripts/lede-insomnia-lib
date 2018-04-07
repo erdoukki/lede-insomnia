@@ -66,9 +66,9 @@ function setup-config-and-build() {
     make defconfig;make oldconfig
 
     # disable mariadb lite
-    echo "We build full MariaDB, it will be not be synced but it is, I just removed a line ..."
-    sed -i 's#CONFIG_MARIADB_LITE=y#\# CONFIG_MARIADB_LITE is not set#g' $DIR/.config
-    cat .config | grep mariadb
+#    echo "We build full MariaDB, it will be not be synced but it is, I just removed a line ..."
+#    sed -i 's#CONFIG_MARIADB_LITE=y#\# CONFIG_MARIADB_LITE is not set#g' $DIR/.config
+#    cat .config | grep mariadb
 
     # disable node unused packages
     cat .config | grep node
