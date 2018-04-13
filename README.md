@@ -90,7 +90,7 @@ I cant's list all of it, there is enough for now. See what is in [create from sc
 
 [Redis 4 is here!](https://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a9_vfpv3/redis/)
 
-[MariaDB 5.5 is here!](https://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a9_vfpv3/mariadb/)
+[MariaDB 10 is here!](https://cdn.corifeus.com/lede/17.01.4/packages/arm_cortex-a9_vfpv3/mariadb/)
 
 # NODE.JS INFO
 
@@ -376,7 +376,7 @@ echo "except-interface=eth1" >> /etc/dnsmasq.conf
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.183-976 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.189-992 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
