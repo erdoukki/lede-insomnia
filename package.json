@@ -8,7 +8,7 @@
         "icon": "fa fa-coffee",
         "code": "Insomnia"
     },
-    "version": "17.1.189-992",
+    "version": "17.1.191-1001",
     "description": "Latest Stable LEDE Version with many plus packages",
     "main": "src/index.js",
     "directories": {
@@ -32,13 +32,13 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^1.7.1316-355"
+        "corifeus-builder": "^1.7.1322-358"
     },
     "engines": {
         "node": ">=8.9.0"
     },
     "homepage": "https://pages.corifeus.com/lede-insomnia",
     "dependencies": {
-        "corifeus-utils": "^1.1.940-338"
+        "corifeus-utils": "^1.1.946-341"
     }
 }
