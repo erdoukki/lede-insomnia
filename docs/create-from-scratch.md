@@ -43,19 +43,19 @@ The same, if you have a server instead ```cdn.corifeus.com```, you can change it
 For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package, they are in ```lede-insomnia/patches```, you can copy them safely into the ```/build/source```. 
 
 * Target System  
-  * Linksys WRT Multiple  => Marvell Armada 37x/38x/XP
-  * D-Link DIR-860l B1 => MediaTek Ralink MIPS
-  * RPI 3 => Broadcom BCM27xx  
+  * Marvell Armada 37x/38x/XP => Linksys WRT Multiple 
+  * MediaTek Ralink MIPS => D-Link DIR-860l B1 
+  * Broadcom BCM27xx => RPI 3   
   
 * Subtarget (Linksys missing this, not needed)
-  * D-Link DIR-860l B1 => MT7621
-  * RPI 3 => BCM2710  
+  * MT7621 => D-Link DIR-860l B1
+  * BCM2710 => RPI 3 
   
 * Target Profile  
+  * Multiple devices => Linksys WRT Multiple
   * D-Link DIR-860l B1 => D-Link DIR-860l B1  
     * Kernel type => MIPS FPU EMULATOR
       * it comes later with ```make -j9 kernel_menuconfig```, after the packages selected, just some info 
-  * Linksys WRT Multiple => Multiple devices
   * RPI 3 => Raspberrry Pi 3 B/CM  
 
 
