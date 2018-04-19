@@ -1,6 +1,6 @@
 [//]: #@corifeus-header
 
-# Latest Stable LEDE Version with many plus packages
+# ☕ Latest Stable LEDE Version with many plus packages
 
                         
 [//]: #@corifeus-header:end

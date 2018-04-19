@@ -9,7 +9,7 @@
         "code": "Insomnia"
     },
     "version": "17.1.191-1001",
-    "description": "Latest Stable LEDE Version with many plus packages",
+    "description": "☕ Latest Stable LEDE Version with many plus packages",
     "main": "src/index.js",
     "directories": {
         "test": "test"
