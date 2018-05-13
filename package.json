@@ -10,7 +10,7 @@
         "opencollective": false,
         "reponame": "lede-insomnia"
     },
-    "version": "17.1.211-1031",
+    "version": "17.1.214-1032",
     "description": "☕ Latest Stable LEDE Version with many plus packages",
     "main": "src/index.js",
     "directories": {
