@@ -4,13 +4,13 @@
         "prefix": "p3x-",
         "type": "lede",
         "cdn": true,
-        "nodejs": "v10.0.0",
+        "nodejs": "v10.1.0",
         "icon": "fas fa-coffee",
         "code": "Insomnia",
         "opencollective": false,
         "reponame": "lede-insomnia"
     },
-    "version": "17.1.199-1025",
+    "version": "17.1.211-1031",
     "description": "☕ Latest Stable LEDE Version with many plus packages",
     "main": "src/index.js",
     "directories": {
@@ -34,13 +34,13 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^1.7.1375-396"
+        "corifeus-builder": "^1.7.1392-405"
     },
     "engines": {
         "node": ">=8.9.0"
     },
     "homepage": "https://pages.corifeus.com/lede-insomnia",
     "dependencies": {
-        "corifeus-utils": "^1.2.33-371"
+        "corifeus-utils": "^1.2.49-378"
     }
 }
