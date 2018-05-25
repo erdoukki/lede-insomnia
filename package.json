@@ -11,7 +11,7 @@
         "reponame": "lede-insomnia",
         "build": true
     },
-    "version": "17.1.223-1041",
+    "version": "17.1.225-1043",
     "description": "☕ Latest Stable LEDE Version with many plus packages",
     "main": "src/index.js",
     "directories": {
@@ -35,13 +35,13 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^1.8.24-423"
+        "corifeus-builder": "^1.8.27-426"
     },
     "engines": {
         "node": ">=10.2.1"
     },
     "homepage": "https://pages.corifeus.com/lede-insomnia",
     "dependencies": {
-        "corifeus-utils": "^1.2.80-389"
+        "corifeus-utils": "^1.2.83-391"
     }
 }
