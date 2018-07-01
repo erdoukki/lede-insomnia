@@ -4,14 +4,14 @@
         "prefix": "p3x-",
         "type": "lede",
         "cdn": true,
-        "nodejs": "v10.2.1",
+        "nodejs": "v10.5.0",
         "icon": "fas fa-coffee",
         "code": "Insomnia",
         "opencollective": false,
         "reponame": "lede-insomnia",
         "build": true
     },
-    "version": "17.1.225-1043",
+    "version": "17.1.227-1062",
     "description": "☕ Latest Stable LEDE Version with many plus packages",
     "main": "src/index.js",
     "directories": {
