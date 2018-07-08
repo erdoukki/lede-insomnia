@@ -72,14 +72,7 @@ For multiple Linksys WRT go back to and select what is you want
   * Use a per-device root filesystem that add profile packages
   * Linksys WRT1900ACS
   * Linksys WRT3200ACM
-
-* Advanced configuration options (ENTER)
-  * Toolchain (ENTER)
-    * Binutils Version
-      * Binutils 2.27
-    * GCC Compiler Version
-      * gcc 6.x
-           
+     
 * Build the LEDE Image Build
   * Include package repositories
   
@@ -99,32 +92,19 @@ For multiple Linksys WRT go back to and select what is you want
     * node
       * Configuration
         * Version Selection
-          * 10.x
-    * SELECT ALL
+          * 9.x - Looks like 10.x is not working right now
+    * SELECT ALL``
     
   * PHP
     * php7
     * SELECT ALL
 
-* Libraries
-  * DISABLED, NOT USING FOR A ROUTER - libavahi-compat-libdnssd (*)          
-
 * Network
   * Web Servers/Proxies
-    * apache
-      * Configuration - It is missing in 17.01.4
-        * Enable HTTP2
     * nginx - Select then Enter
       * Configuration
         * Select all  
-        
-* Utilities
-  * database
-    * mariadb - by v10 selects automatically all
-          
-  * mc - select then enter
-    * Configuration
-      * Enable internal editor - UNCHECK
+
 * Exit
 * YES
 
@@ -177,7 +157,7 @@ sudo renice -20 10728 # this was the dockerd PID
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.227-1062 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.229-1078 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
