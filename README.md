@@ -13,7 +13,7 @@
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM, D-Link DIR860L B1 and RPI-3 is already built, but based on the READMEs, you can built a new one easy.  
 
 ## IMPORTANT
-**This is the last `LEDE 17.01.4` build with laatest wifi, MariaDB, Redis and NodeJs.  
+**This is the last `LEDE 17.01.4` build with latest wifi, MariaDB, Redis and NodeJs.  
 All new builds will happen with the next OpenWrt 18.x.x stable branch of tags.**
 
 ## Linksys WRT3200ACM Winbond
@@ -375,7 +375,7 @@ echo "except-interface=eth1" >> /etc/dnsmasq.conf
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.229-1078 
+[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.230-1087 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
