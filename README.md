@@ -87,9 +87,6 @@ I cant's list all of it, there is enough for now. See what is in [create from sc
 
 [MariaDB 10 is here!](https://cdn.corifeus.com/lede/17.01.5/packages/arm_cortex-a9_vfpv3/mariadb/)
 
-## Based on
-https://github.com/nxhack/openwrt-node-packages#note-about-avahi-and-homebridge
-
 
 
 # Routers pre-built
