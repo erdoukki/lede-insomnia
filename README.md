@@ -14,7 +14,12 @@
 
 # BEWARE
 
-Although, I have built the `LEDE 17.01.4`, for me, it is not working, there is some weird `DNS` `KERNEL` problem, which is just after the `LEDE 17.01.4` was working and the next stable is having a problem. I found it online, the exact errors, but, because I was so sad about this, a reverted my routers to `17.01.4` right away, so I forgot the error to report exactly, but, maybe in `17.01.6` or `18.01.x` will be right. Dunno.
+The `17.01.5` (with `sysupgrade` or upload my settings with `factory install`, I receive this error below:  
+[THE ACTUAL SHOW STOP](docs/lede-17.01.5-result.md)
+
+So, for now, I cannot say, it is stable for me, but of course, in the coming days/weeks, I will talk to the guys on the forum, what this error is and maybe, I can really upgrade to `17.01.5`. Besides, I have a complex settings, that would take many days to do it by hand, so for now, it is a `show stopper`.
+
+I think, I will build both versions `17.01.4` along with `17.01.5`, as that is the `KILLER` and once `OpenWrt 18` is working on my secondary router, I will name it `OpenWrt-Insomnia`. 
 
 ## Linksys WRT3200ACM Winbond
 

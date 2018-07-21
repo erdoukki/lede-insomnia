@@ -71,6 +71,7 @@ uci show fstab
 cat /etc/config/fstab
 df -h 
 
+# yes sometimes, have to do it TWICE format, so go step mkfs.ext4 /dev/sda1
 # THIS IS MY OWN SETUP
 # if the WAN is not DHCP then have to restore the config first
 # this is my own setup, you don't needed
