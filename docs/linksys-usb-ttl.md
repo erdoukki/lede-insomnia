@@ -6,24 +6,51 @@
 [//]: #@corifeus-header:end
 # Linksys USB-TTL
 
+
+# TFTPD Install
+
+https://www.hiroom2.com/2017/07/02/debian-9-tftpd-hpa-en/
+
+```bash
+apt install -y tftpd-hpa
+systemctl disable tftpd-hpa
+service tftpd-hpa start 
+```
+
+The default folder is:  
+`/etc/default/tftpd-hpa`
+which defaults to  
+`/var/lib/tftpboot`
+
+
+# TTL
+
 ```bash
 ufw disable
 ls -l /dev/ttyUSB*
 apt -y install screen
 sudo screen /dev/ttyUSB0 115200,cs8,-ixon,ixoff,-istrip
+sudo screen /dev/ttyUSB1 115200,cs8,-ixon,ixoff,-istrip
 
 reboot
 
 setenv ipaddr 192.168.1.1
 setenv netmask 255.255.255.0
 setenv serverip 192.168.1.33
-setenv firmwareName insomnia-latest-mwlwifi-lede-17.01.5-mvebu-linksys-wrt1900acs-squashfs-factory.img
+
+setenv firmwareName insomnia-latest-mwlwifi-lede-17.01.4-mvebu-linksys-wrt1900acs-squashfs-factory.img
+
+setenv firmwareName insomnia-latest-mwlwifi-lede-17.01.4-mvebu-linksys-wrt3200acm-squashfs-factory.img
+
 run update_both_images
 ```
 
 ```bash
 ufw enable
+service tftpd-hpa stop
 ```
+
+
 [//]: #@corifeus-footer
 
 ---

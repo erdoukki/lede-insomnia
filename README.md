@@ -12,6 +12,10 @@
 
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM, D-Link DIR860L B1 and RPI-3 is already built, but based on the READMEs, you can built a new one easy.  
 
+# BEWARE
+
+Although, I have built the `LEDE 17.01.5`, for me, it is not working, there is some weird `DNS` `KERNEL` problem, which is just after the `LEDE 17.01.4` was working and the next stable is having a problem. I found it online, the exact errors, but, because I was so sad about this, a reverted my routers to `17.01.4` right away, so I forgot the error to report exactly, but, maybe in `17.01.6` or `18.01.x` will be right. Dunno.
+
 ## Linksys WRT3200ACM Winbond
 
 The info is here:  
@@ -186,7 +190,7 @@ If you use an ```insomnia``` firmware, then you are done, but if you want one or
 
 ### If you just use one or a few feeds non insomnia firmware, your router needs a signature
 
-You need to copy this file from this directory:  
+You can enable foreign keys from this directory:  
 https://github.com/patrikx3/lede-insomnia/tree/master/image-builder-files/etc/opkg/keys to:    
 ```text
  /etc/opkg/keys
