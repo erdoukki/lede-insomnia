@@ -12,7 +12,7 @@
 
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM, D-Link DIR860L B1 and RPI-3 is already built, but based on the READMEs, you can built a new one easy.  
 
-# BEWARE
+# BEWARE 17.01.5
 
 If you use `OpenVPN`, you will have to make sure set this settings:
 `/etc/config/openvpn`:  
