@@ -22,7 +22,7 @@ config openvpn 'yours'
     option comp_lzo 'yes'
 ```
 
-Otherwise, you will face this [error](docs/lede-17.01.5-result.md) and resolutions is [here](https://bugs.openwrt.org/index.php?do=details&task_id=1541).
+Otherwise, you will face this [error](docs/lede-17.01.5-result.md) and resolution is [here](https://bugs.openwrt.org/index.php?do=details&task_id=1541).
 
 ## Linksys WRT3200ACM Winbond
 
