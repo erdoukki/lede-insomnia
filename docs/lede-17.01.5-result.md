@@ -2,6 +2,8 @@
 # Weird error
 This why reverted to `17.01.4` (the show stop):
 
+https://bugs.openwrt.org/index.php?do=details&task_id=1541  
+
 ```text
 [   69.072330] sit: non-ECT from 31.27.5.181 with TOS=0x2
 [   69.130311] sit: non-ECT from 31.27.5.181 with TOS=0x2

@@ -6,7 +6,7 @@
 FROM patrikx3/openwrt-insomnia:base
 MAINTAINER patrikx3/lede-insomnia - Patrik Laszlo - alabard@gmail.com
 
-ARG LEDE_VERSION_TOTAL=17.01.4
+ARG LEDE_VERSION_TOTAL=17.01.5
 ARG LEDE_BRANCH=lede-17.01
 ENV LEDE_VERSION_TOTAL=${LEDE_VERSION_TOTAL}
 ENV LEDE_BRANCH=${LEDE_BRANCH}
