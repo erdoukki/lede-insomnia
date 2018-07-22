@@ -30,34 +30,14 @@ make -j9 menuconfig
 
 * Target System
 *   Linksys 1900ACS v2 => Marvell Armada 37x/38x/XP
-*   D-Link DIR 860L B1 => MediaTek Ralink MIPS 
 * Target Profile
   * Linksys 1900ACS v2 => Linksys WRT1900ACS
-  * D-Link DIR 860L B1 =>MT7621
 * The Languages 
   *  Node.js, Select as M (module) 
     * Below this => Configuration => Select Version 8.x
   * node-npm, Select as M (module)
 * Save
 * Exit all
-
-### Note
-If your target machine is MIPS and there is no hardware FPU, you need MIPS_FPU_EMULATOR checked (see if there is fpuemustats in the /sys/kernel/debug/mips directory).
-
-### Then you need first
-```bash
-make -j9 kernel_menuconfig
-```
-
-* Target System  
-  * D-Link DIR-860L B1 MediaTek MT7621AT, target ```ramips / mt7621```, type ```mipsel_24kc```
-    * MediaTek Ralink MIPS       
-* Target Profile  
-  * MT7621  
-* Kernel type
-  * Check MIPS FPU EMULATOR
-* Save  
-* Exit  
 
 ```bash
 sed -i.bak 's#CONFIG_TARGET_INIT_PATH="#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-openwrt:#g' .config

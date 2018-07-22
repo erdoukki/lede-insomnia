@@ -44,18 +44,13 @@ For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package
 
 * Target System  
   * Marvell Armada 37x/38x/XP => Linksys WRT Multiple 
-  * MediaTek Ralink MIPS => D-Link DIR-860l B1 
   * Broadcom BCM27xx => RPI 3   
   
 * Subtarget (Linksys missing this, not needed)
-  * MT7621 => D-Link DIR-860l B1
   * BCM2710 => RPI 3 
   
 * Target Profile  
   * Multiple devices => Linksys WRT Multiple
-  * D-Link DIR-860l B1 => D-Link DIR-860l B1  
-    * Kernel type => MIPS FPU EMULATOR
-      * it comes later with ```make -j9 kernel_menuconfig```, after the packages selected, just some info 
   * RPI 3 => Raspberrry Pi 3 B/CM  
 
 
@@ -99,6 +94,9 @@ For multiple Linksys WRT go back to and select what is you want
     * php7
     * SELECT ALL
 
+* Libraries
+  * libavahi-compat-libdnssd (*)          
+
 * Network
   * Web Servers/Proxies
     * nginx - Select then Enter
@@ -110,32 +108,6 @@ For multiple Linksys WRT go back to and select what is you want
 
 Copy the .config file to {router-name}/.config
 
-**If your target machine is MIPS and there is no hardware FPU we need MIPS_FPU_EMULATOR**
-
-```bash
-make -j9 kernel_menuconfig
-```
- 
-* Target System  
-  * D-Link DIR-860l B1 MediaTek MT7621AT, target ```ramips / mt7621```, type ```mipsel_24kc```
-    * MediaTek Ralink MIPS       
-* Target Profile  
-  * MT7621  
-* Kernel type
-  * Check MIPS FPU EMULATOR
-* Device Drivers
-  * Check DMA Engine support
-    * Press Enter
-      * RALINK DMA support = M
-      * MTK HSDMA support = M 
-* Save  
-* Exit  
-
-For DIR DIR-860L B1, there is no option ```CONFIG_IMG_MDC_DMA=y```, so you have to add in here:
-```lede-insomnia/router/dir-860l-b1/source/target/linux/ramips/mt7621/config-4.4``` . 
- 
-More info: [D-Link DIR-860l B1](docs/d-link-dir860l-b1.md) .
- 
  
 # In an another terminal you can increase the buidling 
 
