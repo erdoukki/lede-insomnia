@@ -15,7 +15,8 @@
 # BEWARE 17.01.5
 
 If you use `OpenVPN`, you will have to make sure set this settings:
-`/etc/config/openvpn`:  
+  
+`/etc/config/openvpn`
 
 ```text
 config openvpn 'yours'

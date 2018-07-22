@@ -53,8 +53,6 @@ nano /etc/config/fstab
 # built the overlay into the drive
 mount /dev/sda1 /mnt ; tar -C /overlay -cvf - . | tar -C /mnt -xf - ; umount /mnt
 
-swapon /dev/sda2
-
 # is it good? then we are good! if it is not, uncheck Keep settings 
 # install the factory now and redo from creating the partition
 # finally 
@@ -72,6 +70,9 @@ cat /etc/config/fstab
 df -h 
 
 # yes sometimes, have to do it TWICE format, so go step mkfs.ext4 /dev/sda1
+
+swapon /dev/sda2
+
 # THIS IS MY OWN SETUP
 # if the WAN is not DHCP then have to restore the config first
 # this is my own setup, you don't needed
