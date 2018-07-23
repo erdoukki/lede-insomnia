@@ -29,8 +29,6 @@ insmod xhci-mtk
 
 mkfs.ext4 /dev/sda1
 # say yes
-mkfs.ext4 /dev/sda1
-# say yes
 
 # sometimes it is not working force, so i usually format twice
 
