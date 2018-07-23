@@ -29,6 +29,10 @@ insmod xhci-mtk
 
 mkfs.ext4 /dev/sda1
 # say yes
+mkfs.ext4 /dev/sda1
+# say yes
+
+# sometimes it is not working force, so i usually format twice
 
 # if you already have it and it is not
 # overlay, then you do not need it,
