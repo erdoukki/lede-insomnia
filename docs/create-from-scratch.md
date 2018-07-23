@@ -1,6 +1,6 @@
 [//]: #@corifeus-header
 
-# ☕ Latest Stable LEDE Version with many plus packages
+# ☕ Latest Stable OpenWrt Version with additional packages/feeds
 
                         
 [//]: #@corifeus-header:end
@@ -21,7 +21,7 @@ opkg list-installed > opkg-list-installed.txt
 ```
 
 * mc
-  * via Midnight Commander you add to your repo via shell patrikx3@192.168.1.30/home/patrikx3/Projects/patrikx3/p3x/lede-insomnia/router/{router-name}
+  * via Midnight Commander you add to your repo via shell patrikx3@192.168.1.30/home/patrikx3/Projects/patrikx3/p3x/openwrt-insomnia/router/{router-name}
 * Copy the opkg-list-installed.txt file to {router-name}/opkg-list-installed.txt as well
 
 
@@ -40,35 +40,35 @@ Make sure you know there are already build docker images, so you don't really ne
 
 The same, if you have a server instead ```cdn.corifeus.com```, you can change it at wish.
 
-For ```apache``` errors and there is a newer ```mwlwifi``` faster, newer package, they are in ```lede-insomnia/patches```, you can copy them safely into the ```/build/source```. 
+There is a newer ```mwlwifi``` faster, newer package, they are in ```openwrt-insomnia/patches```, you can copy them safely into the ```/build/source```. 
 
 * Target System  
-  * Marvell Armada 37x/38x/XP => Linksys WRT Multiple 
-  * Broadcom BCM27xx => RPI 3   
+  * Marvell Armada EBU Armada => Linksys WRT Multiple
+  * Broadcom BCM27xx => RPI 3  
   
-* Subtarget (Linksys missing this, not needed)
-  * BCM2710 => RPI 3 
+* Subtarget
+  * Marvell Armada 37x/38x/XP => Linksys WRT Multiple 
+  * BCM2710 64bit based boards => RPI 3 
   
 * Target Profile  
   * Multiple devices => Linksys WRT Multiple
-  * RPI 3 => Raspberrry Pi 3 B/CM  
-
+  * Raspberrry Pi 3B => RPI 3   
 
 * Global build settings
   * Select all target specific packages by default
   * Select all kernel module packages by default
   * Select all userspace packages by default
   * Set build defaults for automatic builds
-      
+  
 For multiple Linksys WRT go back to and select what is you want
 
 * Target Devices (for now is only Linksys WRT Multiple)
   * Enable all profiles by default - UNCHECK
-  * Use a per-device root filesystem that add profile packages
+  * Use a per-device root filesystem that add profile packages  
   * Linksys WRT1900ACS
   * Linksys WRT3200ACM
      
-* Build the LEDE Image Build
+* Build the OpenWrt Image Build
   * Include package repositories
   
 * Image configuration - ENTER
@@ -78,17 +78,17 @@ For multiple Linksys WRT go back to and select what is you want
     * Manufacturer name
       * p3x
     * Manufacturer URL
-      * https://pages.corifeus.com/lede-insomnia
+      * https://pages.corifeus.com/openwrt-insomnia
   * Seperate feed repositories
-    * SELECT ALL
-              
+    * select
+            
 * Languages
   * Node.js
     * node
       * Configuration
         * Version Selection
           * 10.x
-    * SELECT ALL``
+    * SELECT ALL
     
   * PHP
     * php7
@@ -99,6 +99,9 @@ For multiple Linksys WRT go back to and select what is you want
 
 * Network
   * Web Servers/Proxies
+    * apache
+      * Configuration
+        * Enable HTTP2
     * nginx - Select then Enter
       * Configuration
         * Select all  
@@ -113,7 +116,6 @@ For multiple Linksys WRT go back to and select what is you want
 
 Copy the .config file to {router-name}/.config
 
- 
 # In an another terminal you can increase the buidling 
 
 ```bash
@@ -134,7 +136,7 @@ sudo renice -20 10728 # this was the dockerd PID
 
 ---
 
-[**P3X-LEDE-INSOMNIA**](https://pages.corifeus.com/lede-insomnia) Build v17.1.231-1089 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.84-302 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
