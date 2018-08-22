@@ -11,7 +11,7 @@
 # END OF LIFE
 As of `OpenWrt` stable is released since `18.06.1` of this repo. There are know new releases.   
 
-The new `OpenWrt` is found here:
+The new `OpenWrt` is found here:  
 https://github.com/patrikx3/openwrt-insomnia  
 https://cdn.corifeus.com/openwrt/  
 
