@@ -28,7 +28,7 @@ https://forum.lede-project.org/t/lede-17-01-5-errors-on-linksys-wrt-sit-non-ect-
 ## Linksys WRT3200ACM Winbond
 
 The info is here:  
-https://cdn.corifeus.com/openwrt/SNAPSHOT/
+https://cdn.corifeus.com/openwrt/
 
 ## RPI-3
 
@@ -84,9 +84,9 @@ It is only re-built per request, given I do not use it.
 Besides, all packages are there, like:  
 
 * samba client
-* nginx - full
-* apache 
-* php 7.1
+* nginx
+* apache - with http2 enabled
+* php 7
 * python 2 and 3
 * Redis stable version
 * msmtp
