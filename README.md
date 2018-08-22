@@ -8,6 +8,14 @@
                         
 [//]: #@corifeus-header:end
 
+# END OF LIFE
+As of `OpenWrt` stable is released since `18.06.1` of this repo. There are know new releases.   
+
+The new `OpenWrt` is found here:
+https://github.com/patrikx3/openwrt-insomnia  
+https://cdn.corifeus.com/openwrt/  
+
+
 # LEDE Latest Stable build with latest NodeJs, always the latest Kaloz mwlwifi's WIFI driver, latest Redis stable
 
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM and RPI-3 is already built, but based on the READMEs, you can built a new one easy.  
